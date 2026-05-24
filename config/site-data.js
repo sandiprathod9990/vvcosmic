@@ -10,8 +10,8 @@ module.exports = {
     tagline: 'Pattern Intelligence & Life Alignment',
     practitioner: 'Harshil Sevak',
     email: 'contact@vvcosmic.com',
-    phone: '+91 00000 00000',
-    phoneDisplay: '+91 00000 00000',
+    phone: '+91 81409 61570',
+    phoneDisplay: '+91 81409 61570',
     location: 'India',
     description:
       'VVCosmic.com — Consult Harshil Sevak for Vedic astrology, numerology, vastu, palmistry & tantra. Personalized guidance for clarity, alignment, and life transformation.',
