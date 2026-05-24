@@ -5,18 +5,11 @@
 </head>
 <body>
   <div class="nav-overlay" id="nav-overlay" aria-hidden="true"></div>
-  <header class="site-header" id="site-header">
-    <div class="container header-inner">
+  <div class="site-top" id="site-top">
+    <div class="container site-top-inner">
+      <header class="site-header" id="site-header">
+        <div class="header-inner">
       <a href="/" class="logo" aria-label="<%= site.name %> home">VV<span class="logo-accent">Cosmic</span></a>
-      <nav class="nav" aria-label="Primary" id="primary-nav">
-        <a href="#services">Services</a>
-        <a href="#about">About</a>
-        <a href="#methodology">Process</a>
-        <a href="#videos">Videos</a>
-        <a href="#testimonials">Reviews</a>
-        <a href="tel:<%= site.phone.replace(/\s/g, '') %>" class="nav-phone"><%= site.phoneDisplay %></a>
-        <a href="/booking" class="nav-cta">Book Appointment</a>
-      </nav>
       <div class="header-actions">
         <a href="tel:<%= site.phone.replace(/\s/g, '') %>" class="header-phone"><%= site.phoneDisplay %></a>
         <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="primary-nav">
@@ -26,6 +19,18 @@
       </div>
     </div>
   </header>
+
+  <nav class="nav" aria-label="Primary" id="primary-nav">
+    <a href="#services">Services</a>
+    <a href="#about">About</a>
+    <a href="#methodology">Process</a>
+    <a href="#videos">Videos</a>
+    <a href="#testimonials">Reviews</a>
+    <a href="tel:<%= site.phone.replace(/\s/g, '') %>" class="nav-phone"><%= site.phoneDisplay %></a>
+    <a href="/booking" class="nav-cta">Book Appointment</a>
+      </nav>
+    </div>
+  </div>
 
   <main>
     <section class="hero" id="hero" aria-labelledby="hero-heading">

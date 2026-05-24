@@ -1,7 +1,7 @@
 (function () {
   'use strict';
 
-  const header = document.getElementById('site-header');
+  const header = document.getElementById('site-top') || document.getElementById('site-header');
   const menuToggle = document.querySelector('.menu-toggle');
   const nav = document.querySelector('.nav');
   const navOverlay = document.getElementById('nav-overlay');
