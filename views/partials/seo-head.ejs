@@ -1,0 +1,75 @@
+<% const seoData = seo || {}; const siteUrl = site.domain.replace(/\/$/, ''); const canonical = seoData.canonical || siteUrl; %>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title><%= seoData.title || site.name %></title>
+<meta name="description" content="<%= seoData.description || site.description %>">
+<% if (seoData.keywords) { %>
+<meta name="keywords" content="<%= seoData.keywords %>">
+<% } %>
+<meta name="author" content="<%= site.practitioner %>">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="<%= canonical %>">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="<%= site.name %>">
+<meta property="og:title" content="<%= seoData.title || site.name %>">
+<meta property="og:description" content="<%= seoData.description || site.description %>">
+<meta property="og:url" content="<%= canonical %>">
+<meta property="og:locale" content="en_IN">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="<%= seoData.title || site.name %>">
+<meta name="twitter:description" content="<%= seoData.description || site.description %>">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/styles.css">
+
+<script type="application/ld+json">
+<%- JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": site.name,
+  "url": siteUrl,
+  "description": site.description,
+  "email": site.email,
+  "telephone": site.phone,
+  "areaServed": "IN",
+  "founder": {
+    "@type": "Person",
+    "name": site.practitioner,
+    "jobTitle": "Vedic Astrologer & Vastu Consultant"
+  },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Astrology & Vastu Services",
+    "itemListElement": services.map(function(s) {
+      return {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": s.name,
+          "description": s.shortDescription
+        }
+      };
+    })
+  }
+}) %>
+</script>
+
+<script type="application/ld+json">
+<%- JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": site.practitioner,
+  "url": siteUrl,
+  "jobTitle": "Astrologer, Vastu Consultant",
+  "worksFor": {
+    "@type": "Organization",
+    "name": site.name,
+    "url": siteUrl
+  },
+  "knowsAbout": ["Vedic Astrology", "Vastu Shastra", "Numerology", "Palmistry", "Tantra"]
+}) %>
+</script>

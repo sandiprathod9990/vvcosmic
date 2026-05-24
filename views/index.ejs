@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('partials/seo-head', { site, services, seo }) %>
+</head>
+<body>
+  <header class="site-header" id="site-header">
+    <div class="container header-inner">
+      <a href="/" class="logo" aria-label="<%= site.name %> home">VV<span class="logo-accent">Cosmic</span></a>
+      <nav class="nav" aria-label="Primary">
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="#methodology">Process</a>
+        <a href="#videos">Videos</a>
+        <a href="#testimonials">Reviews</a>
+        <a href="/booking" class="nav-cta">Book Appointment</a>
+      </nav>
+      <a href="tel:<%= site.phone.replace(/\s/g, '') %>" class="header-phone"><%= site.phoneDisplay %></a>
+      <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="hero" aria-labelledby="hero-heading">
+      <div class="hero-bg" aria-hidden="true">
+        <div class="hero-layer hero-layer-1"></div>
+        <div class="hero-layer hero-layer-2"></div>
+        <div class="hero-mandala" aria-hidden="true"></div>
+      </div>
+      <div class="container hero-content">
+        <p class="hero-eyebrow reveal"><%= site.practitioner %> · <%= site.tagline %></p>
+        <h1 class="hero-title reveal" id="hero-heading">Trusted Vedic Astrology & Vastu Guidance for Clarity and Alignment</h1>
+        <p class="hero-subtitle reveal">Consult <%= site.practitioner %> at <%= site.name %>.com for personalized astrology, numerology, vastu, palmistry, and tantra — grounded in observation, depth, and practical life correction.</p>
+        <div class="hero-actions reveal">
+          <a href="/booking" class="btn btn-primary">Book Appointment</a>
+          <a href="#services" class="btn btn-ghost">Explore Services</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services (Astrology, Numerology, Vastu, Palmistry, Tantra) -->
+    <section class="section services" id="services" aria-labelledby="services-heading">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-label">Our Services</span>
+          <h2 id="services-heading">Expert Astrology & Vastu Services</h2>
+          <p class="section-lead">Personalized guidance across five disciplines — the same core services trusted by leading astrologers, delivered with <%= site.practitioner %>'s refined, observational approach.</p>
+        </div>
+        <div class="services-grid">
+          <% services.forEach(function(s, i) { %>
+          <article class="service-card reveal" id="<%= s.slug %>">
+            <span class="service-icon" aria-hidden="true"><%= s.icon %></span>
+            <h3><%= s.name %></h3>
+            <p><%= s.shortDescription %></p>
+            <ul class="service-features">
+              <% s.features.forEach(function(f) { %>
+              <li><%= f %></li>
+              <% }); %>
+            </ul>
+            <a href="/booking?service=<%= s.id %>" class="service-link">Book <%= s.name %> →</a>
+          </article>
+          <% }); %>
+        </div>
+      </div>
+    </section>
+
+    <!-- About / Philosophy -->
+    <section class="section about" id="about" aria-labelledby="about-heading">
+      <div class="container">
+        <div class="about-grid">
+          <div class="about-content reveal">
+            <span class="section-label">About <%= site.practitioner %></span>
+            <h2 id="about-heading">Why consult <%= site.practitioner %>?</h2>
+            <p class="section-lead"><%= site.practitioner %> offers Vedic astrology, vastu, numerology, palmistry, and tantra as integrated tools for understanding life patterns — not fear-based prediction, but intelligent course correction.</p>
+            <p>Astrology is approached as pattern intelligence: chart analysis, karmic tendencies, and behavioral observation. Vastu is spatial intelligence — how your environment shapes clarity and emotional state. Every consultation is private, personalized, and confidential.</p>
+            <div class="about-highlights">
+              <div class="highlight-item">
+                <strong>Personalized Guidance</strong>
+                <span>Tailored to your birth chart, numbers, and living space</span>
+              </div>
+              <div class="highlight-item">
+                <strong>Trusted Remedies</strong>
+                <span>Practical astrology, vastu & tantra corrections</span>
+              </div>
+              <div class="highlight-item">
+                <strong>Confidential Sessions</strong>
+                <span>Private advisory — not mass-market readings</span>
+              </div>
+            </div>
+            <a href="/booking" class="btn btn-primary">Schedule Appointment</a>
+          </div>
+          <div class="about-visual reveal" aria-hidden="true">
+            <div class="about-card">
+              <p class="about-quote">"Repeating patterns reveal deeper imbalance. Awareness changes how they express."</p>
+              <p class="about-name">— <%= site.practitioner %></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section methodology" id="methodology" aria-labelledby="methodology-heading">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-label">Consultation Process</span>
+          <h2 id="methodology-heading">How your session works</h2>
+          <p class="section-lead">A structured three-phase process — whether you book astrology, vastu, numerology, palmistry, or tantra.</p>
+        </div>
+        <div class="phases">
+          <article class="phase reveal">
+            <div class="phase-header">
+              <span class="phase-label">Phase 01</span>
+              <h3>Pattern Observation</h3>
+            </div>
+            <p class="phase-purpose">Chart, palm, numbers, or space — understanding your current life architecture.</p>
+            <ul class="phase-list">
+              <li>Birth chart / palm / numerology analysis</li>
+              <li>Recurring themes & behavioral tendencies</li>
+              <li>Environmental & vastu influences</li>
+              <li>Your concerns & personal context</li>
+            </ul>
+          </article>
+          <article class="phase reveal">
+            <div class="phase-header">
+              <span class="phase-label">Phase 02</span>
+              <h3>Root Cause Analysis</h3>
+            </div>
+            <p class="phase-purpose">Understanding why patterns repeat in career, relationships, health, or home.</p>
+            <ul class="phase-list">
+              <li>Planetary periods & karmic repetition</li>
+              <li>Lifestyle rhythm & emotional cycles</li>
+              <li>Vastu friction in living or workspace</li>
+              <li>Energetic imbalance & leakage</li>
+            </ul>
+          </article>
+          <article class="phase reveal">
+            <div class="phase-header">
+              <span class="phase-label">Phase 03</span>
+              <h3>Alignment & Remedies</h3>
+            </div>
+            <p class="phase-purpose">Personalized remedies and strategic corrections.</p>
+            <ul class="phase-list">
+              <li>Astrological & tantra remedies</li>
+              <li>Vastu spatial corrections</li>
+              <li>Lifestyle & behavioral alignment</li>
+              <li>Follow-up guidance plan</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section experience" id="experience">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-label">What You Can Expect</span>
+          <h2>Powerful Remedy · Personalized Guidance · Trusted Solutions</h2>
+        </div>
+        <div class="experience-grid">
+          <div class="experience-item reveal">
+            <h3>Powerful Remedy</h3>
+            <p>Effective astrology, vastu, and tantra remedies aligned to your specific chart and situation.</p>
+          </div>
+          <div class="experience-item reveal">
+            <h3>Personalized Guidance</h3>
+            <p>No generic readings — every session is built around your birth details, concerns, and goals.</p>
+          </div>
+          <div class="experience-item reveal">
+            <h3>Trusted & Reliable</h3>
+            <p>Confidential, selective consultations with depth and seriousness of process.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section videos" id="videos" aria-labelledby="videos-heading">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-label">Video Gallery</span>
+          <h2 id="videos-heading">Watch <%= site.practitioner %> on YouTube</h2>
+          <p class="section-lead">Explore guidance on astrology, vastu, life patterns, and spiritual remedies — in <%= site.practitioner %>'s own words.</p>
+        </div>
+        <div class="video-grid">
+          <% videos.forEach(function(v, i) { %>
+          <article class="video-card reveal">
+            <div class="video-embed">
+              <iframe
+                src="https://www.youtube-nocookie.com/embed/<%= v.id %>"
+                title="<%= v.title %> — <%= site.practitioner %> | VVCosmic"
+                loading="lazy"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen
+              ></iframe>
+            </div>
+            <div class="video-meta">
+              <h3><%= v.title %></h3>
+              <a href="<%= v.url %>" target="_blank" rel="noopener noreferrer" class="video-link">Watch on YouTube →</a>
+            </div>
+          </article>
+          <% }); %>
+        </div>
+      </div>
+    </section>
+
+    <section class="section testimonials" id="testimonials" aria-labelledby="reviews-heading">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-label">Client Reviews</span>
+          <h2 id="reviews-heading">What clients say about <%= site.practitioner %></h2>
+        </div>
+        <div class="testimonial-grid">
+          <blockquote class="testimonial reveal">
+            <p>"The clarity I gained wasn't dramatic — it was quiet. I stopped reacting to the same patterns and began understanding why they existed."</p>
+            <footer><cite>— Client, Mumbai</cite><span>Astrology Consultation</span></footer>
+          </blockquote>
+          <blockquote class="testimonial reveal">
+            <p>"The vastu analysis changed how I think about my workspace. Small spatial adjustments created noticeable emotional stability."</p>
+            <footer><cite>— Client, Ahmedabad</cite><span>Vastu Consultation</span></footer>
+          </blockquote>
+          <blockquote class="testimonial reveal">
+            <p>"Personalized remedies and numerology guidance helped me make better career decisions with confidence."</p>
+            <footer><cite>— Client, Delhi</cite><span>Numerology Reading</span></footer>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <section class="section consultations" id="consultations" aria-labelledby="pricing-heading">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-label">Book a Session</span>
+          <h2 id="pricing-heading">Consultation & Pricing</h2>
+          <p class="section-lead">Select a service and submit your inquiry. <%= site.practitioner %> reviews each request personally.</p>
+        </div>
+        <div class="consultation-grid">
+          <% consultations.forEach(function(c) { %>
+          <article class="consultation-card reveal">
+            <h3><%= c.name %></h3>
+            <p class="consultation-duration"><%= c.duration %></p>
+            <p class="consultation-desc"><%= c.description %></p>
+            <p class="consultation-price"><%= c.currency %> <%= c.price.toLocaleString('en-IN') %></p>
+            <a href="/booking?consultation=<%= c.id %>" class="btn btn-secondary">Book Now</a>
+          </article>
+          <% }); %>
+        </div>
+      </div>
+    </section>
+
+    <section class="section cta-section">
+      <div class="container cta-inner reveal">
+        <h2>What does your birth chart tell you?<br>Consult <%= site.practitioner %> today.</h2>
+        <div class="cta-actions">
+          <a href="/booking" class="btn btn-primary">Book Appointment</a>
+          <a href="tel:<%= site.phone.replace(/\s/g, '') %>" class="btn btn-ghost-light">Call <%= site.phoneDisplay %></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <span class="logo">VV<span class="logo-accent">Cosmic</span></span>
+        <p><%= site.practitioner %> — Vedic Astrologer, Vastu Consultant & Life Guide</p>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <nav aria-label="Services">
+          <% services.forEach(function(s) { %>
+          <a href="#<%= s.slug %>"><%= s.name %></a>
+          <% }); %>
+        </nav>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <nav aria-label="Footer">
+          <a href="#about">About</a>
+          <a href="#methodology">Process</a>
+          <a href="#videos">Videos</a>
+          <a href="#testimonials">Reviews</a>
+          <a href="/booking">Book Appointment</a>
+        </nav>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <p><a href="tel:<%= site.phone.replace(/\s/g, '') %>"><%= site.phoneDisplay %></a></p>
+        <p><a href="mailto:<%= site.email %>"><%= site.email %></a></p>
+        <p><%= site.location %></p>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>&copy; <%= new Date().getFullYear() %> <%= site.name %>.com · <%= site.practitioner %>. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="/js/main.js" defer></script>
+</body>
+</html>
