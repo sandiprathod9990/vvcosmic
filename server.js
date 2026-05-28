@@ -24,7 +24,6 @@ function baseLocals(extra = {}) {
     services: siteData.practiceDomains,
     practiceDomains: siteData.practiceDomains,
     consultations: siteData.consultations,
-    videos: siteData.videos,
     ...extra,
   };
 }

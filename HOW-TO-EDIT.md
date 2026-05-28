@@ -13,7 +13,6 @@ All website content, pricing, services, contact info, and SEO settings are contr
 | `seo.booking` | SEO for booking page |
 | `services` | Astrology, Numerology, Vastu, Palmistry, Tantra — names, descriptions, features |
 | `consultations` | Session names, duration, price (INR), descriptions |
-| `videos` | YouTube video IDs, titles, and URLs |
 
 After editing, restart the server:
 

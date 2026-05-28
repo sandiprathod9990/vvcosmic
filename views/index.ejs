@@ -287,35 +287,6 @@
       </div>
     </section>
 
-    <section class="section videos" id="insights" aria-labelledby="insights-heading">
-      <div class="container">
-        <div class="section-header reveal">
-          <span class="section-label">Insights</span>
-          <h2 id="insights-heading">Observations on pattern, alignment & environment</h2>
-          <p class="section-lead">Selected reflections from <%= site.practitioner %> — on recurring structures, spatial intelligence, and the refinement of awareness.</p>
-        </div>
-        <div class="video-grid">
-          <% videos.forEach(function(v) { %>
-          <article class="video-card reveal">
-            <div class="video-embed">
-              <iframe
-                src="https://www.youtube-nocookie.com/embed/<%= v.id %>"
-                title="<%= v.title %> — <%= site.practitioner %> | VVCosmic"
-                loading="lazy"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowfullscreen
-              ></iframe>
-            </div>
-            <div class="video-meta">
-              <h3><%= v.title %></h3>
-              <a href="<%= v.url %>" target="_blank" rel="noopener noreferrer" class="video-link">Watch on YouTube →</a>
-            </div>
-          </article>
-          <% }); %>
-        </div>
-      </div>
-    </section>
-
     <section class="section testimonials" id="reflections" aria-labelledby="reflections-heading">
       <div class="container">
         <div class="section-header reveal">

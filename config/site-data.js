@@ -113,11 +113,4 @@ module.exports = {
       description: 'Rhythm, routine, and alignment work across thought, speech, action, and daily structure.',
     },
   ],
-
-  videos: [
-    { id: 'Fh6rgO3ZNG0', title: 'On Recurring Patterns', url: 'https://www.youtube.com/watch?v=Fh6rgO3ZNG0' },
-    { id: 'pibn6Exo19M', title: 'Life Architecture & Alignment', url: 'https://www.youtube.com/watch?v=pibn6Exo19M' },
-    { id: 'EDeHQeFu7h4', title: 'Spatial Intelligence', url: 'https://www.youtube.com/watch?v=EDeHQeFu7h4' },
-    { id: 'vwtoXMxxB5M', title: 'Awareness & Refinement', url: 'https://www.youtube.com/watch?v=vwtoXMxxB5M' },
-  ],
 };
