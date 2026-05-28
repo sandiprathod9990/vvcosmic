@@ -35,22 +35,22 @@
   "description": site.description,
   "email": site.email,
   "telephone": site.phone,
-  "areaServed": "IN",
+  "areaServed": "Worldwide",
   "founder": {
     "@type": "Person",
     "name": site.practitioner,
-    "jobTitle": "Vedic Astrologer & Vastu Consultant"
+    "jobTitle": "Life Alignment & Pattern Intelligence Advisor"
   },
   "hasOfferCatalog": {
     "@type": "OfferCatalog",
-    "name": "Astrology & Vastu Services",
+    "name": "Advisory Engagements",
     "itemListElement": services.map(function(s) {
       return {
         "@type": "Offer",
         "itemOffered": {
           "@type": "Service",
           "name": s.name,
-          "description": s.shortDescription
+          "description": s.description
         }
       };
     })
@@ -64,12 +64,12 @@
   "@type": "Person",
   "name": site.practitioner,
   "url": siteUrl,
-  "jobTitle": "Astrologer, Vastu Consultant",
+  "jobTitle": "Pattern Intelligence & Life Alignment Advisor",
   "worksFor": {
     "@type": "Organization",
     "name": site.name,
     "url": siteUrl
   },
-  "knowsAbout": ["Vedic Astrology", "Vastu Shastra", "Numerology", "Palmistry", "Tantra"]
+  "knowsAbout": ["Pattern Observation", "Life Architecture", "Lifestyle Alignment", "Spatial Intelligence", "Karmic Pattern Analysis"]
 }) %>
 </script>

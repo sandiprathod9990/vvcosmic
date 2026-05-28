@@ -21,7 +21,8 @@ const inquiries = [];
 function baseLocals(extra = {}) {
   return {
     site: SITE,
-    services: siteData.services,
+    services: siteData.practiceDomains,
+    practiceDomains: siteData.practiceDomains,
     consultations: siteData.consultations,
     videos: siteData.videos,
     ...extra,
@@ -87,6 +88,7 @@ app.post(
     body('name').trim().notEmpty().withMessage('Name is required'),
     body('email').isEmail().withMessage('Valid email is required'),
     body('location').trim().notEmpty().withMessage('Location is required'),
+    body('occupation').trim().notEmpty().withMessage('Occupation or field is required'),
     body('lifePhase').trim().notEmpty().withMessage('Current life phase is required'),
     body('concern').trim().notEmpty().withMessage('Area of concern is required'),
     body('purpose').trim().notEmpty().withMessage('Consultation purpose is required'),

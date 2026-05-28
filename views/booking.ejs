@@ -14,9 +14,9 @@
   <main class="booking-main">
     <div class="container booking-container">
       <div class="booking-intro reveal">
-        <span class="section-label">Book Appointment</span>
-        <h1>Schedule with <%= site.practitioner %></h1>
-        <p>Share your context thoughtfully. <%= site.practitioner %> reviews each inquiry personally before any consultation is confirmed.</p>
+        <span class="section-label">Consultation Application</span>
+        <h1>Begin your private inquiry</h1>
+        <p>Share your life context with intention. <%= site.practitioner %> reviews each application personally — inquiry precedes confirmation.</p>
       </div>
 
       <div class="booking-progress" role="progressbar" aria-valuenow="1" aria-valuemin="1" aria-valuemax="4">
@@ -44,8 +44,8 @@
       <form id="booking-form" class="booking-form" novalidate>
         <!-- Step 1: Inquiry -->
         <section class="form-step active" data-step="1">
-          <h2>Your Context</h2>
-          <p class="form-lead">Help us understand where you are in your life architecture.</p>
+          <h2>Life Context</h2>
+          <p class="form-lead">Help us understand your current life architecture — the patterns, concerns, and phase you are navigating.</p>
 
           <div class="form-grid">
             <div class="form-group">
@@ -57,8 +57,12 @@
               <input type="email" id="email" name="email" required autocomplete="email" placeholder="you@example.com">
             </div>
             <div class="form-group">
-              <label for="location">Location</label>
+              <label for="location">Country / Location</label>
               <input type="text" id="location" name="location" required placeholder="City, Country">
+            </div>
+            <div class="form-group">
+              <label for="occupation">Occupation / Field</label>
+              <input type="text" id="occupation" name="occupation" required placeholder="Profession, business, or primary field">
             </div>
             <div class="form-group">
               <label for="lifePhase">Current Life Phase</label>
@@ -88,8 +92,8 @@
 
         <!-- Step 2: Selection -->
         <section class="form-step" data-step="2">
-          <h2>Select Consultation</h2>
-          <p class="form-lead">Choose the engagement that aligns with your current needs.</p>
+          <h2>Select Engagement</h2>
+          <p class="form-lead">Choose the advisory format aligned with your current depth of need.</p>
 
           <div class="consultation-select">
             <% consultations.forEach(function(c) { %>
@@ -115,29 +119,29 @@
 
         <!-- Step 3: Process Overview -->
         <section class="form-step" data-step="3">
-          <h2>What to Expect</h2>
-          <p class="form-lead">Your consultation follows a structured advisory methodology.</p>
+          <h2>Advisory Process</h2>
+          <p class="form-lead">Your engagement follows a layered methodology — observation, root analysis, and strategic correction.</p>
 
           <div class="process-overview">
             <div class="process-item">
               <span class="process-num">01</span>
               <div>
                 <h4>Pattern Observation</h4>
-                <p>Deep analysis of your current life architecture — chart, themes, behavioral tendencies, and environmental influences.</p>
+                <p>Deep observation of your current life architecture — chart, recurring themes, behavioral tendencies, and environmental influences.</p>
               </div>
             </div>
             <div class="process-item">
               <span class="process-num">02</span>
               <div>
-                <h4>Root Cause Analysis</h4>
-                <p>Understanding why patterns repeat through lifestyle rhythm, emotional cycles, and environmental friction.</p>
+                <h4>Lifestyle & Root Cause Analysis</h4>
+                <p>Understanding why patterns repeat — daily rhythm, thought and speech habits, emotional cycles, energetic leakage, and environmental friction.</p>
               </div>
             </div>
             <div class="process-item">
               <span class="process-num">03</span>
               <div>
-                <h4>Strategic Correction</h4>
-                <p>Personalized recommendations for alignment across thought, speech, action, and environment.</p>
+                <h4>Alignment & Strategic Correction</h4>
+                <p>Personalized refinement across thought, speech, action, and environment — integrated into how you live.</p>
               </div>
             </div>
           </div>
@@ -196,7 +200,7 @@
 
           <div class="form-actions">
             <button type="button" class="btn btn-ghost btn-prev" data-prev="3">Back</button>
-            <button type="submit" class="btn btn-primary" id="submit-booking">Complete Inquiry & Payment</button>
+            <button type="submit" class="btn btn-primary" id="submit-booking">Submit Inquiry & Payment</button>
           </div>
         </section>
       </form>

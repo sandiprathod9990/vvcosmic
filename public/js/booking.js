@@ -115,7 +115,7 @@
       document.getElementById('inquiry-ref').textContent = inquiryResult.inquiryId.toUpperCase();
     } catch (err) {
       submitBtn.disabled = false;
-      submitBtn.textContent = 'Complete Inquiry & Payment';
+      submitBtn.textContent = 'Submit Inquiry & Payment';
       alert(err.message || 'Something went wrong. Please try again.');
     }
   });

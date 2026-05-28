@@ -9,25 +9,24 @@
     <div class="container site-top-inner">
       <header class="site-header" id="site-header">
         <div class="header-inner">
-      <a href="/" class="logo" aria-label="<%= site.name %> home">VV<span class="logo-accent">Cosmic</span></a>
-      <div class="header-actions">
-        <a href="tel:<%= site.phone.replace(/\s/g, '') %>" class="header-phone"><%= site.phoneDisplay %></a>
-        <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="primary-nav">
-          <span></span>
-          <span></span>
-        </button>
-      </div>
-    </div>
-  </header>
+          <a href="/" class="logo" aria-label="<%= site.name %> home">VV<span class="logo-accent">Cosmic</span></a>
+          <div class="header-actions">
+            <a href="tel:<%= site.phone.replace(/\s/g, '') %>" class="header-phone"><%= site.phoneDisplay %></a>
+            <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="primary-nav">
+              <span></span>
+              <span></span>
+            </button>
+          </div>
+        </div>
+      </header>
 
-  <nav class="nav" aria-label="Primary" id="primary-nav">
-    <a href="#services">Services</a>
-    <a href="#about">About</a>
-    <a href="#methodology">Process</a>
-    <a href="#videos">Videos</a>
-    <a href="#testimonials">Reviews</a>
-    <a href="tel:<%= site.phone.replace(/\s/g, '') %>" class="nav-phone"><%= site.phoneDisplay %></a>
-    <a href="/booking" class="nav-cta">Book Appointment</a>
+      <nav class="nav" aria-label="Primary" id="primary-nav">
+        <a href="#philosophy">Philosophy</a>
+        <a href="#methodology">Process</a>
+        <a href="#domains">Practice</a>
+        <a href="#reflections">Reflections</a>
+        <a href="tel:<%= site.phone.replace(/\s/g, '') %>" class="nav-phone"><%= site.phoneDisplay %></a>
+        <a href="/booking" class="nav-cta">Begin Inquiry</a>
       </nav>
     </div>
   </div>
@@ -37,74 +36,79 @@
       <div class="hero-bg" aria-hidden="true">
         <div class="hero-layer hero-layer-1"></div>
         <div class="hero-layer hero-layer-2"></div>
-        <div class="hero-mandala" aria-hidden="true"></div>
+        <div class="hero-geometry" aria-hidden="true"></div>
       </div>
       <div class="container hero-content">
         <p class="hero-eyebrow reveal"><%= site.practitioner %> · <%= site.tagline %></p>
-        <h1 class="hero-title reveal" id="hero-heading">Trusted Vedic Astrology & Vastu Guidance for Clarity and Alignment</h1>
-        <p class="hero-subtitle reveal">Consult <%= site.practitioner %> at <%= site.name %>.com for personalized astrology, numerology, vastu, palmistry, and tantra — grounded in observation, depth, and practical life correction.</p>
+        <h1 class="hero-title reveal" id="hero-heading">Hidden patterns shape visible life. Observation precedes alignment.</h1>
+        <p class="hero-subtitle reveal">A private advisory practice for those who sense recurring structures beneath career, relationships, environment, and inner life — and seek intelligent refinement, not prediction.</p>
         <div class="hero-actions reveal">
-          <a href="/booking" class="btn btn-primary">Book Appointment</a>
-          <a href="#services" class="btn btn-ghost">Explore Services</a>
+          <a href="/booking" class="btn btn-primary">Begin Your Inquiry</a>
+          <a href="#philosophy" class="btn btn-ghost">Explore the Approach</a>
         </div>
+      </div>
+      <div class="hero-scroll-hint reveal" aria-hidden="true">
+        <span>Scroll</span>
+        <div class="scroll-line"></div>
       </div>
     </section>
 
-    <!-- Services (Astrology, Numerology, Vastu, Palmistry, Tantra) -->
-    <section class="section services" id="services" aria-labelledby="services-heading">
+    <section class="section philosophy section-texture" id="philosophy" aria-labelledby="philosophy-heading">
       <div class="container">
         <div class="section-header reveal">
-          <span class="section-label">Our Services</span>
-          <h2 id="services-heading">Expert Astrology & Vastu Services</h2>
-          <p class="section-lead">Personalized guidance across five disciplines — the same core services trusted by leading astrologers, delivered with <%= site.practitioner %>'s refined, observational approach.</p>
+          <span class="section-label">Philosophy</span>
+          <h2 id="philosophy-heading">Patterns repeat until they are seen clearly</h2>
+          <p class="section-lead">The work begins with observation — chart intelligence, behavioral loops, environmental influence, and the subconscious structures that shape how life unfolds.</p>
         </div>
-        <div class="services-grid">
-          <% services.forEach(function(s, i) { %>
-          <article class="service-card reveal" id="<%= s.slug %>">
-            <span class="service-icon" aria-hidden="true"><%= s.icon %></span>
-            <h3><%= s.name %></h3>
-            <p><%= s.shortDescription %></p>
-            <ul class="service-features">
-              <% s.features.forEach(function(f) { %>
-              <li><%= f %></li>
-              <% }); %>
-            </ul>
-            <a href="/booking?service=<%= s.id %>" class="service-link">Book <%= s.name %> →</a>
+        <div class="philosophy-grid">
+          <article class="philosophy-card reveal">
+            <span class="card-number">01</span>
+            <h3>Recurring Life Patterns</h3>
+            <p>What appears as coincidence is often structure — themes that return across relationships, work, and inner experience until awareness shifts how they express.</p>
           </article>
-          <% }); %>
+          <article class="philosophy-card reveal">
+            <span class="card-number">02</span>
+            <h3>Karmic Continuity</h3>
+            <p>Not punishment, but inherited energetic tendencies — unconscious repetition, unresolved imbalance, and tendencies carried forward through thought, speech, and action.</p>
+          </article>
+          <article class="philosophy-card reveal">
+            <span class="card-number">03</span>
+            <h3>Environmental Intelligence</h3>
+            <p>Surroundings influence clarity, emotional state, and decision-making. Space is treated as architecture of behavior — not superstition, but spatial psychology.</p>
+          </article>
+          <article class="philosophy-card reveal">
+            <span class="card-number">04</span>
+            <h3>Refinement Through Awareness</h3>
+            <p>Transformation is not dramatic revelation — it is the quiet recalibration of how you think, speak, act, and inhabit your environment each day.</p>
+          </article>
+        </div>
+        <div class="philosophy-note reveal">
+          <p>"Karma is not a verdict. It is the pattern beneath the pattern — and awareness is how repetition becomes choice."</p>
         </div>
       </div>
     </section>
 
-    <!-- About / Philosophy -->
-    <section class="section about" id="about" aria-labelledby="about-heading">
+    <section class="section life-architecture" id="life-architecture" aria-labelledby="architecture-heading">
       <div class="container">
-        <div class="about-grid">
-          <div class="about-content reveal">
-            <span class="section-label">About <%= site.practitioner %></span>
-            <h2 id="about-heading">Why consult <%= site.practitioner %>?</h2>
-            <p class="section-lead"><%= site.practitioner %> offers Vedic astrology, vastu, numerology, palmistry, and tantra as integrated tools for understanding life patterns — not fear-based prediction, but intelligent course correction.</p>
-            <p>Astrology is approached as pattern intelligence: chart analysis, karmic tendencies, and behavioral observation. Vastu is spatial intelligence — how your environment shapes clarity and emotional state. Every consultation is private, personalized, and confidential.</p>
-            <div class="about-highlights">
-              <div class="highlight-item">
-                <strong>Personalized Guidance</strong>
-                <span>Tailored to your birth chart, numbers, and living space</span>
-              </div>
-              <div class="highlight-item">
-                <strong>Trusted Remedies</strong>
-                <span>Practical astrology, vastu & tantra corrections</span>
-              </div>
-              <div class="highlight-item">
-                <strong>Confidential Sessions</strong>
-                <span>Private advisory — not mass-market readings</span>
-              </div>
-            </div>
-            <a href="/booking" class="btn btn-primary">Schedule Appointment</a>
+        <div class="architecture-inner">
+          <div class="architecture-content reveal">
+            <span class="section-label">Life Architecture</span>
+            <h2 id="architecture-heading">The hidden structures influencing outcomes</h2>
+            <p class="section-lead">Career stagnation, relational friction, emotional volatility, and environmental discomfort often share a root — structures operating beneath conscious awareness.</p>
+            <p>Life architecture maps how chart patterns, daily rhythm, speech habits, emotional cycles, and spatial environment intersect. The goal is not more information, but integrated understanding of why certain outcomes persist.</p>
+            <ul class="architecture-list">
+              <li>Cross-domain pattern mapping</li>
+              <li>Behavioral and energetic observation</li>
+              <li>Root cause beneath surface symptoms</li>
+              <li>Strategic alignment across life domains</li>
+            </ul>
           </div>
-          <div class="about-visual reveal" aria-hidden="true">
-            <div class="about-card">
-              <p class="about-quote">"Repeating patterns reveal deeper imbalance. Awareness changes how they express."</p>
-              <p class="about-name">— <%= site.practitioner %></p>
+          <div class="architecture-visual reveal" aria-hidden="true">
+            <div class="architecture-diagram">
+              <div class="arch-layer arch-layer-1"><span>Chart</span></div>
+              <div class="arch-layer arch-layer-2"><span>Behavior</span></div>
+              <div class="arch-layer arch-layer-3"><span>Environment</span></div>
+              <div class="arch-core"><span>Alignment</span></div>
             </div>
           </div>
         </div>
@@ -114,9 +118,9 @@
     <section class="section methodology" id="methodology" aria-labelledby="methodology-heading">
       <div class="container">
         <div class="section-header reveal">
-          <span class="section-label">Consultation Process</span>
-          <h2 id="methodology-heading">How your session works</h2>
-          <p class="section-lead">A structured three-phase process — whether you book astrology, vastu, numerology, palmistry, or tantra.</p>
+          <span class="section-label">Strategic Alignment Process</span>
+          <h2 id="methodology-heading">A layered advisory methodology</h2>
+          <p class="section-lead">Each engagement follows a deliberate sequence — deep observation before conclusion, root analysis before correction, refinement integrated into daily life.</p>
         </div>
         <div class="phases">
           <article class="phase reveal">
@@ -124,76 +128,174 @@
               <span class="phase-label">Phase 01</span>
               <h3>Pattern Observation</h3>
             </div>
-            <p class="phase-purpose">Chart, palm, numbers, or space — understanding your current life architecture.</p>
+            <p class="phase-purpose">Understanding the current life architecture — before any strategic direction is offered.</p>
             <ul class="phase-list">
-              <li>Birth chart / palm / numerology analysis</li>
-              <li>Recurring themes & behavioral tendencies</li>
-              <li>Environmental & vastu influences</li>
-              <li>Your concerns & personal context</li>
+              <li>Chart analysis & recurring life themes</li>
+              <li>Emotional tendencies & behavioral observation</li>
+              <li>Environmental influences on clarity & state</li>
+              <li>Current concerns & personal context</li>
             </ul>
+            <p class="phase-note">Observation precedes conclusion</p>
           </article>
-          <article class="phase reveal">
+          <article class="phase reveal phase--featured">
             <div class="phase-header">
               <span class="phase-label">Phase 02</span>
-              <h3>Root Cause Analysis</h3>
+              <h3>Lifestyle & Root Cause Analysis</h3>
             </div>
-            <p class="phase-purpose">Understanding why patterns repeat in career, relationships, health, or home.</p>
+            <p class="phase-purpose">Understanding why patterns continue repeating beneath the surface — the core differentiator of this practice.</p>
             <ul class="phase-list">
-              <li>Planetary periods & karmic repetition</li>
-              <li>Lifestyle rhythm & emotional cycles</li>
-              <li>Vastu friction in living or workspace</li>
-              <li>Energetic imbalance & leakage</li>
+              <li>Daily rhythm & routine observation</li>
+              <li>Thought patterns, speech habits & emotional cycles</li>
+              <li>Energetic leakage & karmic repetition</li>
+              <li>Environmental friction in living & workspace</li>
             </ul>
+            <p class="phase-note">Why repetition persists</p>
           </article>
           <article class="phase reveal">
             <div class="phase-header">
               <span class="phase-label">Phase 03</span>
-              <h3>Alignment & Remedies</h3>
+              <h3>Alignment & Strategic Correction</h3>
             </div>
-            <p class="phase-purpose">Personalized remedies and strategic corrections.</p>
+            <p class="phase-purpose">Refinement and implementation — personalized, intelligent, integrated into how you live.</p>
             <ul class="phase-list">
-              <li>Astrological & tantra remedies</li>
-              <li>Vastu spatial corrections</li>
-              <li>Lifestyle & behavioral alignment</li>
-              <li>Follow-up guidance plan</li>
+              <li>Thought, speech & action alignment</li>
+              <li>Behavioral recalibration & spatial correction</li>
+              <li>Energetic balancing & lifestyle refinement</li>
+              <li>Strategic guidance & follow-through</li>
             </ul>
+            <p class="phase-note">Correction with intention</p>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="section experience" id="experience">
+    <section class="section services domains" id="domains" aria-labelledby="domains-heading">
       <div class="container">
         <div class="section-header reveal">
-          <span class="section-label">What You Can Expect</span>
-          <h2>Powerful Remedy · Personalized Guidance · Trusted Solutions</h2>
+          <span class="section-label">Practice Domains</span>
+          <h2 id="domains-heading">Observational domains of the advisory practice</h2>
+          <p class="section-lead">Not a menu of services — a curated framework for how hidden patterns are observed, understood, and refined across life.</p>
         </div>
-        <div class="experience-grid">
-          <div class="experience-item reveal">
-            <h3>Powerful Remedy</h3>
-            <p>Effective astrology, vastu, and tantra remedies aligned to your specific chart and situation.</p>
+        <div class="services-grid">
+          <% practiceDomains.forEach(function(d, i) { %>
+          <article class="service-card reveal" id="<%= d.slug %>">
+            <span class="domain-index" aria-hidden="true"><%= String(i + 1).padStart(2, '0') %></span>
+            <h3><%= d.name %></h3>
+            <p><%= d.description %></p>
+            <ul class="service-features">
+              <% d.aspects.forEach(function(a) { %>
+              <li><%= a %></li>
+              <% }); %>
+            </ul>
+            <a href="/booking?service=<%= d.id %>" class="service-link">Request <%= d.name %> →</a>
+          </article>
+          <% }); %>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alignment" id="alignment" aria-labelledby="alignment-heading">
+      <div class="container">
+        <div class="alignment-inner">
+          <div class="alignment-content reveal">
+            <span class="section-label">Lifestyle Alignment</span>
+            <h2 id="alignment-heading">Transformation requires alignment across every layer</h2>
+            <p>True refinement extends beyond chart analysis into how you think, speak, act, and inhabit your environment. Misalignment in any layer allows old patterns to persist — quietly, persistently.</p>
+            <div class="alignment-pillars">
+              <div class="pillar">
+                <h4>Thought</h4>
+                <p>Inner narratives and mental loops that precede action</p>
+              </div>
+              <div class="pillar">
+                <h4>Speech</h4>
+                <p>How language reinforces or dissolves patterns</p>
+              </div>
+              <div class="pillar">
+                <h4>Action</h4>
+                <p>Daily choices that embody or contradict awareness</p>
+              </div>
+              <div class="pillar">
+                <h4>Environment</h4>
+                <p>Spatial and rhythmic context shaping behavior</p>
+              </div>
+            </div>
           </div>
-          <div class="experience-item reveal">
-            <h3>Personalized Guidance</h3>
-            <p>No generic readings — every session is built around your birth details, concerns, and goals.</p>
-          </div>
-          <div class="experience-item reveal">
-            <h3>Trusted & Reliable</h3>
-            <p>Confidential, selective consultations with depth and seriousness of process.</p>
+          <div class="alignment-diagram reveal" aria-hidden="true">
+            <div class="diagram-ring ring-outer"></div>
+            <div class="diagram-ring ring-middle"></div>
+            <div class="diagram-ring ring-inner"></div>
+            <div class="diagram-center"><span>Alignment</span></div>
+            <span class="diagram-node node-1">Thought</span>
+            <span class="diagram-node node-2">Speech</span>
+            <span class="diagram-node node-3">Action</span>
+            <span class="diagram-node node-4">Environment</span>
+            <span class="diagram-node node-5">Routine</span>
+            <span class="diagram-node node-6">Awareness</span>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section videos" id="videos" aria-labelledby="videos-heading">
+    <section class="section spatial" id="spatial" aria-labelledby="spatial-heading">
+      <div class="container">
+        <div class="spatial-grid">
+          <div class="spatial-architecture reveal" aria-hidden="true">
+            <div class="arch-line arch-line-1"></div>
+            <div class="arch-line arch-line-2"></div>
+            <div class="arch-line arch-line-3"></div>
+            <div class="arch-plane plane-1"></div>
+            <div class="arch-plane plane-2"></div>
+            <div class="arch-plane plane-3"></div>
+          </div>
+          <div class="spatial-content reveal">
+            <span class="section-label">Spatial Intelligence</span>
+            <h2 id="spatial-heading">How environment shapes clarity and behavior</h2>
+            <p class="section-lead">Spatial intelligence examines how architecture, light, flow, and placement influence emotional state, decision-making, and the subtle friction that disrupts inner calm.</p>
+            <ul class="spatial-points">
+              <li>Home and workspace energetic architecture</li>
+              <li>Environmental psychology of living spaces</li>
+              <li>Spatial correction without superstitious framing</li>
+              <li>Surroundings as an extension of behavioral patterns</li>
+            </ul>
+            <a href="/booking?service=spatial-intelligence" class="btn btn-secondary">Spatial Intelligence Review</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section client-experience" id="experience" aria-labelledby="experience-heading">
       <div class="container">
         <div class="section-header reveal">
-          <span class="section-label">Video Gallery</span>
-          <h2 id="videos-heading">Watch <%= site.practitioner %> on YouTube</h2>
-          <p class="section-lead">Explore guidance on astrology, vastu, life patterns, and spiritual remedies — in <%= site.practitioner %>'s own words.</p>
+          <span class="section-label">Client Experience</span>
+          <h2 id="experience-heading">A selective, private advisory process</h2>
+          <p class="section-lead">Engagements are intentionally limited. Each inquiry is reviewed personally. The experience is confidential, immersive, and structured — not a transactional reading.</p>
+        </div>
+        <div class="experience-grid">
+          <div class="experience-item reveal">
+            <h3>Private & Confidential</h3>
+            <p>Your context, patterns, and concerns remain entirely between you and <%= site.practitioner %>. No mass sessions, no public exposure.</p>
+          </div>
+          <div class="experience-item reveal">
+            <h3>Deeply Personalized</h3>
+            <p>Every engagement is built from your life architecture — chart, behavior, environment, and stated concerns — not generic templates.</p>
+          </div>
+          <div class="experience-item reveal">
+            <h3>Thoughtfully Paced</h3>
+            <p>Observation takes time. The process respects depth over speed — clarity emerges through sustained attention, not instant answers.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section videos" id="insights" aria-labelledby="insights-heading">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-label">Insights</span>
+          <h2 id="insights-heading">Observations on pattern, alignment & environment</h2>
+          <p class="section-lead">Selected reflections from <%= site.practitioner %> — on recurring structures, spatial intelligence, and the refinement of awareness.</p>
         </div>
         <div class="video-grid">
-          <% videos.forEach(function(v, i) { %>
+          <% videos.forEach(function(v) { %>
           <article class="video-card reveal">
             <div class="video-embed">
               <iframe
@@ -214,35 +316,35 @@
       </div>
     </section>
 
-    <section class="section testimonials" id="testimonials" aria-labelledby="reviews-heading">
+    <section class="section testimonials" id="reflections" aria-labelledby="reflections-heading">
       <div class="container">
         <div class="section-header reveal">
-          <span class="section-label">Client Reviews</span>
-          <h2 id="reviews-heading">What clients say about <%= site.practitioner %></h2>
+          <span class="section-label">Reflections</span>
+          <h2 id="reflections-heading">What clients describe after the process</h2>
         </div>
         <div class="testimonial-grid">
           <blockquote class="testimonial reveal">
-            <p>"The clarity I gained wasn't dramatic — it was quiet. I stopped reacting to the same patterns and began understanding why they existed."</p>
-            <footer><cite>— Client, Mumbai</cite><span>Astrology Consultation</span></footer>
+            <p>"The clarity was quiet, not dramatic. I stopped reacting to the same patterns and began understanding the structure beneath them."</p>
+            <footer><cite>— Client, Mumbai</cite><span>Pattern Observation</span></footer>
           </blockquote>
           <blockquote class="testimonial reveal">
-            <p>"The vastu analysis changed how I think about my workspace. Small spatial adjustments created noticeable emotional stability."</p>
-            <footer><cite>— Client, Ahmedabad</cite><span>Vastu Consultation</span></footer>
+            <p>"Small spatial adjustments created a noticeable shift in emotional stability. I hadn't considered how much my workspace was influencing my decisions."</p>
+            <footer><cite>— Client, Ahmedabad</cite><span>Spatial Intelligence</span></footer>
           </blockquote>
           <blockquote class="testimonial reveal">
-            <p>"Personalized remedies and numerology guidance helped me make better career decisions with confidence."</p>
-            <footer><cite>— Client, Delhi</cite><span>Numerology Reading</span></footer>
+            <p>"Less confusion, more internal steadiness. The guidance helped me align daily choices with what I actually understood about my patterns."</p>
+            <footer><cite>— Client, Delhi</cite><span>Alignment Intensive</span></footer>
           </blockquote>
         </div>
       </div>
     </section>
 
-    <section class="section consultations" id="consultations" aria-labelledby="pricing-heading">
+    <section class="section consultations engagements" id="engagements" aria-labelledby="engagements-heading">
       <div class="container">
         <div class="section-header reveal">
-          <span class="section-label">Book a Session</span>
-          <h2 id="pricing-heading">Consultation & Pricing</h2>
-          <p class="section-lead">Select a service and submit your inquiry. <%= site.practitioner %> reviews each request personally.</p>
+          <span class="section-label">Private Engagements</span>
+          <h2 id="engagements-heading">Selective consultation formats</h2>
+          <p class="section-lead">Each format is designed for a specific depth of observation. <%= site.practitioner %> reviews every inquiry before confirmation.</p>
         </div>
         <div class="consultation-grid">
           <% consultations.forEach(function(c) { %>
@@ -251,7 +353,7 @@
             <p class="consultation-duration"><%= c.duration %></p>
             <p class="consultation-desc"><%= c.description %></p>
             <p class="consultation-price"><%= c.currency %> <%= c.price.toLocaleString('en-IN') %></p>
-            <a href="/booking?consultation=<%= c.id %>" class="btn btn-secondary">Book Now</a>
+            <a href="/booking?consultation=<%= c.id %>" class="btn btn-secondary">Begin Inquiry</a>
           </article>
           <% }); %>
         </div>
@@ -260,9 +362,10 @@
 
     <section class="section cta-section">
       <div class="container cta-inner reveal">
-        <h2>What does your birth chart tell you?<br>Consult <%= site.practitioner %> today.</h2>
+        <h2>When patterns repeat,<br>observation is the first correction.</h2>
+        <p class="cta-lead">Submit a private inquiry. Share your context thoughtfully — each request is reviewed personally.</p>
         <div class="cta-actions">
-          <a href="/booking" class="btn btn-primary">Book Appointment</a>
+          <a href="/booking" class="btn btn-primary">Begin Your Inquiry</a>
           <a href="tel:<%= site.phone.replace(/\s/g, '') %>" class="btn btn-ghost-light">Call <%= site.phoneDisplay %></a>
         </div>
       </div>
@@ -273,24 +376,24 @@
     <div class="container footer-grid">
       <div class="footer-brand">
         <span class="logo">VV<span class="logo-accent">Cosmic</span></span>
-        <p><%= site.practitioner %> — Vedic Astrologer, Vastu Consultant & Life Guide</p>
+        <p><%= site.practitioner %> — Pattern Intelligence & Life Alignment Advisory</p>
       </div>
       <div class="footer-col">
-        <h4>Services</h4>
-        <nav aria-label="Services">
-          <% services.forEach(function(s) { %>
-          <a href="#<%= s.slug %>"><%= s.name %></a>
+        <h4>Practice</h4>
+        <nav aria-label="Practice domains">
+          <% practiceDomains.forEach(function(d) { %>
+          <a href="#<%= d.slug %>"><%= d.name %></a>
           <% }); %>
         </nav>
       </div>
       <div class="footer-col">
-        <h4>Quick Links</h4>
+        <h4>Explore</h4>
         <nav aria-label="Footer">
-          <a href="#about">About</a>
+          <a href="#philosophy">Philosophy</a>
           <a href="#methodology">Process</a>
-          <a href="#videos">Videos</a>
-          <a href="#testimonials">Reviews</a>
-          <a href="/booking">Book Appointment</a>
+          <a href="#alignment">Alignment</a>
+          <a href="#reflections">Reflections</a>
+          <a href="/booking">Begin Inquiry</a>
         </nav>
       </div>
       <div class="footer-col">
