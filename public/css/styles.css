@@ -16,7 +16,7 @@
   --color-indigo: #2c3e6b;
 
   --lotus-stroke: rgba(166, 139, 91, 0.42);
-  --carving-opacity: 0.07;
+  --carving-opacity: 0.14;
   --hero-lotus-opacity: 0.62;
 
   --font-serif: 'Libre Baskerville', Georgia, 'Times New Roman', serif;
@@ -449,7 +449,7 @@ p {
   position: absolute;
   top: 0;
   bottom: 0;
-  width: min(160px, 18vw);
+  width: min(220px, 22vw);
   display: flex;
   align-items: stretch;
   pointer-events: none;
@@ -458,35 +458,35 @@ p {
 }
 
 .carving-accent img {
-  width: 420%;
+  width: 380%;
   height: 100%;
   max-height: none;
   object-fit: cover;
   opacity: var(--carving-opacity);
   mix-blend-mode: multiply;
-  filter: sepia(0.2) contrast(1.02);
+  filter: sepia(0.18) contrast(1.08);
 }
 
 .carving-accent--left {
   left: 0;
-  mask-image: linear-gradient(to right, rgba(0, 0, 0, 0.5) 0%, transparent 100%);
-  -webkit-mask-image: linear-gradient(to right, rgba(0, 0, 0, 0.5) 0%, transparent 100%);
+  mask-image: linear-gradient(to right, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.35) 60%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.35) 60%, transparent 100%);
 }
 
 .carving-accent--left img {
-  object-position: 8% center;
-  margin-left: -55%;
+  object-position: 10% center;
+  margin-left: -48%;
 }
 
 .carving-accent--right {
   right: 0;
-  mask-image: linear-gradient(to left, rgba(0, 0, 0, 0.5) 0%, transparent 100%);
-  -webkit-mask-image: linear-gradient(to left, rgba(0, 0, 0, 0.5) 0%, transparent 100%);
+  mask-image: linear-gradient(to left, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.35) 60%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to left, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.35) 60%, transparent 100%);
 }
 
 .carving-accent--right img {
-  object-position: 92% center;
-  margin-left: -320%;
+  object-position: 90% center;
+  margin-left: -285%;
 }
 
 .section-texture {
@@ -2089,7 +2089,7 @@ body.menu-open {
     --space-xl: 2.25rem;
     --space-2xl: 3rem;
     --space-3xl: 3.5rem;
-    --carving-opacity: 0.05;
+    --carving-opacity: 0.11;
   }
 
   .container {
@@ -2239,11 +2239,11 @@ body.menu-open {
   }
 
   .carving-accent {
-    width: min(90px, 22vw);
+    width: min(120px, 26vw);
   }
 
   .carving-accent--left img {
-    margin-left: -65%;
+    margin-left: -52%;
   }
 
   .alignment-pillars {
