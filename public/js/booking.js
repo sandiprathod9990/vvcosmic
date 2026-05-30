@@ -119,9 +119,4 @@
       alert(err.message || 'Something went wrong. Please try again.');
     }
   });
-
-  const preselected = form.querySelector('input[name="consultation"]:checked');
-  if (preselected) {
-    showStep(2);
-  }
 })();

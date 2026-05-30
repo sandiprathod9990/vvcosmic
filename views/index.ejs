@@ -57,7 +57,9 @@
 
     <%- include('partials/section-divider') %>
 
-    <section class="section philosophy section-texture has-carving-texture" id="philosophy" aria-labelledby="philosophy-heading">
+    <section class="section philosophy section-texture section-decorated" id="philosophy" aria-labelledby="philosophy-heading">
+      <%- include('partials/carving-texture', { carvingLeft: true, carvingRight: false }) %>
+      <div class="section-grid-overlay" aria-hidden="true"></div>
       <div class="container">
         <div class="section-header reveal">
           <span class="section-label">Philosophy</span>
@@ -94,7 +96,8 @@
 
     <%- include('partials/section-divider') %>
 
-    <section class="section life-architecture has-carving-texture has-carving-texture--right" id="life-architecture" aria-labelledby="architecture-heading">
+    <section class="section life-architecture section-decorated" id="life-architecture" aria-labelledby="architecture-heading">
+      <%- include('partials/carving-texture', { carvingLeft: false, carvingRight: true }) %>
       <div class="container">
         <div class="architecture-inner">
           <div class="architecture-content reveal">
@@ -204,7 +207,8 @@
 
     <%- include('partials/section-divider') %>
 
-    <section class="section alignment has-carving-texture" id="alignment" aria-labelledby="alignment-heading">
+    <section class="section alignment section-decorated" id="alignment" aria-labelledby="alignment-heading">
+      <%- include('partials/carving-texture', { carvingLeft: true, carvingRight: false }) %>
       <div class="container">
         <div class="alignment-inner">
           <div class="alignment-content reveal">
@@ -271,7 +275,7 @@
               <li>Spatial correction without superstitious framing</li>
               <li>Surroundings as an extension of behavioral patterns</li>
             </ul>
-            <a href="/booking?service=spatial-intelligence" class="btn btn-secondary">Spatial Intelligence Review</a>
+            <a href="/booking" class="btn btn-secondary">Spatial Intelligence Review</a>
           </div>
         </div>
       </div>

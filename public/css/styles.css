@@ -16,7 +16,7 @@
   --color-indigo: #2c3e6b;
 
   --lotus-stroke: rgba(166, 139, 91, 0.55);
-  --carving-opacity: 0.045;
+  --carving-opacity: 0.12;
 
   --font-serif: 'Libre Baskerville', Georgia, 'Times New Roman', serif;
   --font-sans: 'Source Sans 3', system-ui, -apple-system, sans-serif;
@@ -432,53 +432,60 @@ p {
   background: linear-gradient(90deg, transparent, rgba(166, 139, 91, 0.35), transparent);
 }
 
-/* Temple carving textures */
-.has-carving-texture {
+/* Temple carving — side accents */
+.section-decorated {
   position: relative;
   overflow: hidden;
 }
 
-.has-carving-texture::before,
-.has-carving-texture::after {
-  content: '';
+.section-decorated > .container {
+  position: relative;
+  z-index: 2;
+}
+
+.carving-accent {
   position: absolute;
   top: 0;
-  width: min(180px, 22vw);
-  height: 100%;
-  background-image: url('/images/temple-carving-texture.png');
-  background-repeat: no-repeat;
-  background-size: cover;
-  opacity: var(--carving-opacity);
+  bottom: 0;
+  width: min(300px, 26vw);
+  display: flex;
+  align-items: center;
   pointer-events: none;
-  z-index: 0;
-}
-
-.has-carving-texture::before {
-  left: -40px;
-  background-position: left center;
-  mask-image: linear-gradient(to right, rgba(0,0,0,0.5), transparent);
-  -webkit-mask-image: linear-gradient(to right, rgba(0,0,0,0.5), transparent);
-}
-
-.has-carving-texture--right::after,
-.has-carving-texture:not(.has-carving-texture--right)::after {
-  right: -40px;
-  background-position: right center;
-  mask-image: linear-gradient(to left, rgba(0,0,0,0.5), transparent);
-  -webkit-mask-image: linear-gradient(to left, rgba(0,0,0,0.5), transparent);
-}
-
-.has-carving-texture > .container {
-  position: relative;
   z-index: 1;
+}
+
+.carving-accent img {
+  width: 100%;
+  height: 100%;
+  max-height: 720px;
+  object-fit: contain;
+  object-position: center top;
+  opacity: var(--carving-opacity);
+  mix-blend-mode: multiply;
+  filter: sepia(0.25) contrast(1.05);
+}
+
+.carving-accent--left {
+  left: max(-20px, calc((100vw - var(--container)) / 2 - 280px));
+  mask-image: linear-gradient(to right, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.4) 55%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.4) 55%, transparent 100%);
+}
+
+.carving-accent--right {
+  right: max(-20px, calc((100vw - var(--container)) / 2 - 280px));
+  mask-image: linear-gradient(to left, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.4) 55%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to left, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.4) 55%, transparent 100%);
+}
+
+.carving-accent--right img {
+  object-position: center top;
 }
 
 .section-texture {
   position: relative;
 }
 
-.section-texture::before {
-  content: '';
+.section-grid-overlay {
   position: absolute;
   inset: 0;
   background-image:
@@ -487,6 +494,7 @@ p {
   background-size: 48px 48px;
   pointer-events: none;
   opacity: 0.6;
+  z-index: 0;
 }
 
 .hero-content {
@@ -2064,7 +2072,7 @@ body.menu-open {
     --space-xl: 2.25rem;
     --space-2xl: 3rem;
     --space-3xl: 3.5rem;
-    --carving-opacity: 0.03;
+    --carving-opacity: 0.09;
   }
 
   .container {
@@ -2212,10 +2220,16 @@ body.menu-open {
     max-width: 100%;
   }
 
-  .has-carving-texture::before,
-  .has-carving-texture::after {
-    width: 80px;
-    opacity: 0.025;
+  .carving-accent {
+    width: min(140px, 32vw);
+  }
+
+  .carving-accent--left {
+    left: -10px;
+  }
+
+  .carving-accent--right {
+    right: -10px;
   }
 
   .alignment-pillars {

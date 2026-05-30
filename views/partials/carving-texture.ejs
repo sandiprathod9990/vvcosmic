@@ -1,0 +1,12 @@
+<% const showLeft = typeof carvingLeft === 'undefined' ? true : carvingLeft; %>
+<% const showRight = typeof carvingRight === 'undefined' ? false : carvingRight; %>
+<% if (showLeft) { %>
+<div class="carving-accent carving-accent--left" aria-hidden="true">
+  <img src="/images/temple-carving-texture.png" alt="" width="360" height="900" loading="lazy" decoding="async">
+</div>
+<% } %>
+<% if (showRight) { %>
+<div class="carving-accent carving-accent--right" aria-hidden="true">
+  <img src="/images/temple-carving-texture.png" alt="" width="360" height="900" loading="lazy" decoding="async">
+</div>
+<% } %>
