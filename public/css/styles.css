@@ -958,7 +958,7 @@ p {
 
 /* Spatial — blueprint visual */
 .spatial-blueprint {
-  background: var(--color-ivory);
+  background: var(--color-cream);
 }
 
 .spatial-grid {
@@ -979,7 +979,7 @@ p {
   margin: 0;
   width: 100%;
   padding: var(--space-md);
-  background: #f7f3ec;
+  background: var(--color-ivory);
   border: 1px solid rgba(166, 139, 91, 0.22);
   box-shadow:
     0 16px 48px rgba(15, 22, 35, 0.08),
