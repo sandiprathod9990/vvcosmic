@@ -23,6 +23,7 @@
       <nav class="nav" aria-label="Primary" id="primary-nav">
         <a href="#philosophy">Philosophy</a>
         <a href="#methodology">Process</a>
+        <a href="#spatial">Spatial</a>
         <a href="#domains">Practice</a>
         <a href="#reflections">Reflections</a>
         <a href="tel:<%= site.phone.replace(/\s/g, '') %>" class="nav-phone"><%= site.phoneDisplay %></a>
@@ -75,7 +76,7 @@
           <article class="philosophy-card reveal">
             <%- include('partials/lotus-icon', { lotusClass: 'lotus-icon lotus-icon--card' }) %>
             <h3>Karmic Continuity</h3>
-            <p>Not punishment, but inherited energetic tendencies — unconscious repetition, unresolved imbalance, and tendencies carried forward through thought, speech, and action.</p>
+            <p>Not punishment, but inherited pattern tendencies — unconscious repetition, unresolved imbalance, and tendencies carried forward through thought, speech, and action.</p>
           </article>
           <article class="philosophy-card reveal">
             <%- include('partials/lotus-icon', { lotusClass: 'lotus-icon lotus-icon--card' }) %>
@@ -157,7 +158,7 @@
             <ul class="phase-list">
               <li>Daily rhythm & routine observation</li>
               <li>Thought patterns, speech habits & emotional cycles</li>
-              <li>Energetic leakage & karmic repetition</li>
+              <li>Environmental alignment leakage & karmic repetition</li>
               <li>Environmental friction in living & workspace</li>
             </ul>
             <p class="phase-note">Why repetition persists</p>
@@ -171,7 +172,7 @@
             <ul class="phase-list">
               <li>Thought, speech & action alignment</li>
               <li>Behavioral recalibration & spatial correction</li>
-              <li>Energetic balancing & lifestyle refinement</li>
+              <li>Environmental alignment & lifestyle refinement</li>
               <li>Strategic guidance & follow-through</li>
             </ul>
             <p class="phase-note">Correction with intention</p>
@@ -190,7 +191,7 @@
         <div class="services-grid">
           <% practiceDomains.forEach(function(d, i) { %>
           <article class="service-card reveal" id="<%= d.slug %>">
-            <span class="domain-index" aria-hidden="true"><%= String(i + 1).padStart(2, '0') %></span>
+            <%- include('partials/lotus-icon', { lotusClass: 'lotus-icon lotus-icon--card' }) %>
             <h3><%= d.name %></h3>
             <p><%= d.description %></p>
             <ul class="service-features">
@@ -254,10 +255,10 @@
       <div class="container">
         <div class="spatial-grid">
           <div class="spatial-visual">
-            <figure class="spatial-blueprint-frame">
+            <figure class="spatial-blueprint-frame parallax-layer" data-parallax="0.03">
               <img
                 src="/images/vastu-purusha-blueprint.jpg"
-                alt="Vastu Purusha Mandala — architectural blueprint of spatial intelligence"
+                alt="Spatial intelligence blueprint — Purusha Mandala architectural diagram"
                 width="1024"
                 height="682"
                 loading="eager"
@@ -386,6 +387,7 @@
         <nav aria-label="Footer">
           <a href="#philosophy">Philosophy</a>
           <a href="#methodology">Process</a>
+          <a href="#spatial">Spatial</a>
           <a href="#alignment">Alignment</a>
           <a href="#reflections">Reflections</a>
           <a href="/booking">Begin Inquiry</a>
