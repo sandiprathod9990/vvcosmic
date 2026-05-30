@@ -93,6 +93,13 @@
     let ticking = false;
 
     function updateParallax() {
+      if (window.innerWidth <= 1024) {
+        parallaxLayers.forEach((layer) => {
+          layer.style.transform = '';
+        });
+        return;
+      }
+
       const scrollY = window.scrollY;
 
       parallaxLayers.forEach((layer) => {
@@ -115,6 +122,10 @@
       },
       { passive: true }
     );
+
+    window.addEventListener('resize', () => {
+      updateParallax();
+    });
 
     updateParallax();
   }
