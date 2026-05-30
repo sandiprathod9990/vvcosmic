@@ -933,33 +933,38 @@ p {
   background: var(--color-ivory);
 }
 
+.spatial-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: var(--space-xl);
+  align-items: center;
+}
+
 .spatial-visual {
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 100%;
 }
 
 .spatial-blueprint-frame {
   margin: 0;
-  padding: var(--space-md);
-  background: var(--color-cream);
-  border: 1px solid rgba(166, 139, 91, 0.15);
-  box-shadow: 0 12px 40px rgba(15, 22, 35, 0.06);
+  width: 100%;
+  padding: var(--space-sm);
+  background: #f7f3ec;
+  border: 1px solid rgba(166, 139, 91, 0.22);
+  box-shadow:
+    0 16px 48px rgba(15, 22, 35, 0.08),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.6);
 }
 
 .spatial-blueprint-frame img {
+  display: block;
   width: 100%;
-  max-width: 520px;
+  max-width: none;
   height: auto;
-  opacity: 0.92;
-  filter: contrast(1.02);
-}
-
-.spatial-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--space-xl);
-  align-items: center;
+  opacity: 1;
+  border-radius: 1px;
 }
 
 .spatial-architecture {
@@ -2212,12 +2217,13 @@ body.menu-open {
     grid-template-columns: 1fr;
   }
 
-  .spatial-blueprint-frame {
-    padding: var(--space-sm);
+  .spatial-visual {
+    order: -1;
+    margin-bottom: var(--space-md);
   }
 
-  .spatial-blueprint-frame img {
-    max-width: 100%;
+  .spatial-blueprint-frame {
+    padding: var(--space-xs);
   }
 
   .carving-accent {
