@@ -4,19 +4,21 @@
   --color-charcoal: #1a2332;
   --color-charcoal-deep: #0f1623;
   --color-stone: #d8d0c4;
-  --color-beige: #ede6da;
+  --color-beige: #e8e0d4;
   --color-warm-grey: #5c6678;
   --color-bronze: #a68b5b;
   --color-bronze-muted: #b89a6a;
   --color-gold-light: #dcc9a3;
   --color-earth: #3d4654;
-  --color-cream: #fbf8f3;
-  --color-ivory: #f5f0e8;
+  --color-cream: #faf6f0;
+  --color-ivory: #f0ebe3;
+  --color-parchment: #ebe4d8;
   --color-white: #ffffff;
   --color-indigo: #2c3e6b;
 
   --lotus-stroke: rgba(166, 139, 91, 0.42);
-  --carving-opacity: 0.22;
+  --carving-opacity: 0.42;
+  --carving-filter: sepia(0.55) saturate(0.65) hue-rotate(8deg) brightness(0.88) contrast(1.2);
   --hero-lotus-opacity: 0.62;
 
   --font-serif: 'Libre Baskerville', Georgia, 'Times New Roman', serif;
@@ -438,6 +440,7 @@ p {
 .section-decorated {
   position: relative;
   overflow: hidden;
+  background: var(--color-ivory);
 }
 
 .section-decorated > .container {
@@ -449,28 +452,45 @@ p {
   position: absolute;
   top: 0;
   bottom: 0;
-  width: min(260px, 28vw);
+  width: min(280px, 30vw);
   pointer-events: none;
   z-index: 1;
   background-image: url('/images/temple-carving-texture.png');
   background-repeat: no-repeat;
-  background-size: auto 120%;
+  background-size: auto 125%;
   opacity: var(--carving-opacity);
-  filter: sepia(0.3) saturate(0.7) brightness(0.95);
+  filter: var(--carving-filter);
+  mix-blend-mode: multiply;
 }
 
 .carving-accent--left {
   left: 0;
-  background-position: 12% center;
-  mask-image: linear-gradient(to right, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.5) 65%, transparent 100%);
-  -webkit-mask-image: linear-gradient(to right, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.5) 65%, transparent 100%);
+  background-position: 10% center;
+  mask-image: linear-gradient(to right, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.55) 70%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.55) 70%, transparent 100%);
+}
+
+.carving-accent--left::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, rgba(166, 139, 91, 0.08), transparent 85%);
+  pointer-events: none;
 }
 
 .carving-accent--right {
   right: 0;
-  background-position: 88% center;
-  mask-image: linear-gradient(to left, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.5) 65%, transparent 100%);
-  -webkit-mask-image: linear-gradient(to left, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.5) 65%, transparent 100%);
+  background-position: 90% center;
+  mask-image: linear-gradient(to left, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.55) 70%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to left, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.55) 70%, transparent 100%);
+}
+
+.carving-accent--right::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to left, rgba(166, 139, 91, 0.08), transparent 85%);
+  pointer-events: none;
 }
 
 .section-texture {
@@ -567,7 +587,11 @@ p {
 
 /* Philosophy */
 .philosophy {
-  background: var(--color-white);
+  background: var(--color-ivory);
+}
+
+.philosophy.section-decorated {
+  background: var(--color-ivory);
 }
 
 .philosophy-grid {
@@ -579,7 +603,7 @@ p {
 
 .philosophy-card {
   padding: var(--space-lg);
-  border: 1px solid rgba(42, 40, 38, 0.08);
+  border: 1px solid rgba(166, 139, 91, 0.12);
   background: var(--color-cream);
   transition: border-color var(--transition), transform var(--transition-fast), box-shadow var(--transition);
 }
@@ -706,7 +730,11 @@ p {
 
 /* Life Architecture */
 .life-architecture {
-  background: var(--color-beige);
+  background: var(--color-parchment);
+}
+
+.life-architecture.section-decorated {
+  background: var(--color-parchment);
 }
 
 .architecture-inner {
@@ -833,6 +861,14 @@ p {
 }
 
 /* Alignment */
+.alignment {
+  background: var(--color-ivory);
+}
+
+.alignment.section-decorated {
+  background: var(--color-ivory);
+}
+
 .alignment-inner {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -2073,7 +2109,7 @@ body.menu-open {
     --space-xl: 2.25rem;
     --space-2xl: 3rem;
     --space-3xl: 3.5rem;
-    --carving-opacity: 0.16;
+    --carving-opacity: 0.34;
   }
 
   .container {
@@ -2223,8 +2259,8 @@ body.menu-open {
   }
 
   .carving-accent {
-    width: min(140px, 30vw);
-    background-size: auto 100%;
+    width: min(160px, 32vw);
+    background-size: auto 110%;
   }
 
   .alignment-pillars {
