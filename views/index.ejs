@@ -36,16 +36,18 @@
       <div class="hero-bg" aria-hidden="true">
         <div class="hero-layer hero-layer-1"></div>
         <div class="hero-layer hero-layer-2"></div>
-        <div class="hero-geometry" aria-hidden="true"></div>
       </div>
-      <div class="container hero-content">
-        <p class="hero-eyebrow reveal"><%= site.practitioner %> · <%= site.tagline %></p>
-        <h1 class="hero-title reveal" id="hero-heading">Hidden patterns shape visible life. Observation precedes alignment.</h1>
-        <p class="hero-subtitle reveal">A private advisory practice for those who sense recurring structures beneath career, relationships, environment, and inner life — and seek intelligent refinement, not prediction.</p>
-        <div class="hero-actions reveal">
-          <a href="/booking" class="btn btn-primary">Begin Your Inquiry</a>
-          <a href="#philosophy" class="btn btn-ghost">Explore the Approach</a>
+      <div class="container hero-inner">
+        <div class="hero-content">
+          <p class="hero-eyebrow reveal"><%= site.practitioner %> · <%= site.tagline %></p>
+          <h1 class="hero-title reveal" id="hero-heading">Hidden patterns shape visible life. Observation precedes alignment.</h1>
+          <p class="hero-subtitle reveal">A private advisory practice for those who sense recurring structures beneath career, relationships, environment, and inner life — and seek intelligent refinement, not prediction.</p>
+          <div class="hero-actions reveal">
+            <a href="/booking" class="btn btn-primary">Begin Your Inquiry</a>
+            <a href="#philosophy" class="btn btn-ghost">Explore the Approach</a>
+          </div>
         </div>
+        <%- include('partials/hero-lotus') %>
       </div>
       <div class="hero-scroll-hint reveal" aria-hidden="true">
         <span>Scroll</span>
@@ -53,7 +55,9 @@
       </div>
     </section>
 
-    <section class="section philosophy section-texture" id="philosophy" aria-labelledby="philosophy-heading">
+    <%- include('partials/section-divider') %>
+
+    <section class="section philosophy section-texture has-carving-texture" id="philosophy" aria-labelledby="philosophy-heading">
       <div class="container">
         <div class="section-header reveal">
           <span class="section-label">Philosophy</span>
@@ -62,22 +66,22 @@
         </div>
         <div class="philosophy-grid">
           <article class="philosophy-card reveal">
-            <span class="card-number">01</span>
+            <%- include('partials/lotus-icon', { lotusClass: 'lotus-icon lotus-icon--card' }) %>
             <h3>Recurring Life Patterns</h3>
             <p>What appears as coincidence is often structure — themes that return across relationships, work, and inner experience until awareness shifts how they express.</p>
           </article>
           <article class="philosophy-card reveal">
-            <span class="card-number">02</span>
+            <%- include('partials/lotus-icon', { lotusClass: 'lotus-icon lotus-icon--card' }) %>
             <h3>Karmic Continuity</h3>
             <p>Not punishment, but inherited energetic tendencies — unconscious repetition, unresolved imbalance, and tendencies carried forward through thought, speech, and action.</p>
           </article>
           <article class="philosophy-card reveal">
-            <span class="card-number">03</span>
+            <%- include('partials/lotus-icon', { lotusClass: 'lotus-icon lotus-icon--card' }) %>
             <h3>Environmental Intelligence</h3>
             <p>Surroundings influence clarity, emotional state, and decision-making. Space is treated as architecture of behavior — not superstition, but spatial psychology.</p>
           </article>
           <article class="philosophy-card reveal">
-            <span class="card-number">04</span>
+            <%- include('partials/lotus-icon', { lotusClass: 'lotus-icon lotus-icon--card' }) %>
             <h3>Refinement Through Awareness</h3>
             <p>Transformation is not dramatic revelation — it is the quiet recalibration of how you think, speak, act, and inhabit your environment each day.</p>
           </article>
@@ -88,7 +92,9 @@
       </div>
     </section>
 
-    <section class="section life-architecture" id="life-architecture" aria-labelledby="architecture-heading">
+    <%- include('partials/section-divider') %>
+
+    <section class="section life-architecture has-carving-texture has-carving-texture--right" id="life-architecture" aria-labelledby="architecture-heading">
       <div class="container">
         <div class="architecture-inner">
           <div class="architecture-content reveal">
@@ -114,6 +120,8 @@
         </div>
       </div>
     </section>
+
+    <%- include('partials/section-divider') %>
 
     <section class="section methodology" id="methodology" aria-labelledby="methodology-heading">
       <div class="container">
@@ -194,7 +202,9 @@
       </div>
     </section>
 
-    <section class="section alignment" id="alignment" aria-labelledby="alignment-heading">
+    <%- include('partials/section-divider') %>
+
+    <section class="section alignment has-carving-texture" id="alignment" aria-labelledby="alignment-heading">
       <div class="container">
         <div class="alignment-inner">
           <div class="alignment-content reveal">
@@ -236,23 +246,27 @@
       </div>
     </section>
 
-    <section class="section spatial" id="spatial" aria-labelledby="spatial-heading">
+    <section class="section spatial spatial-blueprint" id="spatial" aria-labelledby="spatial-heading">
       <div class="container">
         <div class="spatial-grid">
-          <div class="spatial-architecture reveal" aria-hidden="true">
-            <div class="arch-line arch-line-1"></div>
-            <div class="arch-line arch-line-2"></div>
-            <div class="arch-line arch-line-3"></div>
-            <div class="arch-plane plane-1"></div>
-            <div class="arch-plane plane-2"></div>
-            <div class="arch-plane plane-3"></div>
+          <div class="spatial-visual reveal" aria-hidden="true">
+            <figure class="spatial-blueprint-frame parallax-layer" data-parallax="0.04">
+              <img
+                src="/images/vastu-purusha-blueprint.png"
+                alt=""
+                width="640"
+                height="640"
+                loading="lazy"
+                decoding="async"
+              >
+            </figure>
           </div>
           <div class="spatial-content reveal">
             <span class="section-label">Spatial Intelligence</span>
             <h2 id="spatial-heading">How environment shapes clarity and behavior</h2>
-            <p class="section-lead">Spatial intelligence examines how architecture, light, flow, and placement influence emotional state, decision-making, and the subtle friction that disrupts inner calm.</p>
+            <p class="section-lead">Spatial intelligence examines how architecture, light, flow, and directional intelligence influence emotional state, decision-making, and the subtle friction that disrupts inner calm.</p>
             <ul class="spatial-points">
-              <li>Home and workspace energetic architecture</li>
+              <li>Home and workspace environmental alignment architecture</li>
               <li>Environmental psychology of living spaces</li>
               <li>Spatial correction without superstitious framing</li>
               <li>Surroundings as an extension of behavioral patterns</li>
@@ -272,14 +286,17 @@
         </div>
         <div class="experience-grid">
           <div class="experience-item reveal">
+            <%- include('partials/lotus-icon', { lotusClass: 'lotus-icon lotus-icon--feature' }) %>
             <h3>Private & Confidential</h3>
             <p>Your context, patterns, and concerns remain entirely between you and <%= site.practitioner %>. No mass sessions, no public exposure.</p>
           </div>
           <div class="experience-item reveal">
+            <%- include('partials/lotus-icon', { lotusClass: 'lotus-icon lotus-icon--feature' }) %>
             <h3>Deeply Personalized</h3>
             <p>Every engagement is built from your life architecture — chart, behavior, environment, and stated concerns — not generic templates.</p>
           </div>
           <div class="experience-item reveal">
+            <%- include('partials/lotus-icon', { lotusClass: 'lotus-icon lotus-icon--feature' }) %>
             <h3>Thoughtfully Paced</h3>
             <p>Observation takes time. The process respects depth over speed — clarity emerges through sustained attention, not instant answers.</p>
           </div>
@@ -346,7 +363,10 @@
   <footer class="site-footer">
     <div class="container footer-grid">
       <div class="footer-brand">
-        <span class="logo">VV<span class="logo-accent">Cosmic</span></span>
+        <div class="footer-brand-mark">
+          <%- include('partials/lotus-icon', { lotusClass: 'lotus-icon lotus-icon--footer' }) %>
+          <span class="logo">VV<span class="logo-accent">Cosmic</span></span>
+        </div>
         <p><%= site.practitioner %> — Pattern Intelligence & Life Alignment Advisory</p>
       </div>
       <div class="footer-col">
@@ -375,6 +395,7 @@
       </div>
     </div>
     <div class="container footer-bottom">
+      <%- include('partials/lotus-icon', { lotusClass: 'lotus-icon lotus-icon--footer-bottom' }) %>
       <p>&copy; <%= new Date().getFullYear() %> <%= site.name %>.com · <%= site.practitioner %>. All rights reserved.</p>
     </div>
   </footer>

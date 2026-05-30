@@ -55,7 +55,7 @@ module.exports = {
       name: 'Spatial Intelligence',
       description:
         'Environmental psychology of living and working spaces — architecture, light, and flow as influences on clarity, behavior, and decision-making.',
-      aspects: ['Home & workspace analysis', 'Energetic architecture', 'Spatial correction', 'Environmental friction'],
+      aspects: ['Home & workspace analysis', 'Environmental alignment architecture', 'Spatial correction', 'Environmental friction'],
     },
     {
       id: 'behavioral-analysis',

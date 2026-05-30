@@ -1,19 +1,22 @@
 /* VVCosmic.com — Harshil Sevak · Premium Pattern Intelligence Brand */
 
 :root {
-  /* Cosmic astrology & vastu palette — high contrast, readable */
   --color-charcoal: #1a2332;
   --color-charcoal-deep: #0f1623;
   --color-stone: #d8d0c4;
-  --color-beige: #ebe4d8;
+  --color-beige: #ede6da;
   --color-warm-grey: #5c6678;
-  --color-bronze: #b8860b;
-  --color-bronze-muted: #c9a227;
-  --color-gold-light: #e8d5a3;
+  --color-bronze: #a68b5b;
+  --color-bronze-muted: #b89a6a;
+  --color-gold-light: #dcc9a3;
   --color-earth: #3d4654;
-  --color-cream: #faf7f2;
+  --color-cream: #fbf8f3;
+  --color-ivory: #f5f0e8;
   --color-white: #ffffff;
   --color-indigo: #2c3e6b;
+
+  --lotus-stroke: rgba(166, 139, 91, 0.55);
+  --carving-opacity: 0.045;
 
   --font-serif: 'Libre Baskerville', Georgia, 'Times New Roman', serif;
   --font-sans: 'Source Sans 3', system-ui, -apple-system, sans-serif;
@@ -89,8 +92,8 @@ h1, h2, h3, h4 {
   color: var(--color-charcoal-deep);
 }
 
-h1 { font-size: clamp(2rem, 4.5vw, 3.25rem); }
-h2 { font-size: clamp(1.75rem, 3vw, 2.5rem); }
+h1 { font-size: clamp(2rem, 4.5vw, 3.25rem); color: #0d1520; }
+h2 { font-size: clamp(1.75rem, 3vw, 2.5rem); color: #0d1520; }
 h3 { font-size: clamp(1.25rem, 2vw, 1.5rem); }
 h4 { font-size: 1.125rem; font-weight: 700; }
 
@@ -318,9 +321,9 @@ p {
   inset: 0;
   background: linear-gradient(
     160deg,
-    #faf7f2 0%,
-    #ebe4d8 45%,
-    #ddd4c4 100%
+    var(--color-cream) 0%,
+    var(--color-beige) 45%,
+    #e5ddd0 100%
   );
 }
 
@@ -328,37 +331,146 @@ p {
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(ellipse 50% 40% at 80% 20%, rgba(44, 62, 107, 0.12) 0%, transparent 60%),
-    radial-gradient(ellipse 40% 50% at 10% 80%, rgba(184, 134, 11, 0.1) 0%, transparent 55%);
+    radial-gradient(ellipse 50% 40% at 80% 20%, rgba(44, 62, 107, 0.08) 0%, transparent 60%),
+    radial-gradient(ellipse 40% 50% at 10% 80%, rgba(166, 139, 91, 0.07) 0%, transparent 55%);
 }
 
-.hero-geometry {
-  position: absolute;
-  top: 8%;
-  right: 4%;
-  width: min(400px, 48vw);
-  height: min(400px, 48vw);
-  border: 1px solid rgba(184, 134, 11, 0.12);
+.hero-inner {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1fr min(420px, 42vw);
+  gap: var(--space-xl);
+  align-items: center;
+  width: 100%;
+  min-height: calc(100vh - var(--header-height));
+  padding: var(--space-2xl) 0 var(--space-xl);
+}
+
+.hero-artwork {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--lotus-stroke);
+  opacity: 0;
+  transform: translateY(12px);
+  animation: hero-art-fade 1.4s ease forwards 0.3s;
+}
+
+@keyframes hero-art-fade {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-lotus {
+  width: 100%;
+  max-width: 420px;
+  height: auto;
+}
+
+.hero-sacred-geometry {
+  transform-origin: center;
+  animation: geometry-breathe 12s ease-in-out infinite;
+}
+
+@keyframes geometry-breathe {
+  0%, 100% { opacity: 0.85; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.015); }
+}
+
+.hero-lotus-petals {
+  transform-origin: 210px 170px;
+}
+
+/* Lotus icon system */
+.lotus-icon {
+  color: var(--color-bronze-muted);
+  flex-shrink: 0;
+}
+
+.lotus-icon--divider {
+  width: 28px;
+  height: 28px;
+  opacity: 0.7;
+}
+
+.lotus-icon--card {
+  width: 32px;
+  height: 32px;
+  margin-bottom: var(--space-sm);
+  opacity: 0.65;
+}
+
+.lotus-icon--footer {
+  width: 24px;
+  height: 24px;
+  opacity: 0.6;
+}
+
+.lotus-icon--footer-bottom {
+  width: 20px;
+  height: 20px;
+  margin: 0 auto var(--space-xs);
   opacity: 0.45;
 }
 
-.hero-geometry::before,
-.hero-geometry::after {
+.section-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-md);
+  padding: var(--space-sm) 0;
+  background: var(--color-cream);
+}
+
+.divider-line {
+  flex: 1;
+  max-width: 120px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(166, 139, 91, 0.35), transparent);
+}
+
+/* Temple carving textures */
+.has-carving-texture {
+  position: relative;
+  overflow: hidden;
+}
+
+.has-carving-texture::before,
+.has-carving-texture::after {
   content: '';
   position: absolute;
-  border: 1px solid rgba(44, 62, 107, 0.1);
+  top: 0;
+  width: min(180px, 22vw);
+  height: 100%;
+  background-image: url('/images/temple-carving-texture.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: var(--carving-opacity);
+  pointer-events: none;
+  z-index: 0;
 }
 
-.hero-geometry::before {
-  inset: 18%;
-  border-radius: 2px;
-  transform: rotate(12deg);
+.has-carving-texture::before {
+  left: -40px;
+  background-position: left center;
+  mask-image: linear-gradient(to right, rgba(0,0,0,0.5), transparent);
+  -webkit-mask-image: linear-gradient(to right, rgba(0,0,0,0.5), transparent);
 }
 
-.hero-geometry::after {
-  inset: 35% 20%;
-  border-radius: 2px;
-  transform: rotate(-8deg);
+.has-carving-texture--right::after,
+.has-carving-texture:not(.has-carving-texture--right)::after {
+  right: -40px;
+  background-position: right center;
+  mask-image: linear-gradient(to left, rgba(0,0,0,0.5), transparent);
+  -webkit-mask-image: linear-gradient(to left, rgba(0,0,0,0.5), transparent);
+}
+
+.has-carving-texture > .container {
+  position: relative;
+  z-index: 1;
 }
 
 .section-texture {
@@ -380,8 +492,8 @@ p {
 .hero-content {
   position: relative;
   z-index: 2;
-  max-width: 720px;
-  padding: var(--space-3xl) 0;
+  max-width: 640px;
+  padding: 0;
 }
 
 .hero-eyebrow {
@@ -469,11 +581,13 @@ p {
   padding: var(--space-lg);
   border: 1px solid rgba(42, 40, 38, 0.08);
   background: var(--color-cream);
-  transition: border-color var(--transition);
+  transition: border-color var(--transition), transform var(--transition-fast), box-shadow var(--transition);
 }
 
 .philosophy-card:hover {
-  border-color: rgba(139, 115, 85, 0.25);
+  border-color: rgba(166, 139, 91, 0.25);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(15, 22, 35, 0.05);
 }
 
 .card-number {
@@ -806,9 +920,31 @@ p {
 .node-5 { bottom: 22%; left: 2%; }
 .node-6 { top: 22%; left: 2%; }
 
-/* Spatial */
-.spatial {
-  background: var(--color-white);
+/* Spatial — blueprint visual */
+.spatial-blueprint {
+  background: var(--color-ivory);
+}
+
+.spatial-visual {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.spatial-blueprint-frame {
+  margin: 0;
+  padding: var(--space-md);
+  background: var(--color-cream);
+  border: 1px solid rgba(166, 139, 91, 0.15);
+  box-shadow: 0 12px 40px rgba(15, 22, 35, 0.06);
+}
+
+.spatial-blueprint-frame img {
+  width: 100%;
+  max-width: 520px;
+  height: auto;
+  opacity: 0.92;
+  filter: contrast(1.02);
 }
 
 .spatial-grid {
@@ -887,6 +1023,13 @@ p {
   position: absolute;
   left: 0;
   color: var(--color-bronze-muted);
+}
+
+.lotus-icon--feature {
+  width: 26px;
+  height: 26px;
+  margin-bottom: var(--space-sm);
+  opacity: 0.55;
 }
 
 /* Experience */
@@ -1030,13 +1173,14 @@ p {
   padding: var(--space-lg);
   background: var(--color-cream);
   border: 1px solid rgba(26, 35, 50, 0.08);
-  border-top: 3px solid var(--color-bronze-muted);
-  transition: box-shadow var(--transition), transform var(--transition-fast);
+  border-top: 2px solid rgba(166, 139, 91, 0.45);
+  transition: border-color var(--transition), box-shadow var(--transition), transform var(--transition-fast);
 }
 
 .service-card:hover {
-  box-shadow: 0 8px 32px rgba(15, 22, 35, 0.08);
+  box-shadow: 0 8px 32px rgba(15, 22, 35, 0.06);
   transform: translateY(-2px);
+  border-top-color: var(--color-bronze-muted);
 }
 
 .service-card h3 {
@@ -1251,6 +1395,13 @@ p {
 .footer-brand .logo {
   display: block;
   color: var(--color-cream);
+  margin-bottom: 0;
+}
+
+.footer-brand-mark {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
   margin-bottom: var(--space-xs);
 }
 
@@ -1295,12 +1446,25 @@ p {
 .footer-bottom {
   padding: var(--space-md) 0;
   border-top: 1px solid rgba(212, 207, 199, 0.12);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-xs);
 }
 
 .footer-bottom p {
   font-size: 0.8125rem;
   color: var(--color-warm-grey);
   text-align: center;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-artwork,
+  .hero-sacred-geometry,
+  .parallax-layer {
+    animation: none !important;
+    transform: none !important;
+  }
 }
 
 /* Reveal animations */
@@ -1897,9 +2061,10 @@ body.menu-open {
 
 @media (max-width: 768px) {
   :root {
-    --space-xl: 3rem;
-    --space-2xl: 4rem;
-    --space-3xl: 5rem;
+    --space-xl: 2.25rem;
+    --space-2xl: 3rem;
+    --space-3xl: 3.5rem;
+    --carving-opacity: 0.03;
   }
 
   .container {
@@ -1907,19 +2072,47 @@ body.menu-open {
   }
 
   .section {
-    padding: var(--space-2xl) 0;
+    padding: var(--space-xl) 0;
+  }
+
+  .section-divider {
+    padding: var(--space-xs) 0;
+  }
+
+  .section-header {
+    margin-bottom: var(--space-lg);
   }
 
   .hero {
     min-height: auto;
     align-items: flex-start;
-    padding-bottom: var(--space-xl);
+    padding-bottom: var(--space-lg);
     padding-top: calc(var(--header-height) + env(safe-area-inset-top, 0));
   }
 
+  .hero-inner {
+    grid-template-columns: 1fr;
+    min-height: auto;
+    padding: 1.25rem 0 var(--space-md);
+    gap: var(--space-md);
+  }
+
   .hero-content {
-    padding: 1.5rem 0 var(--space-lg);
+    padding: 0;
     width: 100%;
+    order: 1;
+  }
+
+  .hero-artwork {
+    order: 2;
+    max-width: 220px;
+    margin: 0 auto;
+    opacity: 0.55;
+    animation: none;
+  }
+
+  .hero-lotus {
+    max-width: 220px;
   }
 
   .hero-eyebrow {
@@ -1933,10 +2126,6 @@ body.menu-open {
     font-size: 1.65rem;
     line-height: 1.3;
     margin-bottom: var(--space-sm);
-  }
-
-  .hero-geometry {
-    display: none;
   }
 
   .hero-subtitle {
@@ -2015,9 +2204,18 @@ body.menu-open {
     grid-template-columns: 1fr;
   }
 
-  .spatial-architecture {
-    height: 280px;
-    order: -1;
+  .spatial-blueprint-frame {
+    padding: var(--space-sm);
+  }
+
+  .spatial-blueprint-frame img {
+    max-width: 100%;
+  }
+
+  .has-carving-texture::before,
+  .has-carving-texture::after {
+    width: 80px;
+    opacity: 0.025;
   }
 
   .alignment-pillars {
@@ -2131,6 +2329,18 @@ body.menu-open {
 }
 
 @media (max-width: 1024px) {
+  .hero-inner {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+    min-height: auto;
+    padding: var(--space-xl) 0 var(--space-lg);
+  }
+
+  .hero-artwork {
+    max-width: 280px;
+    margin: 0 auto;
+  }
+
   .site-top-inner > .nav {
     display: flex;
   }

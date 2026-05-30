@@ -85,4 +85,37 @@
       }
     });
   });
+
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const parallaxLayers = document.querySelectorAll('[data-parallax]');
+
+  if (parallaxLayers.length && !prefersReducedMotion) {
+    let ticking = false;
+
+    function updateParallax() {
+      const scrollY = window.scrollY;
+
+      parallaxLayers.forEach((layer) => {
+        const rate = parseFloat(layer.dataset.parallax) || 0.05;
+        const rect = layer.getBoundingClientRect();
+        const offset = (rect.top + scrollY - window.innerHeight * 0.5) * rate;
+        layer.style.transform = `translate3d(0, ${offset}px, 0)`;
+      });
+
+      ticking = false;
+    }
+
+    window.addEventListener(
+      'scroll',
+      () => {
+        if (!ticking) {
+          window.requestAnimationFrame(updateParallax);
+          ticking = true;
+        }
+      },
+      { passive: true }
+    );
+
+    updateParallax();
+  }
 })();
