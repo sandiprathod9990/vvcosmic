@@ -41,20 +41,7 @@
     "name": site.practitioner,
     "jobTitle": "Life Alignment & Pattern Intelligence Advisor"
   },
-  "hasOfferCatalog": {
-    "@type": "OfferCatalog",
-    "name": "Advisory Engagements",
-    "itemListElement": services.map(function(s) {
-      return {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": s.name,
-          "description": s.description
-        }
-      };
-    })
-  }
+  "serviceType": services.map(function(s) { return s.name; }).join(", ")
 }) %>
 </script>
 

@@ -12,105 +12,50 @@ module.exports = {
     phone: '+91 81409 61570',
     phoneDisplay: '+91 81409 61570',
     location: 'India',
+    footerQuote: 'Every life has a visible story and an invisible architecture.',
     description:
-      'VVCosmic — A refined advisory practice for pattern observation, life architecture analysis, lifestyle alignment, and spatial intelligence with Harshil Sevak.',
+      'VVCosmic — Private advisory in astrology, spatial intelligence, pattern recognition, and life alignment with Harshil Sevak.',
   },
 
   seo: {
     home: {
       title: 'VVCosmic | Life Alignment & Pattern Intelligence | Harshil Sevak',
       description:
-        'VVCosmic with Harshil Sevak — private advisory for pattern observation, karmic analysis, lifestyle alignment, spatial intelligence, and strategic life correction. Begin your inquiry.',
+        'VVCosmic with Harshil Sevak — private advisory for pattern observation, astrology, spatial intelligence, and strategic life alignment. Begin the conversation.',
       keywords:
-        'VVCosmic, Harshil Sevak, life alignment, pattern intelligence, vastu spatial intelligence, lifestyle alignment, karmic patterns, life architecture advisory',
+        'VVCosmic, Harshil Sevak, life alignment, pattern intelligence, astrology advisory, spatial intelligence, life architecture',
     },
     booking: {
-      title: 'Begin Your Inquiry | VVCosmic',
+      title: 'Consultation Inquiry | VVCosmic',
       description:
-        'Submit a private consultation inquiry to VVCosmic. Share your life context for pattern observation and alignment advisory with Harshil Sevak.',
-      keywords: 'VVCosmic inquiry, Harshil Sevak consultation, life alignment booking',
+        'Submit a private consultation inquiry to VVCosmic. Share your context with Harshil Sevak.',
+      keywords: 'VVCosmic inquiry, Harshil Sevak consultation',
     },
   },
 
   practiceDomains: [
-    {
-      id: 'pattern-observation',
-      slug: 'pattern-observation',
-      name: 'Pattern Observation',
-      description:
-        'Chart intelligence and recurring theme analysis — observing emotional tendencies, behavioral loops, and karmic continuity before any conclusion is drawn.',
-      aspects: ['Birth chart & planetary periods', 'Recurring life themes', 'Emotional & behavioral observation', 'Karmic pattern continuity'],
-    },
-    {
-      id: 'lifestyle-alignment',
-      slug: 'lifestyle-alignment',
-      name: 'Lifestyle Alignment',
-      description:
-        'Daily rhythm, routine, and thought-speech-action alignment — understanding how lifestyle refinement shapes how patterns express in your life.',
-      aspects: ['Daily rhythm analysis', 'Thought & speech habits', 'Emotional cycles', 'Conscious living structure'],
-    },
-    {
-      id: 'spatial-intelligence',
-      slug: 'spatial-intelligence',
-      name: 'Spatial Intelligence',
-      description:
-        'Environmental psychology of living and working spaces — architecture, light, and flow as influences on clarity, behavior, and decision-making.',
-      aspects: ['Home & workspace analysis', 'Environmental alignment architecture', 'Spatial correction', 'Environmental friction'],
-    },
-    {
-      id: 'behavioral-analysis',
-      slug: 'behavioral-analysis',
-      name: 'Behavioral & Energetic Analysis',
-      description:
-        'Observation of energetic leakage, unconscious repetition, and inherited tendencies — integrated with numerological and palm-based pattern layers where relevant.',
-      aspects: ['Energetic tendencies', 'Unconscious repetition', 'Numerological patterns', 'Integrated observation'],
-    },
-    {
-      id: 'life-architecture',
-      slug: 'life-architecture',
-      name: 'Life Architecture',
-      description:
-        'A holistic view of how chart, behavior, environment, and awareness intersect — the hidden structures influencing outcomes across career, relationships, and inner life.',
-      aspects: ['Hidden pattern mapping', 'Cross-domain analysis', 'Strategic awareness', 'Long-term alignment'],
-    },
+    { id: 'astrology', slug: 'astrology', name: 'Astrology', description: 'Pattern recognition through chart intelligence' },
+    { id: 'vastu', slug: 'vastu', name: 'Spatial Intelligence', description: 'Environmental and spatial advisory' },
   ],
 
-  consultations: [
+  testimonials: [
     {
-      id: 'pattern-session',
-      serviceId: 'pattern-observation',
-      name: 'Pattern Observation Session',
-      duration: '90 minutes',
-      price: 3500,
-      currency: 'INR',
-      description: 'Deep observational session — chart analysis, recurring themes, and current life architecture.',
+      quote:
+        'The clarity was quiet, not dramatic. I stopped reacting to the same patterns and began understanding the structure beneath them.',
+      cite: 'Client, Mumbai',
+      theme: 'Awareness & clarity',
     },
     {
-      id: 'alignment-intensive',
-      serviceId: 'life-architecture',
-      name: 'Alignment Intensive',
-      duration: '3 hours',
-      price: 8500,
-      currency: 'INR',
-      description: 'Full advisory process — pattern observation, root cause analysis, and strategic correction planning.',
+      quote:
+        'Small spatial adjustments created a noticeable shift in emotional stability. I had not considered how much my workspace was influencing my decisions.',
+      cite: 'Client, Ahmedabad',
+      theme: 'Environmental alignment',
     },
     {
-      id: 'spatial-review',
-      serviceId: 'spatial-intelligence',
-      name: 'Spatial Intelligence Review',
-      duration: '120 minutes',
-      price: 4500,
-      currency: 'INR',
-      description: 'Environmental and spatial analysis — how surroundings influence clarity, behavior, and emotional state.',
-    },
-    {
-      id: 'lifestyle-session',
-      serviceId: 'lifestyle-alignment',
-      name: 'Lifestyle Alignment Session',
-      duration: '75 minutes',
-      price: 2800,
-      currency: 'INR',
-      description: 'Rhythm, routine, and alignment work across thought, speech, action, and daily structure.',
+      quote:
+        'Less confusion, more internal steadiness. The guidance helped me align daily choices with what I actually understood about my patterns.',
+      cite: 'Client, Delhi',
+      theme: 'Decision-making',
     },
   ],
 };

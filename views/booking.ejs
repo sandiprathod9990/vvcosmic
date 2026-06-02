@@ -14,202 +14,50 @@
   <main class="booking-main">
     <div class="container booking-container">
       <div class="booking-intro reveal">
-        <span class="section-label">Consultation Application</span>
-        <h1>Begin your private inquiry</h1>
-        <p>Share your life context with intention. <%= site.practitioner %> reviews each application personally — inquiry precedes confirmation.</p>
+        <%- include('partials/lotus-icon', { lotusClass: 'lotus-icon lotus-icon--section' }) %>
+        <span class="section-label">Consultation Inquiry</span>
+        <h1>Begin the conversation</h1>
+        <p>Share your context with intention. <%= site.practitioner %> reviews each inquiry personally. Meaningful guidance often continues through WhatsApp after initial contact.</p>
+        <p class="inquiry-flow">Inquiry → Initial context → Consultation discussion → Private guidance</p>
       </div>
 
-      <div class="booking-progress" role="progressbar" aria-valuenow="1" aria-valuemin="1" aria-valuemax="4">
-        <div class="progress-step active" data-step="1">
-          <span class="step-num">01</span>
-          <span class="step-label">Inquiry</span>
+      <form id="inquiry-form" class="booking-form inquiry-form" novalidate>
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" required autocomplete="name" placeholder="Your name">
+          </div>
+          <div class="form-group">
+            <label for="country">Country</label>
+            <input type="text" id="country" name="country" required placeholder="Your country">
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required autocomplete="email" placeholder="you@example.com">
+          </div>
+          <div class="form-group">
+            <label for="whatsapp">WhatsApp Number</label>
+            <input type="tel" id="whatsapp" name="whatsapp" required autocomplete="tel" placeholder="+91 …">
+          </div>
+          <div class="form-group form-group--full">
+            <label for="concern">Area of Concern</label>
+            <input type="text" id="concern" name="concern" required placeholder="Career, relationships, environment, patterns…">
+          </div>
+          <div class="form-group form-group--full">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" required placeholder="Share what you are navigating and what clarity would mean for you."></textarea>
+          </div>
         </div>
-        <div class="progress-line"></div>
-        <div class="progress-step" data-step="2">
-          <span class="step-num">02</span>
-          <span class="step-label">Selection</span>
+        <div class="form-actions">
+          <button type="submit" class="btn btn-primary" id="submit-inquiry">Submit Inquiry</button>
         </div>
-        <div class="progress-line"></div>
-        <div class="progress-step" data-step="3">
-          <span class="step-num">03</span>
-          <span class="step-label">Process</span>
-        </div>
-        <div class="progress-line"></div>
-        <div class="progress-step" data-step="4">
-          <span class="step-num">04</span>
-          <span class="step-label">Payment</span>
-        </div>
-      </div>
-
-      <form id="booking-form" class="booking-form" novalidate>
-        <!-- Step 1: Inquiry -->
-        <section class="form-step active" data-step="1">
-          <h2>Life Context</h2>
-          <p class="form-lead">Help us understand your current life architecture — the patterns, concerns, and phase you are navigating.</p>
-
-          <div class="form-grid">
-            <div class="form-group">
-              <label for="name">Full Name</label>
-              <input type="text" id="name" name="name" required autocomplete="name" placeholder="Your name">
-            </div>
-            <div class="form-group">
-              <label for="email">Email</label>
-              <input type="email" id="email" name="email" required autocomplete="email" placeholder="you@example.com">
-            </div>
-            <div class="form-group">
-              <label for="location">Country / Location</label>
-              <input type="text" id="location" name="location" required placeholder="City, Country">
-            </div>
-            <div class="form-group">
-              <label for="occupation">Occupation / Field</label>
-              <input type="text" id="occupation" name="occupation" required placeholder="Profession, business, or primary field">
-            </div>
-            <div class="form-group">
-              <label for="lifePhase">Current Life Phase</label>
-              <select id="lifePhase" name="lifePhase" required>
-                <option value="">Select a phase</option>
-                <option value="transition">Major transition</option>
-                <option value="stagnation">Feeling stuck or repeating patterns</option>
-                <option value="expansion">Growth & expansion</option>
-                <option value="recalibration">Recalibration & realignment</option>
-                <option value="exploration">Exploratory & curious</option>
-              </select>
-            </div>
-            <div class="form-group form-group--full">
-              <label for="concern">Area of Concern</label>
-              <textarea id="concern" name="concern" rows="3" required placeholder="What patterns or areas are you observing in your life?"></textarea>
-            </div>
-            <div class="form-group form-group--full">
-              <label for="purpose">Consultation Purpose</label>
-              <textarea id="purpose" name="purpose" rows="3" required placeholder="What would meaningful clarity look like for you?"></textarea>
-            </div>
-          </div>
-
-          <div class="form-actions">
-            <button type="button" class="btn btn-primary btn-next" data-next="2">Continue</button>
-          </div>
-        </section>
-
-        <!-- Step 2: Selection -->
-        <section class="form-step" data-step="2">
-          <h2>Select Engagement</h2>
-          <p class="form-lead">Choose the advisory format aligned with your current depth of need.</p>
-
-          <div class="consultation-select">
-            <% consultations.forEach(function(c) { %>
-            <label class="consultation-option">
-              <input type="radio" name="consultation" value="<%= c.id %>" <%= selectedConsultation === c.id ? 'checked' : '' %> required>
-              <div class="option-card">
-                <div class="option-header">
-                  <h3><%= c.name %></h3>
-                  <span class="option-price"><%= c.currency %> <%= c.price.toLocaleString('en-IN') %></span>
-                </div>
-                <p class="option-duration"><%= c.duration %></p>
-                <p class="option-desc"><%= c.description %></p>
-              </div>
-            </label>
-            <% }); %>
-          </div>
-
-          <div class="form-actions">
-            <button type="button" class="btn btn-ghost btn-prev" data-prev="1">Back</button>
-            <button type="button" class="btn btn-primary btn-next" data-next="3">Continue</button>
-          </div>
-        </section>
-
-        <!-- Step 3: Process Overview -->
-        <section class="form-step" data-step="3">
-          <h2>Advisory Process</h2>
-          <p class="form-lead">Your engagement follows a layered methodology — observation, root analysis, and strategic correction.</p>
-
-          <div class="process-overview">
-            <div class="process-item">
-              <span class="process-num">01</span>
-              <div>
-                <h4>Pattern Observation</h4>
-                <p>Deep observation of your current life architecture — chart, recurring themes, behavioral tendencies, and environmental influences.</p>
-              </div>
-            </div>
-            <div class="process-item">
-              <span class="process-num">02</span>
-              <div>
-                <h4>Lifestyle & Root Cause Analysis</h4>
-                <p>Understanding why patterns repeat — daily rhythm, thought and speech habits, emotional cycles, environmental alignment leakage, and environmental friction.</p>
-              </div>
-            </div>
-            <div class="process-item">
-              <span class="process-num">03</span>
-              <div>
-                <h4>Alignment & Strategic Correction</h4>
-                <p>Personalized refinement across thought, speech, action, and environment — integrated into how you live.</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="process-note">
-            <p>All consultations with <%= site.practitioner %> are conducted privately. Your inquiry and session remain entirely confidential. You will receive a personal response within 48 hours of submission.</p>
-          </div>
-
-          <div class="form-actions">
-            <button type="button" class="btn btn-ghost btn-prev" data-prev="2">Back</button>
-            <button type="button" class="btn btn-primary btn-next" data-next="4">Proceed to Payment</button>
-          </div>
-        </section>
-
-        <!-- Step 4: Payment -->
-        <section class="form-step" data-step="4">
-          <h2>Secure Payment</h2>
-          <p class="form-lead">Complete your booking with a discreet, premium checkout experience.</p>
-
-          <div class="payment-summary" id="payment-summary">
-            <div class="summary-row">
-              <span>Consultation</span>
-              <span id="summary-consultation">—</span>
-            </div>
-            <div class="summary-row">
-              <span>Duration</span>
-              <span id="summary-duration">—</span>
-            </div>
-            <div class="summary-row summary-total">
-              <span>Total</span>
-              <span id="summary-total">—</span>
-            </div>
-          </div>
-
-          <div class="payment-methods">
-            <p class="payment-label">Payment Method</p>
-            <div class="payment-options">
-              <label class="payment-option">
-                <input type="radio" name="paymentMethod" value="card" checked>
-                <span>Credit / Debit Card</span>
-              </label>
-              <label class="payment-option">
-                <input type="radio" name="paymentMethod" value="upi">
-                <span>UPI</span>
-              </label>
-              <label class="payment-option">
-                <input type="radio" name="paymentMethod" value="international">
-                <span>International Transfer</span>
-              </label>
-            </div>
-          </div>
-
-          <div class="payment-placeholder">
-            <p>Payment gateway integration point — connect Stripe or Razorpay for live transactions. Cards, UPI, and international payments supported.</p>
-          </div>
-
-          <div class="form-actions">
-            <button type="button" class="btn btn-ghost btn-prev" data-prev="3">Back</button>
-            <button type="submit" class="btn btn-primary" id="submit-booking">Submit Inquiry & Payment</button>
-          </div>
-        </section>
       </form>
 
-      <div id="booking-success" class="booking-success hidden">
+      <div id="inquiry-success" class="booking-success hidden">
         <div class="success-content">
           <span class="section-label">Inquiry Received</span>
-          <h2>Thank you for your inquiry.</h2>
-          <p>Your submission has been received. We will review your context personally and respond within 48 hours with next steps for your advisory process.</p>
+          <h2>Thank you.</h2>
+          <p>Your inquiry has been received. We will review your context personally and respond within 48 hours.</p>
           <p class="success-id">Reference: <span id="inquiry-ref"></span></p>
           <a href="/" class="btn btn-primary">Return Home</a>
         </div>
@@ -217,9 +65,6 @@
     </div>
   </main>
 
-  <script>
-    window.CONSULTATIONS = <%- JSON.stringify(consultations) %>;
-  </script>
   <script src="/js/booking.js" defer></script>
   <script src="/js/main.js" defer></script>
 </body>

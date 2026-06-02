@@ -12,7 +12,7 @@ All website content, pricing, services, contact info, and SEO settings are contr
 | `seo.home` | Google title, description, keywords for homepage |
 | `seo.booking` | SEO for booking page |
 | `services` | Astrology, Numerology, Vastu, Palmistry, Tantra — names, descriptions, features |
-| `consultations` | Session names, duration, price (INR), descriptions |
+| `testimonials` | Client reflection quotes (no pricing on site) |
 
 After editing, restart the server:
 
@@ -55,20 +55,9 @@ site: {
 
 ---
 
-## Change service pricing
+## Consultation inquiries
 
-Open `config/site-data.js` → `consultations` array:
-
-```js
-{
-  id: 'astrology-session',
-  name: 'Astrology Consultation',
-  duration: '60 minutes',
-  price: 2500,        // ← change price here
-  currency: 'INR',
-  description: '...',
-}
-```
+The site does not display pricing. Inquiries use `/booking` with fields: Name, Country, Email, WhatsApp, Area of Concern, Message. Edit copy in `views/booking.ejs` and `config/site-data.js`.
 
 ---
 
@@ -85,7 +74,7 @@ Open `config/site-data.js` → `consultations` array:
 When someone submits the booking form:
 
 - **POST `/api/inquiry`** — saves inquiry (currently in memory)
-- **POST `/api/payment-intent`** — payment placeholder (connect Razorpay/Stripe)
+- **POST `/api/inquiry`** — consultation inquiry (fields: name, country, email, whatsapp, concern, message)
 
 To persist inquiries to a file or email, edit `server.js` around line 90.
 

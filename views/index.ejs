@@ -22,12 +22,13 @@
 
       <nav class="nav" aria-label="Primary" id="primary-nav">
         <a href="#philosophy">Philosophy</a>
-        <a href="#methodology">Process</a>
-        <a href="#spatial">Spatial</a>
-        <a href="#domains">Practice</a>
-        <a href="#reflections">Reflections</a>
+        <a href="#life-architecture">Architecture</a>
+        <a href="#astrology">Astrology</a>
+        <a href="#vastu">Vastu</a>
+        <a href="#thought-speech-action">Alignment</a>
+        <a href="#the-practice">Practice</a>
         <a href="tel:<%= site.phone.replace(/\s/g, '') %>" class="nav-phone"><%= site.phoneDisplay %></a>
-        <a href="/booking" class="nav-cta">Begin Inquiry</a>
+        <a href="/booking" class="nav-cta">Inquiry</a>
       </nav>
     </div>
   </div>
@@ -44,7 +45,7 @@
           <h1 class="hero-title reveal" id="hero-heading">Hidden patterns shape visible life. Observation precedes alignment.</h1>
           <p class="hero-subtitle reveal">A private advisory practice for those who sense recurring structures beneath career, relationships, environment, and inner life — and seek intelligent refinement, not prediction.</p>
           <div class="hero-actions reveal">
-            <a href="/booking" class="btn btn-primary">Begin Your Inquiry</a>
+            <a href="/booking" class="btn btn-primary">Begin the Conversation</a>
             <a href="#philosophy" class="btn btn-ghost">Explore the Approach</a>
           </div>
         </div>
@@ -121,11 +122,23 @@
       </div>
     </section>
 
-    <section class="section methodology" id="methodology" aria-labelledby="methodology-heading">
+    <section class="section section--intro" id="astrology" aria-labelledby="astrology-heading">
+      <div class="container">
+        <div class="section-header section-header--center reveal">
+          <%- include('partials/lotus-icon', { lotusClass: 'lotus-icon lotus-icon--section' }) %>
+          <span class="section-label">Astrology</span>
+          <h2 id="astrology-heading">Symbolic language, not prediction</h2>
+          <p class="section-lead">Astrology is approached as pattern recognition — a map of tendencies, recurring themes, and periods of emphasis. Intelligent, observational, modern.</p>
+          <p>The chart does not dictate fate. It reveals structure — what repeats, what seeks balance, and where awareness can refine expression.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section methodology" id="astrology-method" aria-labelledby="astrology-method-heading">
       <div class="container">
         <div class="section-header reveal">
-          <span class="section-label">Strategic Alignment Process</span>
-          <h2 id="methodology-heading">A layered advisory methodology</h2>
+          <span class="section-label">How I Practice Astrology</span>
+          <h2 id="astrology-method-heading">A layered observational process</h2>
           <p class="section-lead">Each engagement follows a deliberate sequence — deep observation before conclusion, root analysis before correction, refinement integrated into daily life.</p>
         </div>
         <div class="phases">
@@ -175,39 +188,79 @@
       </div>
     </section>
 
-    <section class="section services domains" id="domains" aria-labelledby="domains-heading">
+    <section class="section spatial spatial-blueprint" id="vastu" aria-labelledby="vastu-heading">
       <div class="container">
-        <div class="section-header reveal">
-          <span class="section-label">Practice Domains</span>
-          <h2 id="domains-heading">Observational domains of the advisory practice</h2>
-          <p class="section-lead">Not a menu of services — a curated framework for how hidden patterns are observed, understood, and refined across life.</p>
+        <div class="section-header section-header--center reveal">
+          <span class="section-label">Vastu</span>
+          <h2 id="vastu-heading">Spatial intelligence</h2>
+          <p class="section-lead">Environmental psychology and energetic architecture — how layout, light, flow, and space influence clarity, movement, and behavior.</p>
         </div>
-        <div class="services-grid">
-          <% practiceDomains.forEach(function(d, i) { %>
-          <article class="service-card reveal" id="<%= d.slug %>">
-            <%- include('partials/lotus-icon', { lotusClass: 'lotus-icon lotus-icon--card' }) %>
-            <h3><%= d.name %></h3>
-            <p><%= d.description %></p>
-            <ul class="service-features">
-              <% d.aspects.forEach(function(a) { %>
-              <li><%= a %></li>
-              <% }); %>
+        <div class="spatial-grid">
+          <div class="spatial-visual">
+            <figure class="spatial-blueprint-frame">
+              <img
+                src="/images/vastu-purusha-blueprint.jpg"
+                alt="Spatial intelligence — Purusha Mandala architectural diagram"
+                width="1024"
+                height="682"
+                loading="lazy"
+                decoding="async"
+              >
+            </figure>
+          </div>
+          <div class="spatial-content reveal">
+            <p>No fear-based language. Focus on clarity, environment, and the influence of surroundings on decision-making and inner state.</p>
+            <ul class="spatial-points">
+              <li>Home and workspace environmental alignment</li>
+              <li>Environmental psychology of living spaces</li>
+              <li>Spatial correction without superstitious framing</li>
+              <li>Surroundings as an extension of behavioral patterns</li>
             </ul>
-            <a href="/booking?service=<%= d.id %>" class="service-link">Request <%= d.name %> →</a>
-          </article>
-          <% }); %>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="section alignment section-decorated" id="alignment" aria-labelledby="alignment-heading">
+    <section class="section section--stone vastu-method" id="vastu-method" aria-labelledby="vastu-method-heading">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-label">How I Practice Vastu</span>
+          <h2 id="vastu-method-heading">Structured spatial methodology</h2>
+        </div>
+        <div class="phases phases--compact">
+          <article class="phase phase--light reveal">
+            <div class="phase-header">
+              <span class="phase-label">Step 01</span>
+              <h3>Spatial Observation</h3>
+            </div>
+            <p class="phase-purpose">Reading the living or working environment — layout, movement, light, and flow.</p>
+          </article>
+          <article class="phase phase--light reveal">
+            <div class="phase-header">
+              <span class="phase-label">Step 02</span>
+              <h3>Environmental Analysis</h3>
+            </div>
+            <p class="phase-purpose">Understanding environmental friction, energy flow, and how space shapes behavior and clarity.</p>
+          </article>
+          <article class="phase phase--light reveal">
+            <div class="phase-header">
+              <span class="phase-label">Step 03</span>
+              <h3>Strategic Refinement</h3>
+            </div>
+            <p class="phase-purpose">Practical corrections — layout, placement, and adjustments integrated into daily life.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alignment section-decorated" id="thought-speech-action" aria-labelledby="tsa-heading">
       <%- include('partials/carving-texture', { carvingLeft: true, carvingRight: false }) %>
       <div class="container">
         <div class="alignment-inner">
           <div class="alignment-content reveal">
-            <span class="section-label">Lifestyle Alignment</span>
-            <h2 id="alignment-heading">Transformation requires alignment across every layer</h2>
-            <p>True refinement extends beyond chart analysis into how you think, speak, act, and inhabit your environment. Misalignment in any layer allows old patterns to persist — quietly, persistently.</p>
+            <span class="section-label">Thought · Speech · Action</span>
+            <h2 id="tsa-heading">Meaningful transformation occurs across every layer</h2>
+            <p>A modern interpretation of alignment through mind, word, and deed — integrated with environment.</p>
             <div class="alignment-pillars">
               <div class="pillar">
                 <h4>Thought</h4>
@@ -243,60 +296,32 @@
       </div>
     </section>
 
-    <section class="section spatial spatial-blueprint" id="spatial" aria-labelledby="spatial-heading">
+    <section class="section section--intro" id="what-changes" aria-labelledby="changes-heading">
       <div class="container">
-        <div class="spatial-grid">
-          <div class="spatial-visual">
-            <figure class="spatial-blueprint-frame">
-              <img
-                src="/images/vastu-purusha-blueprint.jpg"
-                alt="Spatial intelligence blueprint — Purusha Mandala architectural diagram"
-                width="1024"
-                height="682"
-                loading="eager"
-                decoding="async"
-              >
-            </figure>
-          </div>
-          <div class="spatial-content reveal">
-            <span class="section-label">Spatial Intelligence</span>
-            <h2 id="spatial-heading">How environment shapes clarity and behavior</h2>
-            <p class="section-lead">Spatial intelligence examines how architecture, light, flow, and directional intelligence influence emotional state, decision-making, and the subtle friction that disrupts inner calm.</p>
-            <ul class="spatial-points">
-              <li>Home and workspace environmental alignment architecture</li>
-              <li>Environmental psychology of living spaces</li>
-              <li>Spatial correction without superstitious framing</li>
-              <li>Surroundings as an extension of behavioral patterns</li>
-            </ul>
-            <a href="/booking" class="btn btn-secondary">Spatial Intelligence Review</a>
-          </div>
+        <div class="section-header section-header--center reveal">
+          <span class="section-label">What Changes?</span>
+          <h2 id="changes-heading">Outcomes clients describe</h2>
         </div>
+        <ul class="outcomes-grid reveal">
+          <li>Clearer decisions</li>
+          <li>Reduced confusion</li>
+          <li>Greater awareness</li>
+          <li>Stronger alignment</li>
+          <li>Emotional stability</li>
+          <li>Improved relationship with environment</li>
+          <li>More intentional living</li>
+        </ul>
       </div>
     </section>
 
-    <section class="section client-experience" id="experience" aria-labelledby="experience-heading">
+    <section class="section client-experience" id="the-practice" aria-labelledby="practice-heading">
       <div class="container">
-        <div class="section-header reveal">
-          <span class="section-label">Client Experience</span>
-          <h2 id="experience-heading">A selective, private advisory process</h2>
-          <p class="section-lead">Engagements are intentionally limited. Each inquiry is reviewed personally. The experience is confidential, immersive, and structured — not a transactional reading.</p>
-        </div>
-        <div class="experience-grid">
-          <div class="experience-item reveal">
-            <%- include('partials/lotus-icon', { lotusClass: 'lotus-icon lotus-icon--feature' }) %>
-            <h3>Private & Confidential</h3>
-            <p>Your context, patterns, and concerns remain entirely between you and <%= site.practitioner %>. No mass sessions, no public exposure.</p>
-          </div>
-          <div class="experience-item reveal">
-            <%- include('partials/lotus-icon', { lotusClass: 'lotus-icon lotus-icon--feature' }) %>
-            <h3>Deeply Personalized</h3>
-            <p>Every engagement is built from your life architecture — chart, behavior, environment, and stated concerns — not generic templates.</p>
-          </div>
-          <div class="experience-item reveal">
-            <%- include('partials/lotus-icon', { lotusClass: 'lotus-icon lotus-icon--feature' }) %>
-            <h3>Thoughtfully Paced</h3>
-            <p>Observation takes time. The process respects depth over speed — clarity emerges through sustained attention, not instant answers.</p>
-          </div>
+        <div class="section-header section-header--center reveal">
+          <%- include('partials/lotus-icon', { lotusClass: 'lotus-icon lotus-icon--section' }) %>
+          <span class="section-label">The Practice</span>
+          <h2 id="practice-heading">Methodology before recommendation</h2>
+          <p class="section-lead">Not biography. Not credentials. How this practice differs from ordinary consultations.</p>
+          <p>Before any guidance is offered, the practice studies chart, behavior, environment, routine, emotional cycles, and recurring life themes. Observation is deliberate. Recommendations follow understanding.</p>
         </div>
       </div>
     </section>
@@ -308,93 +333,43 @@
           <h2 id="reflections-heading">What clients describe after the process</h2>
         </div>
         <div class="testimonial-grid">
+          <% testimonials.forEach(function(t) { %>
           <blockquote class="testimonial reveal">
-            <p>"The clarity was quiet, not dramatic. I stopped reacting to the same patterns and began understanding the structure beneath them."</p>
-            <footer><cite>— Client, Mumbai</cite><span>Pattern Observation</span></footer>
+            <p>"<%= t.quote %>"</p>
+            <footer><cite>— <%= t.cite %></cite><span><%= t.theme %></span></footer>
           </blockquote>
-          <blockquote class="testimonial reveal">
-            <p>"Small spatial adjustments created a noticeable shift in emotional stability. I hadn't considered how much my workspace was influencing my decisions."</p>
-            <footer><cite>— Client, Ahmedabad</cite><span>Spatial Intelligence</span></footer>
-          </blockquote>
-          <blockquote class="testimonial reveal">
-            <p>"Less confusion, more internal steadiness. The guidance helped me align daily choices with what I actually understood about my patterns."</p>
-            <footer><cite>— Client, Delhi</cite><span>Alignment Intensive</span></footer>
-          </blockquote>
-        </div>
-      </div>
-    </section>
-
-    <section class="section consultations engagements" id="engagements" aria-labelledby="engagements-heading">
-      <div class="container">
-        <div class="section-header reveal">
-          <span class="section-label">Private Engagements</span>
-          <h2 id="engagements-heading">Selective consultation formats</h2>
-          <p class="section-lead">Each format is designed for a specific depth of observation. <%= site.practitioner %> reviews every inquiry before confirmation.</p>
-        </div>
-        <div class="consultation-grid">
-          <% consultations.forEach(function(c) { %>
-          <article class="consultation-card reveal">
-            <h3><%= c.name %></h3>
-            <p class="consultation-duration"><%= c.duration %></p>
-            <p class="consultation-desc"><%= c.description %></p>
-            <p class="consultation-price"><%= c.currency %> <%= c.price.toLocaleString('en-IN') %></p>
-            <a href="/booking?consultation=<%= c.id %>" class="btn btn-secondary">Begin Inquiry</a>
-          </article>
           <% }); %>
         </div>
       </div>
     </section>
 
-    <section class="section cta-section">
+    <section class="section cta-section" id="inquiry">
       <div class="container cta-inner reveal">
-        <h2>When patterns repeat,<br>observation is the first correction.</h2>
-        <p class="cta-lead">Submit a private inquiry. Share your context thoughtfully — each request is reviewed personally.</p>
+        <%- include('partials/lotus-icon', { lotusClass: 'lotus-icon lotus-icon--section lotus-icon--on-dark' }) %>
+        <span class="section-label">Consultation Inquiry</span>
+        <h2>Begin the conversation</h2>
+        <p class="cta-lead">Inquiry · Initial context · Consultation discussion · Private guidance. Each request is reviewed personally.</p>
         <div class="cta-actions">
-          <a href="/booking" class="btn btn-primary">Begin Your Inquiry</a>
+          <a href="/booking" class="btn btn-primary">Submit Inquiry</a>
           <a href="tel:<%= site.phone.replace(/\s/g, '') %>" class="btn btn-ghost-light">Call <%= site.phoneDisplay %></a>
         </div>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="container footer-grid">
-      <div class="footer-brand">
-        <div class="footer-brand-mark">
-          <%- include('partials/lotus-icon', { lotusClass: 'lotus-icon lotus-icon--footer' }) %>
-          <span class="logo">VV<span class="logo-accent">Cosmic</span></span>
-        </div>
-        <p><%= site.practitioner %> — Pattern Intelligence & Life Alignment Advisory</p>
-      </div>
-      <div class="footer-col">
-        <h4>Practice</h4>
-        <nav aria-label="Practice domains">
-          <% practiceDomains.forEach(function(d) { %>
-          <a href="#<%= d.slug %>"><%= d.name %></a>
-          <% }); %>
-        </nav>
-      </div>
-      <div class="footer-col">
-        <h4>Explore</h4>
-        <nav aria-label="Footer">
-          <a href="#philosophy">Philosophy</a>
-          <a href="#methodology">Process</a>
-          <a href="#spatial">Spatial</a>
-          <a href="#alignment">Alignment</a>
-          <a href="#reflections">Reflections</a>
-          <a href="/booking">Begin Inquiry</a>
-        </nav>
-      </div>
-      <div class="footer-col">
-        <h4>Contact</h4>
-        <p><a href="tel:<%= site.phone.replace(/\s/g, '') %>"><%= site.phoneDisplay %></a></p>
-        <p><a href="mailto:<%= site.email %>"><%= site.email %></a></p>
-        <p><%= site.location %></p>
-      </div>
-    </div>
-    <div class="container footer-bottom">
-      <%- include('partials/lotus-icon', { lotusClass: 'lotus-icon lotus-icon--footer-bottom' }) %>
-      <p>&copy; <%= new Date().getFullYear() %> <%= site.name %>.com · <%= site.practitioner %>. All rights reserved.</p>
+  <footer class="site-footer site-footer--book">
+    <div class="container footer-book">
+      <%- include('partials/lotus-icon', { lotusClass: 'lotus-icon lotus-icon--footer-large' }) %>
+      <p class="footer-quote">"<%= site.footerQuote %>"</p>
+      <p class="footer-practitioner"><%= site.practitioner %> · <%= site.name %></p>
+      <nav class="footer-minimal" aria-label="Footer">
+        <a href="mailto:<%= site.email %>"><%= site.email %></a>
+        <span aria-hidden="true">·</span>
+        <a href="tel:<%= site.phone.replace(/\s/g, '') %>"><%= site.phoneDisplay %></a>
+        <span aria-hidden="true">·</span>
+        <a href="/booking">Inquiry</a>
+      </nav>
+      <p class="footer-copy">&copy; <%= new Date().getFullYear() %> <%= site.name %></p>
     </div>
   </footer>
 
