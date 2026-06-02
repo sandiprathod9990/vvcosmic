@@ -28,9 +28,9 @@
   --space-sm: 1rem;
   --space-md: 1.5rem;
   --space-lg: 2.5rem;
-  --space-xl: 4rem;
-  --space-2xl: 6rem;
-  --space-3xl: 8rem;
+  --space-xl: 3rem;
+  --space-2xl: 4.5rem;
+  --space-3xl: 5.5rem;
 
   --transition: 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   --transition-fast: 0.2s ease;
@@ -347,7 +347,7 @@ p {
   align-items: center;
   width: 100%;
   min-height: calc(100vh - var(--header-height));
-  padding: var(--space-2xl) 0 var(--space-xl);
+  padding: var(--space-xl) 0 var(--space-lg);
 }
 
 .hero-artwork {
@@ -424,9 +424,11 @@ p {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: var(--space-md);
-  padding: var(--space-sm) 0;
-  background: var(--color-cream);
+  gap: var(--space-sm);
+  padding: 0;
+  margin: 0;
+  min-height: 2.5rem;
+  background: transparent;
 }
 
 .divider-line {
@@ -441,11 +443,12 @@ p {
   position: relative;
   overflow: hidden;
   background: var(--color-ivory);
+  isolation: isolate;
 }
 
 .section-decorated > .container {
   position: relative;
-  z-index: 2;
+  z-index: 3;
 }
 
 .carving-accent {
@@ -454,7 +457,7 @@ p {
   bottom: 0;
   width: min(280px, 30vw);
   pointer-events: none;
-  z-index: 1;
+  z-index: 2;
   background-image: url('/images/temple-carving-texture.png');
   background-repeat: no-repeat;
   background-size: auto 125%;
@@ -506,7 +509,7 @@ p {
   background-size: 48px 48px;
   pointer-events: none;
   opacity: 0.6;
-  z-index: 0;
+  z-index: 1;
 }
 
 .hero-content {
@@ -573,16 +576,16 @@ p {
 
 /* Sections */
 .section {
-  padding: var(--space-3xl) 0;
+  padding: var(--space-2xl) 0;
 }
 
 .section-header {
-  margin-bottom: var(--space-xl);
+  margin-bottom: var(--space-lg);
   max-width: 680px;
 }
 
 .section-header h2 {
-  margin-bottom: var(--space-md);
+  margin-bottom: var(--space-sm);
 }
 
 /* Philosophy */
@@ -598,7 +601,7 @@ p {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: var(--space-md);
-  margin-bottom: var(--space-xl);
+  margin-bottom: var(--space-lg);
 }
 
 .philosophy-card {
@@ -633,9 +636,10 @@ p {
 }
 
 .philosophy-note {
-  padding: var(--space-lg);
+  padding: var(--space-md) var(--space-lg);
   border-left: 2px solid var(--color-bronze-muted);
   background: rgba(139, 115, 85, 0.04);
+  margin-top: var(--space-md);
 }
 
 .philosophy-note p {
@@ -740,7 +744,7 @@ p {
 .architecture-inner {
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;
-  gap: var(--space-xl);
+  gap: var(--space-lg);
   align-items: center;
 }
 
@@ -964,7 +968,7 @@ p {
 .spatial-grid {
   display: grid;
   grid-template-columns: 1.15fr 0.85fr;
-  gap: var(--space-xl);
+  gap: var(--space-lg);
   align-items: start;
 }
 
@@ -2112,9 +2116,9 @@ body.menu-open {
 
 @media (max-width: 768px) {
   :root {
-    --space-xl: 2.25rem;
-    --space-2xl: 3rem;
-    --space-3xl: 3.5rem;
+    --space-xl: 1.75rem;
+    --space-2xl: 2.5rem;
+    --space-3xl: 3rem;
     --carving-opacity: 0.34;
   }
 
@@ -2123,15 +2127,16 @@ body.menu-open {
   }
 
   .section {
-    padding: var(--space-xl) 0;
+    padding: var(--space-lg) 0;
   }
 
   .section-divider {
-    padding: var(--space-xs) 0;
+    padding: 0;
+    min-height: 1.5rem;
   }
 
   .section-header {
-    margin-bottom: var(--space-lg);
+    margin-bottom: var(--space-md);
   }
 
   .hero {
@@ -2257,7 +2262,7 @@ body.menu-open {
 
   .spatial-visual {
     order: -1;
-    margin-bottom: var(--space-lg);
+    margin-bottom: var(--space-md);
     width: 100%;
   }
 

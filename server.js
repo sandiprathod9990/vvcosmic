@@ -23,7 +23,7 @@ function baseLocals(extra = {}) {
     site: SITE,
     services: siteData.practiceDomains,
     practiceDomains: siteData.practiceDomains,
-    testimonials: siteData.testimonials,
+    consultations: siteData.consultations,
     ...extra,
   };
 }
@@ -39,12 +39,18 @@ app.get('/', (req, res) => {
 });
 
 app.get('/booking', (req, res) => {
+  let selected = req.query.consultation || '';
+  if (!selected && req.query.service) {
+    const match = siteData.consultations.find((c) => c.serviceId === req.query.service);
+    if (match) selected = match.id;
+  }
   res.render('booking', baseLocals({
     seo: {
       ...siteData.seo.booking,
       canonical: `${SITE.domain}/booking`,
     },
     pageTitle: siteData.seo.booking.title,
+    selectedConsultation: selected,
   }));
 });
 
@@ -78,12 +84,14 @@ ${urls.map((url) => `  <url>
 app.post(
   '/api/inquiry',
   [
-    body('name').trim().notEmpty().withMessage('Full name is required'),
-    body('country').trim().notEmpty().withMessage('Country is required'),
+    body('name').trim().notEmpty().withMessage('Name is required'),
     body('email').isEmail().withMessage('Valid email is required'),
-    body('whatsapp').trim().notEmpty().withMessage('WhatsApp number is required'),
+    body('location').trim().notEmpty().withMessage('Location is required'),
+    body('occupation').trim().notEmpty().withMessage('Occupation or field is required'),
+    body('lifePhase').trim().notEmpty().withMessage('Current life phase is required'),
     body('concern').trim().notEmpty().withMessage('Area of concern is required'),
-    body('message').trim().notEmpty().withMessage('Message is required'),
+    body('purpose').trim().notEmpty().withMessage('Consultation purpose is required'),
+    body('consultation').trim().notEmpty().withMessage('Please select a consultation type'),
   ],
   (req, res) => {
     const errors = validationResult(req);
@@ -107,6 +115,29 @@ app.post(
     });
   }
 );
+
+app.post('/api/payment-intent', (req, res) => {
+  const { consultationId, inquiryId } = req.body;
+  const consultation = siteData.consultations.find((c) => c.id === consultationId);
+
+  if (!consultation) {
+    return res.status(400).json({ success: false, message: 'Invalid consultation selected' });
+  }
+
+  res.json({
+    success: true,
+    paymentIntent: {
+      id: `pi_${Date.now()}`,
+      amount: consultation.price * 100,
+      currency: consultation.currency.toLowerCase(),
+      consultation: consultation.name,
+      inquiryId,
+      status: 'requires_payment_method',
+    },
+    message:
+      'Payment gateway integration ready. Connect Stripe or Razorpay credentials to enable live payments.',
+  });
+});
 
 app.listen(PORT, () => {
   console.log(`${SITE.name} running at http://localhost:${PORT}`);
