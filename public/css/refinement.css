@@ -1,0 +1,648 @@
+/**
+ * VVCosmic — Final refinement layer
+ * Color system, center alignment, lotus brand, no temple motifs
+ */
+
+:root {
+  --color-charcoal: #1e1e1c;
+  --color-charcoal-deep: #1e1e1c;
+  --color-stone: #d8d0c5;
+  --color-beige: #e8e1d7;
+  --color-warm-grey: #6a6560;
+  --color-bronze: #8a6a42;
+  --color-bronze-muted: #8a6a42;
+  --color-copper: #a16b4f;
+  --color-gold-light: #c4a574;
+  --color-earth: #4a4540;
+  --color-cream: #e8e1d7;
+  --color-ivory: #e8e1d7;
+  --color-white: #ffffff;
+
+  --lotus-stroke: rgba(196, 165, 116, 0.35);
+  --hero-lotus-opacity: 0.28;
+
+  --text-on-dark: #e8e1d7;
+  --text-on-dark-muted: #d8d0c5;
+}
+
+body {
+  background: var(--color-beige);
+  color: var(--color-earth);
+}
+
+h1, h2, h3, h4 {
+  color: var(--color-charcoal);
+}
+
+/* Logo */
+.logo-link {
+  text-decoration: none;
+}
+
+.logo-wordmark {
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  letter-spacing: 0.06em;
+  line-height: 1;
+}
+
+.logo-vv {
+  color: var(--color-stone);
+  font-weight: 400;
+}
+
+.logo-cosmic {
+  color: var(--color-bronze);
+  font-weight: 400;
+  letter-spacing: 0.14em;
+}
+
+.site-top {
+  background: var(--color-charcoal);
+  border-bottom: 1px solid rgba(216, 208, 197, 0.08);
+}
+
+.site-top.scrolled {
+  background: rgba(30, 30, 28, 0.98);
+}
+
+.site-top .nav a {
+  color: var(--text-on-dark-muted);
+}
+
+.site-top .nav a:hover {
+  color: var(--color-beige);
+}
+
+.site-top .header-phone {
+  color: var(--color-gold-light);
+}
+
+.site-top .nav-cta {
+  border-color: var(--color-bronze) !important;
+  color: var(--color-beige) !important;
+}
+
+.site-top--minimal {
+  position: relative;
+  height: auto;
+  padding: var(--space-md) 0;
+  background: var(--color-charcoal);
+}
+
+/* Center-aligned sections */
+.section-centered {
+  text-align: center;
+}
+
+.section-centered .container {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section-centered .section-lead {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 640px;
+}
+
+.container--narrow {
+  max-width: 720px;
+}
+
+/* Section backgrounds */
+.section--dark {
+  background: var(--color-charcoal);
+  color: var(--text-on-dark-muted);
+}
+
+.section--dark h1,
+.section--dark h2,
+.section--dark h3,
+.section--dark h4 {
+  color: var(--color-beige);
+}
+
+.section--dark .section-label {
+  color: var(--color-gold-light);
+}
+
+.section--dark .section-lead,
+.section--dark p {
+  color: var(--text-on-dark-muted);
+}
+
+.section--light {
+  background: var(--color-beige);
+}
+
+.section--stone {
+  background: var(--color-stone);
+}
+
+.section--geometric {
+  background-image:
+    linear-gradient(rgba(30, 30, 28, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(30, 30, 28, 0.04) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+/* Lotus icons */
+.lotus-icon--section {
+  width: 36px;
+  height: 36px;
+  margin: 0 auto var(--space-md);
+  display: block;
+  color: var(--color-bronze);
+  opacity: 0.75;
+}
+
+.section--dark .lotus-icon--section {
+  color: var(--color-gold-light);
+  opacity: 0.6;
+}
+
+.lotus-icon--footer-large {
+  width: 32px;
+  height: 32px;
+  margin: 0 auto var(--space-md);
+  color: var(--color-gold-light);
+  opacity: 0.5;
+}
+
+/* Hero */
+.hero--dark {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: var(--color-charcoal);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero--dark .hero-layer-1,
+.hero--dark .hero-layer-2 {
+  display: none;
+}
+
+.hero-lotus-bg {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.hero-lotus-bg .hero-lotus-bg-inner {
+  width: min(520px, 85vw);
+  max-width: 520px;
+  opacity: var(--hero-lotus-opacity);
+  color: var(--lotus-stroke);
+  animation: none;
+  transform: none;
+}
+
+.hero--dark .hero-inner {
+  position: relative;
+  z-index: 2;
+  display: block;
+  min-height: auto;
+  padding: calc(var(--header-height) + var(--space-2xl)) var(--space-md) var(--space-2xl);
+  max-width: 800px;
+  margin: 0 auto;
+  grid-template-columns: 1fr;
+}
+
+.hero--dark .hero-content {
+  max-width: none;
+  margin: 0 auto;
+}
+
+.hero--dark .hero-title {
+  color: var(--color-beige);
+  font-size: clamp(1.85rem, 4.5vw, 3rem);
+}
+
+.hero--dark .hero-subtitle,
+.hero--dark .hero-depth {
+  color: var(--text-on-dark-muted);
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 560px;
+}
+
+.hero-depth {
+  font-size: 1rem;
+  font-style: italic;
+  margin-bottom: var(--space-lg);
+  opacity: 0.9;
+}
+
+.hero--dark .hero-eyebrow {
+  color: var(--color-gold-light);
+}
+
+.hero--dark .hero-actions {
+  justify-content: center;
+}
+
+.hero-scroll-hint {
+  display: none;
+}
+
+/* Buttons */
+.btn-primary {
+  background: var(--color-bronze);
+  color: var(--color-beige);
+}
+
+.btn-primary:hover {
+  background: var(--color-copper);
+  color: var(--color-white);
+}
+
+.section--dark .btn-primary {
+  background: var(--color-beige);
+  color: var(--color-charcoal);
+}
+
+.section--dark .btn-primary:hover {
+  background: var(--color-stone);
+}
+
+.btn-ghost-light {
+  color: var(--text-on-dark-muted);
+  border-color: rgba(232, 225, 215, 0.35);
+}
+
+.btn-ghost-light:hover {
+  color: var(--color-beige);
+  border-color: var(--color-beige);
+}
+
+/* Section divider */
+.section-divider {
+  background: var(--color-charcoal);
+}
+
+.section-divider .divider-line {
+  background: linear-gradient(90deg, transparent, rgba(138, 106, 66, 0.4), transparent);
+}
+
+/* Philosophy */
+.philosophy-pillars p {
+  font-size: 0.875rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-bronze);
+  margin: var(--space-lg) 0;
+}
+
+.philosophy-quote {
+  margin-top: var(--space-xl);
+  padding: var(--space-lg);
+  border: none;
+  max-width: 560px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.philosophy-quote p {
+  font-family: var(--font-serif);
+  font-size: 1.2rem;
+  font-style: italic;
+  color: var(--color-earth);
+  line-height: 1.7;
+}
+
+.centered-list {
+  list-style: none;
+  margin: var(--space-lg) auto 0;
+  padding: 0;
+  max-width: 400px;
+}
+
+.centered-list li {
+  padding: var(--space-xs) 0;
+  color: var(--color-earth);
+  position: relative;
+}
+
+.centered-list li::before {
+  content: '·';
+  margin-right: var(--space-sm);
+  color: var(--color-bronze);
+}
+
+/* Process timeline */
+.process-timeline {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-lg);
+  margin-top: var(--space-xl);
+  text-align: left;
+}
+
+.process-timeline--vertical {
+  grid-template-columns: 1fr;
+  max-width: 560px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.timeline-step {
+  padding: var(--space-lg);
+  border: 1px solid rgba(30, 30, 28, 0.1);
+  background: rgba(255, 255, 255, 0.4);
+}
+
+.section--dark + .section--light .timeline-step,
+.section--light .timeline-step {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.timeline-step--featured {
+  border-color: rgba(138, 106, 66, 0.35);
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.timeline-num {
+  display: block;
+  font-family: var(--font-serif);
+  font-size: 0.875rem;
+  color: var(--color-bronze);
+  margin-bottom: var(--space-sm);
+  letter-spacing: 0.1em;
+}
+
+.timeline-step h3 {
+  margin-bottom: var(--space-sm);
+  font-size: 1.25rem;
+}
+
+.timeline-step p {
+  font-size: 0.95rem;
+  margin-bottom: var(--space-md);
+}
+
+.timeline-step ul {
+  list-style: none;
+  padding: 0;
+}
+
+.timeline-step li {
+  font-size: 0.875rem;
+  padding: 0.25rem 0;
+  padding-left: 1rem;
+  position: relative;
+  color: var(--color-earth);
+}
+
+.timeline-step li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.65em;
+  width: 4px;
+  height: 4px;
+  background: var(--color-bronze);
+  border-radius: 50%;
+}
+
+/* Vastu blueprint */
+.blueprint-figure {
+  margin: var(--space-xl) auto 0;
+  max-width: 720px;
+  padding: var(--space-md);
+  background: var(--color-beige);
+  border: 1px solid rgba(138, 106, 66, 0.2);
+  box-shadow: 0 12px 40px rgba(30, 30, 28, 0.06);
+}
+
+.blueprint-figure img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Thought Speech Action */
+.tsa-pillars {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: var(--space-md);
+  margin-top: var(--space-xl);
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.tsa-pillar h3 {
+  font-size: 1rem;
+  font-family: var(--font-sans);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-gold-light);
+  margin-bottom: var(--space-xs);
+}
+
+.tsa-pillar p {
+  font-size: 0.875rem;
+  color: var(--text-on-dark-muted);
+}
+
+/* Outcomes */
+.outcomes-grid {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--space-sm);
+  max-width: 720px;
+  margin: var(--space-xl) auto 0;
+  padding: 0;
+}
+
+.outcomes-grid li {
+  padding: var(--space-md);
+  border: 1px solid rgba(30, 30, 28, 0.08);
+  background: rgba(255, 255, 255, 0.35);
+  font-size: 0.9375rem;
+  color: var(--color-earth);
+}
+
+/* Testimonials */
+.testimonial-stack {
+  max-width: 640px;
+  margin: var(--space-xl) auto 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.testimonial-stack .testimonial {
+  text-align: center;
+  background: rgba(255, 255, 255, 0.4);
+  border: 1px solid rgba(30, 30, 28, 0.06);
+}
+
+/* Footer book ending */
+.site-footer--book {
+  background: var(--color-charcoal);
+  padding: var(--space-3xl) 0 var(--space-xl);
+}
+
+.footer-book {
+  text-align: center;
+  max-width: 560px;
+  margin: 0 auto;
+}
+
+.footer-quote {
+  font-family: var(--font-serif);
+  font-size: clamp(1.15rem, 2.5vw, 1.5rem);
+  font-style: italic;
+  color: var(--color-beige);
+  line-height: 1.6;
+  margin-bottom: var(--space-lg);
+}
+
+.footer-practitioner {
+  font-size: 0.875rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-gold-light);
+  margin-bottom: var(--space-md);
+}
+
+.footer-minimal {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-lg);
+}
+
+.footer-minimal a {
+  color: var(--text-on-dark-muted);
+  font-size: 0.875rem;
+}
+
+.footer-minimal a:hover {
+  color: var(--color-beige);
+}
+
+.footer-minimal span {
+  color: rgba(216, 208, 197, 0.3);
+}
+
+.footer-copy {
+  font-size: 0.75rem;
+  color: var(--color-warm-grey);
+}
+
+/* Booking / inquiry */
+.booking-page {
+  background: var(--color-beige);
+  min-height: 100vh;
+}
+
+.booking-main {
+  padding: calc(var(--header-height) + var(--space-2xl)) 0 var(--space-3xl);
+}
+
+.booking-container {
+  max-width: 560px;
+}
+
+.inquiry-form {
+  text-align: left;
+  margin-top: var(--space-xl);
+}
+
+.inquiry-success {
+  text-align: center;
+  margin-top: var(--space-xl);
+}
+
+.inquiry-success.hidden,
+.inquiry-form.hidden {
+  display: none;
+}
+
+.booking-intro h1 {
+  margin-bottom: var(--space-sm);
+}
+
+.nav-back {
+  font-size: 0.875rem;
+  color: var(--text-on-dark-muted);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.nav-back:hover {
+  color: var(--color-beige);
+}
+
+/* Mobile nav on dark header */
+@media (max-width: 1024px) {
+  .site-top .nav {
+    background: var(--color-charcoal);
+    border-left-color: rgba(216, 208, 197, 0.1);
+  }
+
+  .site-top .nav a {
+    color: var(--text-on-dark-muted);
+    border-bottom-color: rgba(216, 208, 197, 0.08);
+  }
+
+  .hero--dark .hero-inner {
+    padding-top: calc(var(--header-height) + var(--space-xl));
+  }
+
+  .process-timeline {
+    grid-template-columns: 1fr;
+  }
+
+  .tsa-pillars {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .logo-vv {
+    color: var(--color-stone);
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --space-3xl: 4rem;
+    --space-2xl: 3rem;
+  }
+
+  .section {
+    padding: var(--space-2xl) 0;
+  }
+
+  .outcomes-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .tsa-pillars {
+    grid-template-columns: 1fr;
+  }
+
+  .blueprint-figure {
+    padding: var(--space-sm);
+  }
+}
+
+/* Hide legacy elements */
+.carving-accent,
+.has-carving-texture::before,
+.has-carving-texture::after,
+.section-decorated .carving-accent {
+  display: none !important;
+}
