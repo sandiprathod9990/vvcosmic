@@ -838,16 +838,17 @@ main > .section:first-of-type {
 }
 
 .architecture-inner {
-  display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  gap: var(--space-lg);
-  align-items: center;
+  max-width: 720px;
 }
 
-.architecture-content p {
+.architecture-inner p {
   color: var(--color-earth);
   margin-bottom: var(--space-sm);
   line-height: 1.65;
+}
+
+.architecture-inner .section-lead {
+  margin-bottom: var(--space-sm);
 }
 
 .architecture-list {
@@ -2473,8 +2474,7 @@ body.menu-open {
   }
 
   .alignment-inner,
-  .spatial-grid,
-  .architecture-inner {
+  .spatial-grid {
     grid-template-columns: 1fr;
   }
 
