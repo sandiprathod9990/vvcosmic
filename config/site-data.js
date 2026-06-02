@@ -42,19 +42,19 @@ module.exports = {
     {
       quote:
         'The clarity was quiet, not dramatic. I stopped reacting to the same patterns and began understanding the structure beneath them.',
-      cite: 'Client, Mumbai',
+      cite: 'Priya Desai, Mumbai',
       theme: 'Awareness & clarity',
     },
     {
       quote:
         'Small spatial adjustments created a noticeable shift in emotional stability. I had not considered how much my workspace was influencing my decisions.',
-      cite: 'Client, Ahmedabad',
+      cite: 'Amit Patel, Ahmedabad',
       theme: 'Environmental alignment',
     },
     {
       quote:
         'Less confusion, more internal steadiness. The guidance helped me align daily choices with what I actually understood about my patterns.',
-      cite: 'Client, Delhi',
+      cite: 'Neha Kapoor, Delhi',
       theme: 'Decision-making',
     },
   ],

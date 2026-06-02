@@ -31,7 +31,7 @@
   --space-xl: 2rem;
   --space-2xl: 2.75rem;
   --space-3xl: 3.25rem;
-  --section-pad-y: var(--space-xl);
+  --section-pad-y: 3rem;
 
   --transition: 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   --transition-fast: 0.2s ease;
@@ -622,19 +622,25 @@ p {
 
 .outcomes-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: var(--space-sm);
-  max-width: 880px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-md);
+  max-width: 1080px;
   margin: 0 auto;
   text-align: center;
 }
 
 .outcomes-grid li {
-  padding: var(--space-sm) var(--space-md);
+  padding: var(--space-md) var(--space-sm);
   background: var(--color-ivory);
+  border: 1px solid rgba(166, 139, 91, 0.12);
   font-family: var(--font-serif);
-  font-size: 1.05rem;
+  font-size: 1rem;
+  line-height: 1.45;
   color: var(--color-charcoal);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 4.5rem;
 }
 
 .phases--compact {
@@ -648,11 +654,25 @@ p {
 
 .vastu-method {
   background: var(--color-parchment);
+  color: var(--color-charcoal);
 }
 
-/* Tighter transition from hero into first section */
+.vastu-method .section-header h2,
+.vastu-method .phase--light .phase-header h3 {
+  color: var(--color-charcoal-deep);
+}
+
+.vastu-method .phase--light .phase-purpose {
+  color: var(--color-earth);
+}
+
+.vastu-method .phase--light .phase-label {
+  color: var(--color-bronze);
+}
+
+/* Slightly less gap between hero and first section only */
 main > .section:first-of-type {
-  padding-top: var(--space-md);
+  padding-top: 2rem;
 }
 
 /* Philosophy */
@@ -754,14 +774,20 @@ main > .section:first-of-type {
 
 .phase-header h3 {
   margin-bottom: var(--space-sm);
+}
+
+.methodology .phase-header h3 {
   color: var(--color-cream);
 }
 
 .phase-purpose {
   font-family: var(--font-serif);
   font-style: italic;
-  color: var(--color-stone);
   margin-bottom: var(--space-sm);
+}
+
+.methodology .phase-purpose {
+  color: var(--color-stone);
 }
 
 .phase-list {
@@ -773,6 +799,9 @@ main > .section:first-of-type {
   padding-left: 1.25rem;
   margin-bottom: var(--space-xs);
   font-size: 0.9rem;
+}
+
+.methodology .phase-list li {
   color: rgba(232, 228, 220, 0.85);
 }
 
@@ -2132,6 +2161,13 @@ body.menu-open {
 }
 
 /* Responsive */
+@media (max-width: 900px) {
+  .outcomes-grid {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 520px;
+  }
+}
+
 @media (max-width: 1024px) {
   :root {
     --header-height: 64px;
@@ -2271,7 +2307,7 @@ body.menu-open {
     --space-xl: 1.5rem;
     --space-2xl: 2rem;
     --space-3xl: 2.5rem;
-    --section-pad-y: var(--space-lg);
+    --section-pad-y: 3rem;
     --carving-opacity: 0.34;
   }
 
@@ -2284,7 +2320,7 @@ body.menu-open {
   }
 
   main > .section:first-of-type {
-    padding-top: var(--space-sm);
+    padding-top: 1.5rem;
   }
 
   .section-divider {
@@ -2330,6 +2366,16 @@ body.menu-open {
 
   .hero-lotus {
     max-width: 220px;
+  }
+
+  .outcomes-grid {
+    grid-template-columns: 1fr;
+    max-width: 320px;
+  }
+
+  .outcomes-grid li {
+    min-height: auto;
+    padding: var(--space-sm) var(--space-md);
   }
 
   .hero-eyebrow {
