@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="VVCosmic">
+  <defs>
+    <linearGradient id="vv-bg" x1="8" y1="6" x2="56" y2="58" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#1e2a3d"/>
+      <stop offset="1" stop-color="#0f1623"/>
+    </linearGradient>
+    <linearGradient id="vv-gold" x1="32" y1="14" x2="32" y2="50" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#e8d5b0"/>
+      <stop offset="1" stop-color="#a68b5b"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="14" fill="url(#vv-bg)"/>
+  <circle cx="32" cy="32" r="27" fill="none" stroke="#a68b5b" stroke-opacity="0.18" stroke-width="0.75"/>
+  <g fill="none" stroke="url(#vv-gold)" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M32 15c-4.5 4-6.5 8.5-6.5 13.5S27.5 38 32 41c4.5-3 6.5-7.5 6.5-12.5S36.5 19 32 15z"/>
+    <path d="M32 15c-9 2-13.5 7-14.5 13 1.5 5.5 6.5 9.5 14.5 13"/>
+    <path d="M32 15c9 2 13.5 7 14.5 13-1.5 5.5-6.5 9.5-14.5 13"/>
+    <path d="M32 15c-11 3.5-15.5 10-16.5 17.5 2 6.5 8 10.5 16.5 13"/>
+    <path d="M32 15c11 3.5 15.5 10 16.5 17.5-2 6.5-8 10.5-16.5 13"/>
+  </g>
+  <circle cx="32" cy="30" r="3.25" fill="#dcc9a3"/>
+  <circle cx="32" cy="30" r="1.25" fill="#0f1623" opacity="0.35"/>
+</svg>
