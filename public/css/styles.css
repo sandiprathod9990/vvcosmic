@@ -383,6 +383,11 @@ p {
   position: relative;
 }
 
+.section--has-bg .bg-text-panel {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
 /* Hero */
 .hero {
   position: relative;
@@ -531,42 +536,60 @@ p {
 }
 
 /* Vastu — blueprint background */
+.section--vastu-bg {
+  padding: var(--section-pad-y) 0;
+}
+
 .section--vastu-bg .section-bg__overlay {
   background: linear-gradient(
     90deg,
-    rgba(15, 22, 35, 0.92) 0%,
-    rgba(15, 22, 35, 0.82) 42%,
-    rgba(15, 22, 35, 0.55) 62%,
-    rgba(15, 22, 35, 0.68) 100%
+    rgba(15, 22, 35, 0.88) 0%,
+    rgba(15, 22, 35, 0.58) 38%,
+    rgba(15, 22, 35, 0.28) 62%,
+    rgba(15, 22, 35, 0.22) 100%
   );
 }
 
-.section--vastu-bg .spatial-content.bg-text-panel {
-  text-align: left;
+.section--vastu-bg .section-bg__image--vastu {
+  left: 28%;
+  right: 0;
+  width: auto;
+  opacity: 1;
+  background-size: cover;
+  background-position: right center;
+  filter: brightness(1.2) contrast(1.1) saturate(1.08);
 }
 
 .section--vastu-bg .section-header.bg-text-panel {
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.section--vastu-bg .section-bg__image--vastu {
-  background-size: cover;
-  background-position: 72% center;
-}
-
-.section--vastu-bg .section-header,
-.section--vastu-bg .spatial-content--bg {
   max-width: 640px;
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
+}
+
+.section--vastu-bg .section-header.bg-text-panel::before {
+  background: rgba(15, 22, 35, 0.72);
+}
+
+.section--vastu-bg .vastu-details {
+  position: relative;
+  z-index: 2;
+  max-width: 640px;
+  margin: var(--space-md) 0 0;
+  padding: var(--space-md) var(--space-lg);
+  text-align: left;
+  background: rgba(250, 247, 242, 0.08);
+  border: 1px solid rgba(220, 201, 163, 0.16);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.section--vastu-bg .vastu-details p {
+  color: var(--color-stone);
+  margin-bottom: var(--space-sm);
 }
 
 .section--vastu-bg .spatial-points {
-  display: inline-block;
-  text-align: left;
-  margin: var(--space-md) auto 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
 .section--vastu-bg .spatial-points li {
@@ -1308,7 +1331,7 @@ main > .section:first-of-type {
 .alignment-diagram {
   position: relative;
   width: 100%;
-  max-width: 400px;
+  max-width: min(400px, 100%);
   aspect-ratio: 1;
   margin: 0 auto;
 }
@@ -1992,6 +2015,28 @@ main > .section:first-of-type {
   color: var(--color-earth);
   letter-spacing: 0.02em;
   margin-top: var(--space-sm);
+  line-height: 1.55;
+  word-wrap: break-word;
+}
+
+/* Booking page header */
+.site-header--minimal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: rgba(250, 247, 242, 0.98);
+  border-bottom: 1px solid rgba(26, 35, 50, 0.08);
+  padding-top: env(safe-area-inset-top, 0);
+}
+
+.site-header--minimal .header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: var(--header-height);
+  gap: var(--space-sm);
 }
 
 .lotus-icon--on-dark {
@@ -2669,7 +2714,8 @@ body.menu-open {
 
   .section--hero-bg .hero-inner {
     max-width: 100%;
-    padding-left: 1.5rem;
+    padding-left: clamp(1.25rem, 4vw, 1.5rem);
+    padding-right: 1.125rem;
   }
 
   .section--hero-bg .hero-content.bg-text-panel::before {
@@ -2684,7 +2730,8 @@ body.menu-open {
   .hero-inner {
     grid-template-columns: 1fr;
     min-height: auto;
-    padding: 0.75rem 0 var(--space-xs);
+    padding-top: 0.75rem;
+    padding-bottom: var(--space-xs);
     gap: var(--space-sm);
   }
 
@@ -2808,6 +2855,19 @@ body.menu-open {
     grid-template-columns: 1fr;
   }
 
+  .alignment-inner {
+    gap: var(--space-lg);
+  }
+
+  .alignment-diagram {
+    max-width: min(320px, 100%);
+    margin-top: var(--space-sm);
+  }
+
+  .diagram-node {
+    font-size: 0.65rem;
+  }
+
   .spatial-visual {
     order: -1;
     margin-bottom: var(--space-md);
@@ -2843,6 +2903,14 @@ body.menu-open {
 
   .testimonial p {
     font-size: 1.05rem;
+  }
+
+  .inquiry-flow {
+    font-size: 0.8125rem;
+  }
+
+  .site-header--minimal .header-inner {
+    min-height: 56px;
   }
 
   .booking-main {
@@ -2896,6 +2964,15 @@ body.menu-open {
   .process-item {
     flex-direction: column;
     gap: var(--space-xs);
+  }
+
+  .footer-minimal {
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+
+  .footer-minimal span[aria-hidden="true"] {
+    display: none;
   }
 }
 
@@ -2952,7 +3029,13 @@ body.menu-open {
     grid-template-columns: 1fr;
     gap: var(--space-md);
     min-height: auto;
-    padding: var(--space-sm) 0 var(--space-xs);
+    padding-top: var(--space-sm);
+    padding-bottom: var(--space-xs);
+  }
+
+  .section--hero-bg .hero-inner {
+    padding-left: clamp(1.5rem, 4.5vw, 3.5rem);
+    padding-right: var(--space-md);
   }
 
   .hero-artwork {
