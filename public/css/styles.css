@@ -535,7 +535,7 @@ p {
   background-position: center 30%;
 }
 
-/* Vastu — blueprint background */
+/* Vastu — blueprint background (same pattern as methodology / testimonials) */
 .section--vastu-bg {
   padding: var(--section-pad-y) 0;
 }
@@ -543,25 +543,22 @@ p {
 .section--vastu-bg .section-bg__overlay {
   background: linear-gradient(
     90deg,
-    rgba(15, 22, 35, 0.88) 0%,
-    rgba(15, 22, 35, 0.58) 38%,
-    rgba(15, 22, 35, 0.28) 62%,
+    rgba(15, 22, 35, 0.8) 0%,
+    rgba(15, 22, 35, 0.55) 38%,
+    rgba(15, 22, 35, 0.3) 62%,
     rgba(15, 22, 35, 0.22) 100%
   );
 }
 
 .section--vastu-bg .section-bg__image--vastu {
-  left: 28%;
-  right: 0;
-  width: auto;
   opacity: 1;
   background-size: cover;
-  background-position: right center;
-  filter: brightness(1.2) contrast(1.1) saturate(1.08);
+  background-position: 72% center;
+  filter: brightness(1.25) contrast(1.12) saturate(1.1);
 }
 
 .section--vastu-bg .section-header.bg-text-panel {
-  max-width: 640px;
+  max-width: 720px;
 }
 
 .section--vastu-bg .section-header.bg-text-panel::before {
@@ -571,7 +568,7 @@ p {
 .section--vastu-bg .vastu-details {
   position: relative;
   z-index: 2;
-  max-width: 640px;
+  max-width: 720px;
   margin: var(--space-md) 0 0;
   padding: var(--space-md) var(--space-lg);
   text-align: left;
@@ -586,14 +583,12 @@ p {
   margin-bottom: var(--space-sm);
 }
 
-.section--vastu-bg .spatial-points {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
 .section--vastu-bg .spatial-points li {
   color: var(--color-stone);
+}
+
+.section--vastu-bg .spatial-points li::before {
+  color: var(--color-gold-light);
 }
 
 /* Testimonials — transformation background */
@@ -2725,6 +2720,23 @@ body.menu-open {
 
   .section--has-bg .bg-text-panel::before {
     inset: -0.75rem -0.625rem;
+  }
+
+  .section--vastu-bg .section-bg__image--vastu {
+    background-position: 68% center;
+  }
+
+  .section--vastu-bg .section-bg__overlay {
+    background: linear-gradient(
+      180deg,
+      rgba(15, 22, 35, 0.72) 0%,
+      rgba(15, 22, 35, 0.48) 50%,
+      rgba(15, 22, 35, 0.68) 100%
+    );
+  }
+
+  .section--vastu-bg .vastu-details {
+    padding: var(--space-md);
   }
 
   .hero-inner {
