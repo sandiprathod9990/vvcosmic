@@ -433,6 +433,11 @@ p {
   max-width: min(560px, 100%);
   margin-right: auto;
   margin-left: 0;
+  padding-left: clamp(1.75rem, 4.5vw, 3.5rem);
+}
+
+.section--hero-bg .hero-content {
+  padding-left: 0.25rem;
 }
 
 .section--hero-bg .hero-content.bg-text-panel::before {
@@ -2664,6 +2669,7 @@ body.menu-open {
 
   .section--hero-bg .hero-inner {
     max-width: 100%;
+    padding-left: 1.5rem;
   }
 
   .section--hero-bg .hero-content.bg-text-panel::before {
