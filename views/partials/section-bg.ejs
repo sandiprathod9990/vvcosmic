@@ -1,11 +1,11 @@
 <%#
   Section background image + dark overlay
-  Params: image (required), position, size, opacity, overlay
+  Params: image (required), bgClass, position, size
 %>
 <div class="section-bg" aria-hidden="true">
   <div
     class="section-bg__image<%= typeof bgClass !== 'undefined' ? ' ' + bgClass : '' %>"
-    style="background-image: url('<%= image %>');<% if (typeof position !== 'undefined') { %> background-position: <%= position %>;<% } %><% if (typeof size !== 'undefined') { %> background-size: <%= size %>;<% } %><% if (typeof opacity !== 'undefined') { %> opacity: <%= opacity %>;<% } %>"
+    style="background-image: url('<%= image %>');<% if (typeof position !== 'undefined') { %> background-position: <%= position %>;<% } %><% if (typeof size !== 'undefined') { %> background-size: <%= size %>;<% } %>"
   ></div>
-  <div class="section-bg__overlay"<% if (typeof overlay !== 'undefined') { %> style="opacity: <%= overlay %>;"<% } %>></div>
+  <div class="section-bg__overlay"></div>
 </div>

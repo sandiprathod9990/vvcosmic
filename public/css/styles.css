@@ -308,9 +308,11 @@ p {
 /* Section background system */
 .section--has-bg {
   position: relative;
+  z-index: 0;
   isolation: isolate;
+  overflow: hidden;
   color: var(--color-cream);
-  background-color: var(--color-charcoal-deep);
+  background: transparent !important;
 }
 
 .section-bg {
@@ -318,25 +320,28 @@ p {
   inset: 0;
   z-index: 0;
   pointer-events: none;
-  overflow: hidden;
 }
 
 .section-bg__image {
   position: absolute;
   inset: 0;
+  z-index: 0;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  will-change: transform;
+  transform: translateZ(0);
 }
 
 .section-bg__overlay {
   position: absolute;
   inset: 0;
-  background: rgba(15, 22, 35, 0.75);
+  z-index: 1;
+  background: rgba(15, 22, 35, 0.68);
+  pointer-events: none;
 }
 
-.section--has-bg > .container {
+.section--has-bg > .container,
+.section--has-bg > .hero-scroll-hint {
   position: relative;
   z-index: 2;
 }
@@ -356,6 +361,28 @@ p {
   color: var(--color-cream);
 }
 
+/* Readable text panel over background images */
+.bg-text-panel {
+  position: relative;
+  z-index: 2;
+}
+
+.section--has-bg .bg-text-panel::before {
+  content: '';
+  position: absolute;
+  inset: -1rem -1.25rem;
+  z-index: -1;
+  background: rgba(15, 22, 35, 0.78);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 3px;
+  box-shadow: 0 0 0 1px rgba(220, 201, 163, 0.06);
+}
+
+.section--has-bg .bg-text-panel > * {
+  position: relative;
+}
+
 /* Hero */
 .hero {
   position: relative;
@@ -367,26 +394,55 @@ p {
   overflow: hidden;
 }
 
+.section--hero-bg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: var(--color-charcoal-deep);
+}
+
+.section--hero-bg .section-bg {
+  z-index: 1;
+}
+
 .section--hero-bg .section-bg__overlay {
   background: linear-gradient(
-    108deg,
-    rgba(15, 22, 35, 0.91) 0%,
-    rgba(15, 22, 35, 0.76) 42%,
-    rgba(15, 22, 35, 0.86) 100%
+    90deg,
+    rgba(15, 22, 35, 0.96) 0%,
+    rgba(15, 22, 35, 0.92) 36%,
+    rgba(15, 22, 35, 0.68) 58%,
+    rgba(15, 22, 35, 0.75) 100%
   );
 }
 
 .section--hero-bg .section-bg__image--lotus {
-  filter: sepia(0.15) saturate(0.85) brightness(0.95);
+  left: 42%;
+  right: 0;
+  width: auto;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+  opacity: 0.9;
+  mix-blend-mode: soft-light;
+  filter: sepia(0.1) saturate(1.05) brightness(1.02);
 }
 
 .section--hero-bg .hero-inner {
   grid-template-columns: 1fr;
-  max-width: 680px;
+  max-width: min(560px, 100%);
+  margin-right: auto;
+  margin-left: 0;
+}
+
+.section--hero-bg .hero-content.bg-text-panel::before {
+  inset: -1.25rem -1.5rem;
+  background: rgba(15, 22, 35, 0.82);
 }
 
 .section--hero-bg .hero-title {
   color: var(--color-cream);
+  text-shadow: 0 1px 24px rgba(15, 22, 35, 0.45);
 }
 
 .section--hero-bg .hero-subtitle {
@@ -399,6 +455,7 @@ p {
 
 .section--hero-bg .hero-scroll-hint {
   color: rgba(232, 228, 220, 0.55);
+  z-index: 2;
 }
 
 .section--hero-bg .scroll-line {
@@ -411,10 +468,27 @@ p {
 }
 
 .section--about-bg .section-bg__overlay {
-  background: rgba(15, 22, 35, 0.78);
+  background: linear-gradient(
+    180deg,
+    rgba(15, 22, 35, 0.72) 0%,
+    rgba(15, 22, 35, 0.55) 45%,
+    rgba(15, 22, 35, 0.72) 100%
+  );
+}
+
+.section--about-bg .about-frame-content.bg-text-panel::before {
+  inset: -1.5rem -2rem;
+  background: rgba(15, 22, 35, 0.72);
+}
+
+.section--about-bg .section-bg__image--temple {
+  background-size: cover;
+  background-position: center center;
 }
 
 .about-frame-content {
+  position: relative;
+  z-index: 2;
   max-width: 520px;
   margin: 0 auto;
   text-align: center;
@@ -427,26 +501,53 @@ p {
 }
 
 /* Methodology — golden spiral */
-.methodology.section--has-bg {
-  background-color: var(--color-charcoal-deep);
+.section--methodology-bg .section-bg__overlay {
+  background: linear-gradient(
+    180deg,
+    rgba(15, 22, 35, 0.82) 0%,
+    rgba(15, 22, 35, 0.62) 45%,
+    rgba(15, 22, 35, 0.82) 100%
+  );
 }
 
-.section--methodology-bg .section-bg__overlay {
-  background: rgba(15, 22, 35, 0.8);
+.section--methodology-bg .section-header.bg-text-panel {
+  max-width: 720px;
+}
+
+.section--methodology-bg .phases {
+  position: relative;
+  z-index: 2;
 }
 
 .section--methodology-bg .section-bg__image--spiral {
-  opacity: 0.55;
+  opacity: 1;
+  background-size: cover;
+  background-position: center 30%;
 }
 
 /* Vastu — blueprint background */
 .section--vastu-bg .section-bg__overlay {
   background: linear-gradient(
     90deg,
-    rgba(15, 22, 35, 0.88) 0%,
-    rgba(15, 22, 35, 0.72) 55%,
-    rgba(15, 22, 35, 0.82) 100%
+    rgba(15, 22, 35, 0.92) 0%,
+    rgba(15, 22, 35, 0.82) 42%,
+    rgba(15, 22, 35, 0.55) 62%,
+    rgba(15, 22, 35, 0.68) 100%
   );
+}
+
+.section--vastu-bg .spatial-content.bg-text-panel {
+  text-align: left;
+}
+
+.section--vastu-bg .section-header.bg-text-panel {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section--vastu-bg .section-bg__image--vastu {
+  background-size: cover;
+  background-position: 72% center;
 }
 
 .section--vastu-bg .section-header,
@@ -468,21 +569,19 @@ p {
 }
 
 /* Testimonials — transformation background */
-.testimonials.section--has-bg {
-  background-color: var(--color-charcoal-deep);
-}
-
 .section--testimonials-bg .section-bg__overlay {
-  background: rgba(15, 22, 35, 0.78);
+  background: rgba(15, 22, 35, 0.65);
 }
 
 .section--testimonials-bg .section-bg__image--transformation {
-  opacity: 0.45;
+  opacity: 1;
+  background-size: cover;
+  background-position: center center;
 }
 
 .section--testimonials-bg .testimonial {
-  background: rgba(250, 247, 242, 0.07);
-  border: 1px solid rgba(220, 201, 163, 0.16);
+  background: rgba(250, 247, 242, 0.08);
+  border: 1px solid rgba(220, 201, 163, 0.18);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
 }
@@ -927,8 +1026,11 @@ main > .section:first-of-type {
 
 /* Methodology */
 .methodology {
-  background: var(--color-charcoal-deep);
   color: var(--color-beige);
+}
+
+.methodology.section--has-bg {
+  background: transparent;
 }
 
 .methodology .section-label {
@@ -1408,6 +1510,10 @@ main > .section:first-of-type {
 /* Testimonials */
 .testimonials {
   background: var(--color-beige);
+}
+
+.testimonials.section--has-bg {
+  background: transparent !important;
 }
 
 .testimonial-grid {
@@ -2542,6 +2648,31 @@ body.menu-open {
 
   .section--hero-bg {
     min-height: auto;
+  }
+
+  .section--hero-bg .section-bg__image--lotus {
+    left: 0;
+    right: 0;
+    opacity: 0.35;
+    background-position: center top;
+    background-size: min(85vw, 320px);
+  }
+
+  .section--hero-bg .section-bg__overlay {
+    background: rgba(15, 22, 35, 0.9);
+  }
+
+  .section--hero-bg .hero-inner {
+    max-width: 100%;
+  }
+
+  .section--hero-bg .hero-content.bg-text-panel::before {
+    inset: -0.75rem -0.5rem;
+    background: rgba(15, 22, 35, 0.88);
+  }
+
+  .section--has-bg .bg-text-panel::before {
+    inset: -0.75rem -0.625rem;
   }
 
   .hero-inner {

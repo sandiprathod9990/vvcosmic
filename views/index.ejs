@@ -38,13 +38,10 @@
     <section class="hero section--has-bg section--hero-bg" id="hero" aria-labelledby="hero-heading">
       <%- include('partials/section-bg', {
         image: '/images/bg/lotus-brand.png',
-        bgClass: 'section-bg__image--lotus',
-        position: '72% 42%',
-        size: 'min(48vw, 480px)',
-        opacity: '0.28'
+        bgClass: 'section-bg__image--lotus'
       }) %>
       <div class="container hero-inner">
-        <div class="hero-content">
+        <div class="hero-content bg-text-panel">
           <p class="hero-eyebrow reveal"><%= site.practitioner %> · <%= site.tagline %></p>
           <h1 class="hero-title reveal" id="hero-heading">Hidden patterns shape visible life. Observation precedes alignment.</h1>
           <p class="hero-subtitle reveal">A private advisory practice for those who sense recurring structures beneath career, relationships, environment, and inner life — and seek intelligent refinement, not prediction.</p>
@@ -123,7 +120,7 @@
         size: 'cover'
       }) %>
       <div class="container">
-        <div class="about-frame-content reveal">
+        <div class="about-frame-content bg-text-panel reveal">
           <%- include('partials/lotus-icon', { lotusClass: 'lotus-icon lotus-icon--section lotus-icon--on-dark' }) %>
           <span class="section-label">About <%= site.practitioner %></span>
           <h2 id="about-heading"><%= site.practitioner %></h2>
@@ -153,7 +150,7 @@
         size: 'cover'
       }) %>
       <div class="container">
-        <div class="section-header reveal">
+        <div class="section-header bg-text-panel reveal">
           <span class="section-label">How I Practice Astrology</span>
           <h2 id="astrology-method-heading">A layered observational process</h2>
           <p class="section-lead">Each engagement follows a deliberate sequence — deep observation before conclusion, root analysis before correction, refinement integrated into daily life.</p>
@@ -213,12 +210,12 @@
         size: 'cover'
       }) %>
       <div class="container">
-        <div class="section-header section-header--center reveal">
+        <div class="section-header section-header--center bg-text-panel reveal">
           <span class="section-label">Vastu</span>
           <h2 id="vastu-heading">Spatial intelligence</h2>
           <p class="section-lead">Environmental psychology and energetic architecture — how layout, light, flow, and space influence clarity, movement, and behavior.</p>
         </div>
-        <div class="spatial-content spatial-content--bg reveal">
+        <div class="spatial-content spatial-content--bg bg-text-panel reveal">
           <p>No fear-based language. Focus on clarity, environment, and the influence of surroundings on decision-making and inner state.</p>
           <ul class="spatial-points">
             <li>Home and workspace environmental alignment</li>
@@ -344,7 +341,7 @@
         size: 'cover'
       }) %>
       <div class="container">
-        <div class="section-header reveal">
+        <div class="section-header bg-text-panel reveal">
           <span class="section-label">Reflections</span>
           <h2 id="reflections-heading">What clients describe after the process</h2>
         </div>
