@@ -23,6 +23,7 @@
       <nav class="nav" aria-label="Primary" id="primary-nav">
         <a href="#philosophy">Philosophy</a>
         <a href="#life-architecture">Architecture</a>
+        <a href="#about">About</a>
         <a href="#astrology">Astrology</a>
         <a href="#vastu">Vastu</a>
         <a href="#thought-speech-action">Alignment</a>
@@ -34,11 +35,14 @@
   </div>
 
   <main>
-    <section class="hero" id="hero" aria-labelledby="hero-heading">
-      <div class="hero-bg" aria-hidden="true">
-        <div class="hero-layer hero-layer-1"></div>
-        <div class="hero-layer hero-layer-2"></div>
-      </div>
+    <section class="hero section--has-bg section--hero-bg" id="hero" aria-labelledby="hero-heading">
+      <%- include('partials/section-bg', {
+        image: '/images/bg/lotus-brand.png',
+        bgClass: 'section-bg__image--lotus',
+        position: '72% 42%',
+        size: 'min(48vw, 480px)',
+        opacity: '0.28'
+      }) %>
       <div class="container hero-inner">
         <div class="hero-content">
           <p class="hero-eyebrow reveal"><%= site.practitioner %> · <%= site.tagline %></p>
@@ -46,10 +50,9 @@
           <p class="hero-subtitle reveal">A private advisory practice for those who sense recurring structures beneath career, relationships, environment, and inner life — and seek intelligent refinement, not prediction.</p>
           <div class="hero-actions reveal">
             <a href="/booking" class="btn btn-primary">Begin the Conversation</a>
-            <a href="#philosophy" class="btn btn-ghost">Explore the Approach</a>
+            <a href="#philosophy" class="btn btn-ghost-light">Explore the Approach</a>
           </div>
         </div>
-        <%- include('partials/hero-lotus') %>
       </div>
       <div class="hero-scroll-hint reveal" aria-hidden="true">
         <span>Scroll</span>
@@ -112,6 +115,24 @@
       </div>
     </section>
 
+    <section class="section section--has-bg section--about-bg" id="about" aria-labelledby="about-heading">
+      <%- include('partials/section-bg', {
+        image: '/images/bg/temple-frame.png',
+        bgClass: 'section-bg__image--temple',
+        position: 'center center',
+        size: 'cover'
+      }) %>
+      <div class="container">
+        <div class="about-frame-content reveal">
+          <%- include('partials/lotus-icon', { lotusClass: 'lotus-icon lotus-icon--section lotus-icon--on-dark' }) %>
+          <span class="section-label">About <%= site.practitioner %></span>
+          <h2 id="about-heading"><%= site.practitioner %></h2>
+          <p class="section-lead"><%= site.aboutLead %></p>
+          <p><%= site.aboutBody %></p>
+        </div>
+      </div>
+    </section>
+
     <section class="section section--intro" id="astrology" aria-labelledby="astrology-heading">
       <div class="container">
         <div class="section-header section-header--center reveal">
@@ -124,7 +145,13 @@
       </div>
     </section>
 
-    <section class="section methodology" id="astrology-method" aria-labelledby="astrology-method-heading">
+    <section class="section methodology section--has-bg section--methodology-bg" id="astrology-method" aria-labelledby="astrology-method-heading">
+      <%- include('partials/section-bg', {
+        image: '/images/bg/golden-spiral.png',
+        bgClass: 'section-bg__image--spiral',
+        position: 'center 35%',
+        size: 'cover'
+      }) %>
       <div class="container">
         <div class="section-header reveal">
           <span class="section-label">How I Practice Astrology</span>
@@ -178,35 +205,27 @@
       </div>
     </section>
 
-    <section class="section spatial spatial-blueprint" id="vastu" aria-labelledby="vastu-heading">
+    <section class="section spatial section--has-bg section--vastu-bg" id="vastu" aria-labelledby="vastu-heading">
+      <%- include('partials/section-bg', {
+        image: '/images/bg/vastu-blueprint.png',
+        bgClass: 'section-bg__image--vastu',
+        position: '68% center',
+        size: 'cover'
+      }) %>
       <div class="container">
         <div class="section-header section-header--center reveal">
           <span class="section-label">Vastu</span>
           <h2 id="vastu-heading">Spatial intelligence</h2>
           <p class="section-lead">Environmental psychology and energetic architecture — how layout, light, flow, and space influence clarity, movement, and behavior.</p>
         </div>
-        <div class="spatial-grid">
-          <div class="spatial-visual">
-            <figure class="spatial-blueprint-frame">
-              <img
-                src="/images/vastu-purusha-blueprint.jpg"
-                alt="Spatial intelligence — Purusha Mandala architectural diagram"
-                width="1024"
-                height="682"
-                loading="lazy"
-                decoding="async"
-              >
-            </figure>
-          </div>
-          <div class="spatial-content reveal">
-            <p>No fear-based language. Focus on clarity, environment, and the influence of surroundings on decision-making and inner state.</p>
-            <ul class="spatial-points">
-              <li>Home and workspace environmental alignment</li>
-              <li>Environmental psychology of living spaces</li>
-              <li>Spatial correction without superstitious framing</li>
-              <li>Surroundings as an extension of behavioral patterns</li>
-            </ul>
-          </div>
+        <div class="spatial-content spatial-content--bg reveal">
+          <p>No fear-based language. Focus on clarity, environment, and the influence of surroundings on decision-making and inner state.</p>
+          <ul class="spatial-points">
+            <li>Home and workspace environmental alignment</li>
+            <li>Environmental psychology of living spaces</li>
+            <li>Spatial correction without superstitious framing</li>
+            <li>Surroundings as an extension of behavioral patterns</li>
+          </ul>
         </div>
       </div>
     </section>
@@ -317,7 +336,13 @@
       </div>
     </section>
 
-    <section class="section testimonials" id="reflections" aria-labelledby="reflections-heading">
+    <section class="section testimonials section--has-bg section--testimonials-bg" id="reflections" aria-labelledby="reflections-heading">
+      <%- include('partials/section-bg', {
+        image: '/images/bg/transformation.png',
+        bgClass: 'section-bg__image--transformation',
+        position: 'center center',
+        size: 'cover'
+      }) %>
       <div class="container">
         <div class="section-header reveal">
           <span class="section-label">Reflections</span>

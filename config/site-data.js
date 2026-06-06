@@ -15,6 +15,10 @@ module.exports = {
     footerQuote: 'Every life has a visible story and an invisible architecture.',
     description:
       'VVCosmic — Private advisory in astrology, spatial intelligence, pattern recognition, and life alignment with Harshil Sevak.',
+    aboutLead:
+      'Private advisory in pattern intelligence, astrology, and spatial alignment — grounded in observation, structure, and intentional refinement.',
+    aboutBody:
+      'The practice is selective and deeply personal. Each engagement begins with understanding how visible life is shaped by invisible architecture — chart patterns, behavioral loops, environment, and the quiet structures beneath repetition. Guidance follows observation, not prediction.',
   },
 
   seo: {

@@ -305,15 +305,198 @@ p {
   color: var(--color-charcoal);
 }
 
+/* Section background system */
+.section--has-bg {
+  position: relative;
+  isolation: isolate;
+  color: var(--color-cream);
+  background-color: var(--color-charcoal-deep);
+}
+
+.section-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.section-bg__image {
+  position: absolute;
+  inset: 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  will-change: transform;
+}
+
+.section-bg__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(15, 22, 35, 0.75);
+}
+
+.section--has-bg > .container {
+  position: relative;
+  z-index: 2;
+}
+
+.section--has-bg .section-label {
+  color: var(--color-gold-light);
+}
+
+.section--has-bg .section-lead,
+.section--has-bg p {
+  color: var(--color-stone);
+}
+
+.section--has-bg h2,
+.section--has-bg h3,
+.section--has-bg h4 {
+  color: var(--color-cream);
+}
+
 /* Hero */
 .hero {
   position: relative;
-  min-height: auto;
+  min-height: min(88vh, 720px);
   display: flex;
   align-items: center;
   padding-top: var(--header-height);
-  padding-bottom: var(--space-md);
+  padding-bottom: var(--space-lg);
   overflow: hidden;
+}
+
+.section--hero-bg .section-bg__overlay {
+  background: linear-gradient(
+    108deg,
+    rgba(15, 22, 35, 0.91) 0%,
+    rgba(15, 22, 35, 0.76) 42%,
+    rgba(15, 22, 35, 0.86) 100%
+  );
+}
+
+.section--hero-bg .section-bg__image--lotus {
+  filter: sepia(0.15) saturate(0.85) brightness(0.95);
+}
+
+.section--hero-bg .hero-inner {
+  grid-template-columns: 1fr;
+  max-width: 680px;
+}
+
+.section--hero-bg .hero-title {
+  color: var(--color-cream);
+}
+
+.section--hero-bg .hero-subtitle {
+  color: var(--color-stone);
+}
+
+.section--hero-bg .hero-eyebrow {
+  color: var(--color-gold-light);
+}
+
+.section--hero-bg .hero-scroll-hint {
+  color: rgba(232, 228, 220, 0.55);
+}
+
+.section--hero-bg .scroll-line {
+  background: linear-gradient(to bottom, rgba(220, 201, 163, 0.5), transparent);
+}
+
+/* About — temple frame */
+.section--about-bg {
+  padding: var(--section-pad-y) 0;
+}
+
+.section--about-bg .section-bg__overlay {
+  background: rgba(15, 22, 35, 0.78);
+}
+
+.about-frame-content {
+  max-width: 520px;
+  margin: 0 auto;
+  text-align: center;
+  padding: var(--space-xl) var(--space-md);
+}
+
+.about-frame-content .section-lead {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Methodology — golden spiral */
+.methodology.section--has-bg {
+  background-color: var(--color-charcoal-deep);
+}
+
+.section--methodology-bg .section-bg__overlay {
+  background: rgba(15, 22, 35, 0.8);
+}
+
+.section--methodology-bg .section-bg__image--spiral {
+  opacity: 0.55;
+}
+
+/* Vastu — blueprint background */
+.section--vastu-bg .section-bg__overlay {
+  background: linear-gradient(
+    90deg,
+    rgba(15, 22, 35, 0.88) 0%,
+    rgba(15, 22, 35, 0.72) 55%,
+    rgba(15, 22, 35, 0.82) 100%
+  );
+}
+
+.section--vastu-bg .section-header,
+.section--vastu-bg .spatial-content--bg {
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.section--vastu-bg .spatial-points {
+  display: inline-block;
+  text-align: left;
+  margin: var(--space-md) auto 0;
+}
+
+.section--vastu-bg .spatial-points li {
+  color: var(--color-stone);
+}
+
+/* Testimonials — transformation background */
+.testimonials.section--has-bg {
+  background-color: var(--color-charcoal-deep);
+}
+
+.section--testimonials-bg .section-bg__overlay {
+  background: rgba(15, 22, 35, 0.78);
+}
+
+.section--testimonials-bg .section-bg__image--transformation {
+  opacity: 0.45;
+}
+
+.section--testimonials-bg .testimonial {
+  background: rgba(250, 247, 242, 0.07);
+  border: 1px solid rgba(220, 201, 163, 0.16);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.section--testimonials-bg .testimonial p {
+  color: var(--color-cream);
+}
+
+.section--testimonials-bg .testimonial cite {
+  color: var(--color-gold-light);
+}
+
+.section--testimonials-bg .testimonial footer span {
+  color: rgba(232, 228, 220, 0.65);
 }
 
 .hero-bg {
@@ -395,6 +578,11 @@ p {
 .lotus-icon {
   color: var(--color-bronze-muted);
   flex-shrink: 0;
+}
+
+.lotus-icon--brand {
+  background: url('/images/bg/lotus-brand.png') center / contain no-repeat;
+  mix-blend-mode: multiply;
 }
 
 .lotus-icon--divider {
@@ -868,10 +1056,11 @@ main > .section:first-of-type {
   position: absolute;
   left: 0;
   top: 0.65em;
-  width: 4px;
-  height: 4px;
-  background: var(--color-bronze-muted);
-  border-radius: 50%;
+  width: 6px;
+  height: 6px;
+  background: url('/images/bg/lotus-brand.png') center / contain no-repeat;
+  opacity: 0.55;
+  border-radius: 0;
 }
 
 .architecture-diagram {
@@ -2347,8 +2536,12 @@ body.menu-open {
   .hero {
     min-height: auto;
     align-items: flex-start;
-    padding-bottom: var(--space-sm);
+    padding-bottom: var(--space-md);
     padding-top: calc(var(--header-height) + env(safe-area-inset-top, 0));
+  }
+
+  .section--hero-bg {
+    min-height: auto;
   }
 
   .hero-inner {
