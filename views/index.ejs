@@ -47,7 +47,7 @@
           <p class="hero-subtitle reveal">A private advisory practice for those who sense recurring structures beneath career, relationships, environment, and inner life — and seek intelligent refinement, not prediction.</p>
           <div class="hero-actions reveal">
             <a href="/booking" class="btn btn-primary">Begin the Conversation</a>
-            <a href="#philosophy" class="btn btn-ghost-light">Explore the Approach</a>
+            <a href="#philosophy" class="btn btn-ghost">Explore the Approach</a>
           </div>
         </div>
       </div>
@@ -57,11 +57,14 @@
       </div>
     </section>
 
+    <%- include('partials/section-divider') %>
+
     <section class="section philosophy section-texture section-decorated" id="philosophy" aria-labelledby="philosophy-heading">
       <%- include('partials/carving-texture', { carvingLeft: true, carvingRight: false }) %>
       <div class="section-grid-overlay" aria-hidden="true"></div>
       <div class="container">
         <div class="section-header reveal">
+          <%- include('partials/lotus-icon', { lotusClass: 'lotus-icon lotus-icon--section' }) %>
           <span class="section-label">Philosophy</span>
           <h2 id="philosophy-heading">Patterns repeat until they are seen clearly</h2>
           <p class="section-lead">The work begins with observation — chart intelligence, behavioral loops, environmental influence, and the subconscious structures that shape how life unfolds.</p>
@@ -356,6 +359,8 @@
       </div>
     </section>
 
+    <%- include('partials/section-divider') %>
+
     <section class="section cta-section" id="inquiry">
       <div class="container cta-inner reveal">
         <%- include('partials/lotus-icon', { lotusClass: 'lotus-icon lotus-icon--section lotus-icon--on-dark' }) %>
@@ -372,7 +377,7 @@
 
   <footer class="site-footer site-footer--book">
     <div class="container footer-book">
-      <%- include('partials/lotus-icon', { lotusClass: 'lotus-icon lotus-icon--footer-large' }) %>
+      <%- include('partials/lotus-icon', { lotusClass: 'lotus-icon lotus-icon--footer-large lotus-icon--on-dark' }) %>
       <p class="footer-quote">"<%= site.footerQuote %>"</p>
       <p class="footer-practitioner"><%= site.practitioner %> · <%= site.name %></p>
       <nav class="footer-minimal" aria-label="Footer">

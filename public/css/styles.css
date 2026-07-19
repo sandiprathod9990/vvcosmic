@@ -399,12 +399,16 @@ p {
   overflow: hidden;
 }
 
+.section--hero-bg {
+  color: var(--color-charcoal);
+}
+
 .section--hero-bg::before {
   content: '';
   position: absolute;
   inset: 0;
   z-index: 0;
-  background: var(--color-charcoal-deep);
+  background: var(--color-cream);
 }
 
 .section--hero-bg .section-bg {
@@ -414,23 +418,21 @@ p {
 .section--hero-bg .section-bg__overlay {
   background: linear-gradient(
     90deg,
-    rgba(15, 22, 35, 0.96) 0%,
-    rgba(15, 22, 35, 0.92) 36%,
-    rgba(15, 22, 35, 0.68) 58%,
-    rgba(15, 22, 35, 0.75) 100%
+    rgba(250, 247, 242, 0.94) 0%,
+    rgba(250, 247, 242, 0.78) 40%,
+    rgba(250, 247, 242, 0.32) 62%,
+    rgba(250, 247, 242, 0.06) 100%
   );
 }
 
 .section--hero-bg .section-bg__image--lotus {
-  left: 42%;
-  right: 0;
-  width: auto;
+  inset: 0;
   background-repeat: no-repeat;
-  background-position: center center;
-  background-size: contain;
-  opacity: 0.9;
-  mix-blend-mode: soft-light;
-  filter: sepia(0.1) saturate(1.05) brightness(1.02);
+  background-position: 62% center;
+  background-size: cover;
+  opacity: 1;
+  mix-blend-mode: normal;
+  filter: none;
 }
 
 .section--hero-bg .hero-inner {
@@ -447,29 +449,40 @@ p {
 
 .section--hero-bg .hero-content.bg-text-panel::before {
   inset: -1.25rem -1.5rem;
-  background: rgba(15, 22, 35, 0.82);
+  background: rgba(250, 247, 242, 0.78);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 0 0 1px rgba(166, 139, 91, 0.08);
 }
 
 .section--hero-bg .hero-title {
-  color: var(--color-cream);
-  text-shadow: 0 1px 24px rgba(15, 22, 35, 0.45);
+  color: var(--color-charcoal);
+  text-shadow: none;
 }
 
 .section--hero-bg .hero-subtitle {
-  color: var(--color-stone);
+  color: var(--color-earth);
 }
 
 .section--hero-bg .hero-eyebrow {
-  color: var(--color-gold-light);
+  color: var(--color-bronze);
 }
 
 .section--hero-bg .hero-scroll-hint {
-  color: rgba(232, 228, 220, 0.55);
+  color: rgba(42, 40, 38, 0.45);
   z-index: 2;
 }
 
 .section--hero-bg .scroll-line {
-  background: linear-gradient(to bottom, rgba(220, 201, 163, 0.5), transparent);
+  background: linear-gradient(to bottom, rgba(166, 139, 91, 0.45), transparent);
+}
+
+.section--hero-bg .section-label,
+.section--hero-bg h2,
+.section--hero-bg h3,
+.section--hero-bg h4,
+.section--hero-bg p {
+  color: inherit;
 }
 
 /* About — temple frame */
@@ -696,41 +709,41 @@ p {
   transform-origin: 210px 170px;
 }
 
-/* Lotus icon system */
+/* Lotus brand image — icons, markers, dividers */
 .lotus-icon {
-  color: var(--color-bronze-muted);
+  display: inline-block;
+  vertical-align: middle;
+  width: 24px;
+  height: 24px;
+  background: url('/images/bg/lotus-brand.png') center / contain no-repeat;
+  mix-blend-mode: multiply;
   flex-shrink: 0;
 }
 
-.lotus-icon--brand {
-  background: url('/images/bg/lotus-brand.png') center / contain no-repeat;
-  mix-blend-mode: multiply;
-}
-
 .lotus-icon--divider {
-  width: 28px;
-  height: 28px;
-  opacity: 0.7;
+  width: 32px;
+  height: 32px;
+  opacity: 0.75;
 }
 
 .lotus-icon--card {
-  width: 28px;
-  height: 28px;
+  width: 32px;
+  height: 32px;
   margin-bottom: 0.35rem;
-  opacity: 0.65;
+  opacity: 0.72;
 }
 
 .lotus-icon--footer {
-  width: 24px;
-  height: 24px;
-  opacity: 0.6;
+  width: 28px;
+  height: 28px;
+  opacity: 0.65;
 }
 
 .lotus-icon--footer-bottom {
-  width: 20px;
-  height: 20px;
+  width: 24px;
+  height: 24px;
   margin: 0 auto var(--space-xs);
-  opacity: 0.45;
+  opacity: 0.55;
 }
 
 .section-divider {
@@ -908,10 +921,10 @@ p {
 }
 
 .lotus-icon--section {
-  width: 28px;
-  height: 28px;
+  width: 32px;
+  height: 32px;
   margin-bottom: 0.35rem;
-  opacity: 0.6;
+  opacity: 0.72;
 }
 
 .section-header--center {
@@ -1180,12 +1193,12 @@ main > .section:first-of-type {
   content: '';
   position: absolute;
   left: 0;
-  top: 0.65em;
-  width: 6px;
-  height: 6px;
+  top: 0.45em;
+  width: 10px;
+  height: 10px;
   background: url('/images/bg/lotus-brand.png') center / contain no-repeat;
-  opacity: 0.55;
-  border-radius: 0;
+  mix-blend-mode: multiply;
+  opacity: 0.68;
 }
 
 .architecture-diagram {
@@ -1960,9 +1973,9 @@ main > .section:first-of-type {
 }
 
 .lotus-icon--footer-large {
-  width: 36px;
-  height: 36px;
-  opacity: 0.55;
+  width: 40px;
+  height: 40px;
+  opacity: 0.68;
   margin-bottom: var(--space-xs);
 }
 
@@ -2034,12 +2047,12 @@ main > .section:first-of-type {
   gap: var(--space-sm);
 }
 
-.lotus-icon--on-dark {
-  opacity: 0.5;
-}
-
-.lotus-icon--on-dark .lotus-petal {
-  stroke: rgba(220, 201, 163, 0.5);
+.lotus-icon--on-dark,
+.cta-section .lotus-icon,
+.site-footer .lotus-icon {
+  mix-blend-mode: lighten;
+  opacity: 0.62;
+  filter: saturate(0.95) brightness(1.04);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -2685,26 +2698,30 @@ body.menu-open {
   }
 
   .hero {
-    min-height: auto;
+    min-height: min(90vh, 680px);
     align-items: flex-start;
-    padding-bottom: var(--space-md);
+    padding-bottom: var(--space-lg);
     padding-top: calc(var(--header-height) + env(safe-area-inset-top, 0));
   }
 
   .section--hero-bg {
-    min-height: auto;
+    min-height: min(90vh, 680px);
   }
 
   .section--hero-bg .section-bg__image--lotus {
-    left: 0;
-    right: 0;
-    opacity: 0.35;
-    background-position: center top;
-    background-size: min(85vw, 320px);
+    background-size: min(92vw, 400px);
+    background-position: center calc(100% - 2rem);
+    background-repeat: no-repeat;
   }
 
   .section--hero-bg .section-bg__overlay {
-    background: rgba(15, 22, 35, 0.9);
+    background: linear-gradient(
+      180deg,
+      rgba(250, 247, 242, 0.9) 0%,
+      rgba(250, 247, 242, 0.68) 36%,
+      rgba(250, 247, 242, 0.28) 58%,
+      rgba(250, 247, 242, 0.06) 100%
+    );
   }
 
   .section--hero-bg .hero-inner {
@@ -2715,7 +2732,7 @@ body.menu-open {
 
   .section--hero-bg .hero-content.bg-text-panel::before {
     inset: -0.75rem -0.5rem;
-    background: rgba(15, 22, 35, 0.88);
+    background: rgba(250, 247, 242, 0.72);
   }
 
   .section--has-bg .bg-text-panel::before {
@@ -2755,18 +2772,6 @@ body.menu-open {
     padding: 0;
     width: 100%;
     order: 1;
-  }
-
-  .hero-artwork {
-    order: 2;
-    max-width: 220px;
-    margin: 0 auto;
-    opacity: 0.55;
-    animation: none;
-  }
-
-  .hero-lotus {
-    max-width: 220px;
   }
 
   .outcomes-grid {
@@ -3010,6 +3015,21 @@ body.menu-open {
     font-size: 0.8125rem;
   }
 
+  .section--hero-bg .section-bg__image--lotus {
+    background-size: min(96vw, 360px);
+    background-position: center calc(100% - 1.25rem);
+  }
+
+  .section--hero-bg .section-bg__overlay {
+    background: linear-gradient(
+      180deg,
+      rgba(250, 247, 242, 0.92) 0%,
+      rgba(250, 247, 242, 0.62) 34%,
+      rgba(250, 247, 242, 0.2) 56%,
+      rgba(250, 247, 242, 0.04) 100%
+    );
+  }
+
   .service-card,
   .consultation-card,
   .phase,
@@ -3048,11 +3068,6 @@ body.menu-open {
   .section--hero-bg .hero-inner {
     padding-left: clamp(1.5rem, 4.5vw, 3.5rem);
     padding-right: var(--space-md);
-  }
-
-  .hero-artwork {
-    max-width: 280px;
-    margin: 0 auto;
   }
 
   .spatial-grid {
