@@ -11,6 +11,9 @@ module.exports = {
     email: 'contact@vvcosmic.com',
     phone: '+91 81409 61570',
     phoneDisplay: '+91 81409 61570',
+    phoneTel: 'tel:+918140961570',
+    whatsappUrl:
+      'https://wa.me/918140961570?text=I%20would%20like%20to%20know%20more%20about%20your%20consultation%20services',
     location: 'India',
     footerQuote: 'Every life has a visible story and an invisible architecture.',
     description:
@@ -57,8 +60,3 @@ module.exports = {
     },
   ],
 };
-
-const site = module.exports.site;
-site.phoneTel = `tel:${site.phone.replace(/\s/g, '')}`;
-site.whatsappUrl =
-  'https://wa.me/918140961570?text=Hi%20Vaishali%20Vastu%20Consultancy%21%20I%20would%20like%20to%20know%20more%20about%20your%20crystals.';

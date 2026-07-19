@@ -16,8 +16,9 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 function baseLocals(extra = {}) {
+  const phoneTel = SITE.phoneTel || `tel:${SITE.phone.replace(/\s/g, '')}`;
   return {
-    site: SITE,
+    site: { ...SITE, phoneTel },
     services: siteData.practiceDomains,
     practiceDomains: siteData.practiceDomains,
     testimonials: siteData.testimonials,
