@@ -596,11 +596,11 @@ p {
   margin-bottom: var(--space-sm);
 }
 
-.section--vastu-bg .spatial-points li {
+.section--vastu-bg .vastu-points li {
   color: var(--color-stone);
 }
 
-.section--vastu-bg .spatial-points li::before {
+.section--vastu-bg .vastu-points li::before {
   color: var(--color-gold-light);
 }
 
@@ -1399,23 +1399,23 @@ main > .section:first-of-type {
 .node-5 { bottom: 22%; left: 2%; }
 .node-6 { top: 22%; left: 2%; }
 
-/* Spatial — blueprint visual */
-.spatial-blueprint {
+/* Vastu — blueprint visual */
+.vastu-blueprint {
   background: var(--color-cream);
 }
 
-.spatial-grid {
+.vastu-grid {
   display: grid;
   grid-template-columns: 1.15fr 0.85fr;
   gap: var(--space-md);
   align-items: start;
 }
 
-.spatial-blueprint .section-header {
+.vastu-blueprint .section-header {
   margin-bottom: var(--space-sm);
 }
 
-.spatial-visual {
+.vastu-visual {
   display: flex;
   align-items: flex-start;
   justify-content: center;
@@ -1423,11 +1423,11 @@ main > .section:first-of-type {
   min-width: 0;
 }
 
-.spatial-content {
+.vastu-content {
   min-width: 0;
 }
 
-.spatial-blueprint-frame {
+.vastu-blueprint-frame {
   margin: 0;
   width: 100%;
   max-width: 100%;
@@ -1439,7 +1439,7 @@ main > .section:first-of-type {
     inset 0 0 0 1px rgba(255, 255, 255, 0.6);
 }
 
-.spatial-blueprint-frame img {
+.vastu-blueprint-frame img {
   display: block;
   width: 100%;
   max-width: 100%;
@@ -1448,7 +1448,7 @@ main > .section:first-of-type {
   border-radius: 1px;
 }
 
-.spatial-architecture {
+.vastu-architecture {
   position: relative;
   height: 400px;
   background: linear-gradient(180deg, var(--color-beige) 0%, var(--color-cream) 100%);
@@ -1505,14 +1505,14 @@ main > .section:first-of-type {
   right: 10%;
 }
 
-.spatial-points li {
+.vastu-points li {
   position: relative;
   padding-left: 1.5rem;
   margin-bottom: var(--space-sm);
   color: var(--color-earth);
 }
 
-.spatial-points li::before {
+.vastu-points li::before {
   content: '—';
   position: absolute;
   left: 0;
@@ -2904,7 +2904,7 @@ body.menu-open {
   }
 
   .alignment-inner,
-  .spatial-grid {
+  .vastu-grid {
     grid-template-columns: 1fr;
   }
 
@@ -2921,26 +2921,26 @@ body.menu-open {
     font-size: 0.65rem;
   }
 
-  .spatial-visual {
+  .vastu-visual {
     order: -1;
     margin-bottom: var(--space-md);
     width: 100%;
   }
 
-  .spatial-content {
+  .vastu-content {
     width: 100%;
   }
 
-  .spatial-blueprint-frame {
+  .vastu-blueprint-frame {
     padding: var(--space-sm);
     transform: none !important;
   }
 
-  .spatial-content .section-lead {
+  .vastu-content .section-lead {
     max-width: 100%;
   }
 
-  .spatial-content .btn {
+  .vastu-content .btn {
     width: 100%;
     text-align: center;
   }
@@ -3096,30 +3096,30 @@ body.menu-open {
     padding-right: var(--space-md);
   }
 
-  .spatial-grid {
+  .vastu-grid {
     grid-template-columns: 1fr;
     gap: var(--space-md);
     align-items: stretch;
   }
 
-  .spatial-visual {
+  .vastu-visual {
     order: -1;
     margin-bottom: 0;
     width: 100%;
   }
 
-  .spatial-content {
+  .vastu-content {
     width: 100%;
     position: relative;
     z-index: 1;
   }
 
-  .spatial-blueprint-frame {
+  .vastu-blueprint-frame {
     padding: var(--space-sm);
     transform: none !important;
   }
 
-  .spatial-blueprint .parallax-layer {
+  .vastu-blueprint .parallax-layer {
     transform: none !important;
   }
 
