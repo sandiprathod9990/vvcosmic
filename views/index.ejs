@@ -11,7 +11,7 @@
         <div class="header-inner">
           <a href="/" class="logo" aria-label="<%= site.name %> home">VV<span class="logo-accent">Cosmic</span></a>
           <div class="header-actions">
-            <a href="tel:<%= site.phone.replace(/\s/g, '') %>" class="header-phone"><%= site.phoneDisplay %></a>
+            <a href="<%= site.phoneTel %>" class="header-phone" aria-label="Call <%= site.phoneDisplay %>"><%= site.phoneDisplay %></a>
             <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="primary-nav">
               <span></span>
               <span></span>
@@ -28,8 +28,8 @@
         <a href="#vastu">Vastu</a>
         <a href="#thought-speech-action">Alignment</a>
         <a href="#the-practice">Practice</a>
-        <a href="tel:<%= site.phone.replace(/\s/g, '') %>" class="nav-phone"><%= site.phoneDisplay %></a>
-        <a href="/booking" class="nav-cta">Inquiry</a>
+        <a href="<%= site.phoneTel %>" class="nav-phone" aria-label="Call <%= site.phoneDisplay %>"><%= site.phoneDisplay %></a>
+        <a href="<%= site.whatsappUrl %>" class="nav-cta" target="_blank" rel="noopener noreferrer">Inquiry</a>
       </nav>
     </div>
   </div>
@@ -48,7 +48,7 @@
           </div>
           <p class="hero-subtitle reveal">A private advisory practice for those who sense recurring structures beneath career, relationships, environment, and inner life — and seek intelligent refinement, not prediction.</p>
           <div class="hero-actions reveal">
-            <a href="/booking" class="btn btn-primary">Begin the Conversation</a>
+            <a href="<%= site.whatsappUrl %>" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Begin the Conversation</a>
             <a href="#philosophy" class="btn btn-ghost">Explore the Approach</a>
           </div>
         </div>
@@ -120,9 +120,7 @@
     <section class="section section--has-bg section--about-bg" id="about" aria-labelledby="about-heading">
       <%- include('partials/section-bg', {
         image: '/images/bg/temple-frame.png',
-        bgClass: 'section-bg__image--temple',
-        position: 'center center',
-        size: 'cover'
+        bgClass: 'section-bg__image--temple'
       }) %>
       <div class="container">
         <div class="about-frame-content bg-text-panel reveal">
@@ -326,9 +324,13 @@
       </div>
     </section>
 
-    <section class="section client-experience" id="the-practice" aria-labelledby="practice-heading">
+    <section class="section client-experience section--has-bg section--practice-bg" id="the-practice" aria-labelledby="practice-heading">
+      <%- include('partials/section-bg', {
+        image: '/images/bg/vastu-mandala.png',
+        bgClass: 'section-bg__image--mandala'
+      }) %>
       <div class="container">
-        <div class="section-header section-header--center reveal">
+        <div class="section-header section-header--center practice-content reveal">
           <%- include('partials/lotus-icon', { lotusClass: 'lotus-icon lotus-icon--section' }) %>
           <span class="section-label">The Practice</span>
           <h2 id="practice-heading">Methodology before recommendation</h2>
@@ -370,8 +372,8 @@
         <h2>Begin the conversation</h2>
         <p class="cta-lead">Inquiry · Initial context · Consultation discussion · Private guidance. Each request is reviewed personally.</p>
         <div class="cta-actions">
-          <a href="/booking" class="btn btn-primary">Submit Inquiry</a>
-          <a href="tel:<%= site.phone.replace(/\s/g, '') %>" class="btn btn-ghost-light">Call <%= site.phoneDisplay %></a>
+          <a href="<%= site.whatsappUrl %>" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Message on WhatsApp</a>
+          <a href="<%= site.whatsappUrl %>" class="btn btn-ghost-light" target="_blank" rel="noopener noreferrer"><%= site.phoneDisplay %></a>
         </div>
       </div>
     </section>
@@ -385,9 +387,9 @@
       <nav class="footer-minimal" aria-label="Footer">
         <a href="mailto:<%= site.email %>"><%= site.email %></a>
         <span aria-hidden="true">·</span>
-        <a href="tel:<%= site.phone.replace(/\s/g, '') %>"><%= site.phoneDisplay %></a>
+        <a href="<%= site.phoneTel %>" aria-label="Call <%= site.phoneDisplay %>"><%= site.phoneDisplay %></a>
         <span aria-hidden="true">·</span>
-        <a href="/booking">Inquiry</a>
+        <a href="<%= site.whatsappUrl %>" target="_blank" rel="noopener noreferrer">Inquiry</a>
       </nav>
       <p class="footer-copy">&copy; <%= new Date().getFullYear() %> <%= site.name %></p>
     </div>

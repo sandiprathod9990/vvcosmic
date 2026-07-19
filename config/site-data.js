@@ -29,12 +29,6 @@ module.exports = {
       keywords:
         'VVCosmic, Harshil Sevak, life alignment, pattern intelligence, astrology advisory, vastu intelligence, life architecture',
     },
-    booking: {
-      title: 'Consultation Inquiry | VVCosmic',
-      description:
-        'Submit a private consultation inquiry to VVCosmic. Share your context with Harshil Sevak.',
-      keywords: 'VVCosmic inquiry, Harshil Sevak consultation',
-    },
   },
 
   practiceDomains: [
@@ -63,3 +57,8 @@ module.exports = {
     },
   ],
 };
+
+const site = module.exports.site;
+site.phoneTel = `tel:${site.phone.replace(/\s/g, '')}`;
+site.whatsappUrl =
+  'https://wa.me/918140961570?text=Hi%20Vaishali%20Vastu%20Consultancy%21%20I%20would%20like%20to%20know%20more%20about%20your%20crystals.';

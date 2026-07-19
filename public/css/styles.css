@@ -604,6 +604,67 @@ p {
   color: var(--color-gold-light);
 }
 
+/* Practice — Vastu Purusha Mandala */
+.section--practice-bg {
+  padding: var(--section-pad-y) 0;
+}
+
+.section--practice-bg.section--has-bg {
+  color: var(--color-charcoal-deep);
+}
+
+.section--practice-bg .section-bg__overlay {
+  background: radial-gradient(
+    ellipse 72% 88% at 50% 48%,
+    rgba(250, 247, 242, 0.97) 0%,
+    rgba(250, 247, 242, 0.84) 36%,
+    rgba(250, 247, 242, 0.52) 68%,
+    rgba(250, 247, 242, 0.18) 100%
+  );
+}
+
+.section--practice-bg .section-bg__image--mandala {
+  opacity: 0.68;
+  background-size: cover;
+  background-position: center 40%;
+  filter: saturate(0.85) contrast(0.94) brightness(1.06);
+}
+
+.section--practice-bg .practice-content {
+  position: relative;
+  z-index: 2;
+  max-width: 640px;
+  margin: 0 auto;
+  padding: var(--space-xl) var(--space-lg);
+  background: rgba(250, 246, 240, 0.72);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-radius: 2px;
+  box-shadow: 0 0 0 1px rgba(166, 139, 91, 0.1);
+}
+
+.section--practice-bg .practice-content .section-label {
+  color: #6f5738;
+}
+
+.section--practice-bg .practice-content h2 {
+  color: var(--color-charcoal-deep);
+}
+
+.section--practice-bg .practice-content .section-lead,
+.section--practice-bg .practice-content p {
+  color: var(--color-charcoal);
+  line-height: 1.72;
+}
+
+.section--practice-bg .practice-content .section-lead {
+  font-size: 1.0625rem;
+}
+
+.section--practice-bg .lotus-icon--section {
+  opacity: 0.85;
+}
+
 /* Testimonials — transformation background */
 .section--testimonials-bg .section-bg__overlay {
   background: rgba(15, 22, 35, 0.65);
@@ -1278,6 +1339,10 @@ main > .section:first-of-type {
 
 .client-experience {
   background: var(--color-cream);
+}
+
+.client-experience.section--has-bg {
+  background: transparent !important;
 }
 
 .engagements .section-header {
@@ -2771,6 +2836,60 @@ body.menu-open {
     z-index: 1;
   }
 
+  .section--about-bg {
+    min-height: auto;
+    display: flex;
+    align-items: center;
+    padding: var(--space-xl) 0;
+    background-color: var(--color-charcoal-deep);
+  }
+
+  .section--about-bg > .container {
+    width: 100%;
+  }
+
+  .section--about-bg .section-bg__image--temple {
+    opacity: 1;
+    background-size: cover;
+    background-position: center center;
+  }
+
+  .section--about-bg .section-bg__overlay {
+    background: linear-gradient(
+      180deg,
+      rgba(15, 22, 35, 0.78) 0%,
+      rgba(15, 22, 35, 0.68) 50%,
+      rgba(15, 22, 35, 0.78) 100%
+    );
+  }
+
+  .section--about-bg .about-frame-content {
+    max-width: min(90vw, 400px);
+    margin: 0 auto;
+    padding: var(--space-md) var(--space-sm);
+  }
+
+  .section--about-bg .about-frame-content.bg-text-panel::before {
+    display: block;
+    inset: -0.75rem -0.625rem;
+    background: rgba(15, 22, 35, 0.84);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+  }
+
+  .section--about-bg .about-frame-content .section-label {
+    color: var(--color-gold-light);
+  }
+
+  .section--about-bg .about-frame-content h2 {
+    color: var(--color-cream);
+  }
+
+  .section--about-bg .about-frame-content .section-lead,
+  .section--about-bg .about-frame-content p {
+    color: var(--color-stone);
+  }
+
   .section--has-bg .bg-text-panel::before {
     inset: -0.75rem -0.625rem;
   }
@@ -2790,6 +2909,66 @@ body.menu-open {
 
   .section--vastu-bg .vastu-details {
     padding: var(--space-md);
+  }
+
+  /* Methodology — solid site color on mobile (no background image) */
+  .section--methodology-bg .section-bg {
+    display: none;
+  }
+
+  .methodology.section--methodology-bg.section--has-bg {
+    background: var(--color-charcoal-deep) !important;
+    color: var(--color-beige);
+  }
+
+  .section--methodology-bg .section-header.bg-text-panel::before {
+    display: none;
+  }
+
+  .section--methodology-bg.section--has-bg .section-label {
+    color: var(--color-bronze-muted);
+  }
+
+  .section--methodology-bg.section--has-bg .section-lead,
+  .section--methodology-bg.section--has-bg .section-header p {
+    color: var(--color-stone);
+  }
+
+  .section--methodology-bg.section--has-bg h2,
+  .section--methodology-bg.section--has-bg h3,
+  .section--methodology-bg.section--has-bg h4 {
+    color: var(--color-cream);
+  }
+
+  .section--practice-bg .section-bg__image--mandala {
+    opacity: 0.62;
+    background-size: cover;
+    background-position: center 38%;
+  }
+
+  .section--practice-bg .section-bg__overlay {
+    background: radial-gradient(
+      ellipse 92% 90% at 50% 46%,
+      rgba(250, 247, 242, 0.98) 0%,
+      rgba(250, 247, 242, 0.88) 48%,
+      rgba(250, 247, 242, 0.45) 100%
+    );
+  }
+
+  .section--practice-bg .practice-content {
+    max-width: min(92vw, 480px);
+    padding: var(--space-lg) var(--space-md);
+    background: rgba(250, 246, 240, 0.82);
+  }
+
+  .section--practice-bg .practice-content h2 {
+    font-size: clamp(1.625rem, 5.5vw, 2rem);
+  }
+
+  .section--practice-bg .practice-content .section-lead,
+  .section--practice-bg .practice-content p {
+    font-size: 0.9875rem;
+    line-height: 1.68;
   }
 
   .hero-inner {
@@ -3054,6 +3233,11 @@ body.menu-open {
   .section--hero-bg .hero-headline {
     min-height: min(82vw, 300px);
     background-size: min(96vw, 340px);
+  }
+
+  .section--about-bg .about-frame-content {
+    max-width: min(92vw, 360px);
+    padding: var(--space-md) var(--space-xs);
   }
 
   .service-card,
