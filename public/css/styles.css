@@ -845,6 +845,10 @@ p {
   padding: 0;
 }
 
+.hero-headline {
+  position: relative;
+}
+
 .hero-eyebrow {
   font-size: 0.75rem;
   font-weight: 500;
@@ -2698,30 +2702,22 @@ body.menu-open {
   }
 
   .hero {
-    min-height: min(90vh, 680px);
+    min-height: auto;
     align-items: flex-start;
     padding-bottom: var(--space-lg);
     padding-top: calc(var(--header-height) + env(safe-area-inset-top, 0));
   }
 
   .section--hero-bg {
-    min-height: min(90vh, 680px);
+    min-height: auto;
   }
 
   .section--hero-bg .section-bg__image--lotus {
-    background-size: min(92vw, 400px);
-    background-position: center calc(100% - 2rem);
-    background-repeat: no-repeat;
+    opacity: 0;
   }
 
   .section--hero-bg .section-bg__overlay {
-    background: linear-gradient(
-      180deg,
-      rgba(250, 247, 242, 0.9) 0%,
-      rgba(250, 247, 242, 0.68) 36%,
-      rgba(250, 247, 242, 0.28) 58%,
-      rgba(250, 247, 242, 0.06) 100%
-    );
+    background: rgba(250, 247, 242, 0.12);
   }
 
   .section--hero-bg .hero-inner {
@@ -2731,8 +2727,48 @@ body.menu-open {
   }
 
   .section--hero-bg .hero-content.bg-text-panel::before {
-    inset: -0.75rem -0.5rem;
-    background: rgba(250, 247, 242, 0.72);
+    display: none;
+  }
+
+  .section--hero-bg .hero-headline {
+    position: relative;
+    isolation: isolate;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: min(78vw, 320px);
+    margin: 0 0 var(--space-sm);
+    padding: var(--space-sm) 0;
+    background: url('/images/bg/lotus-brand.png') center center / min(92vw, 360px) no-repeat;
+  }
+
+  .section--hero-bg .hero-headline::after {
+    content: '';
+    position: absolute;
+    inset: -0.25rem -0.125rem;
+    z-index: 0;
+    background: linear-gradient(
+      180deg,
+      rgba(250, 247, 242, 0.22) 0%,
+      rgba(250, 247, 242, 0.06) 45%,
+      rgba(250, 247, 242, 0.28) 100%
+    );
+    pointer-events: none;
+  }
+
+  .section--hero-bg .hero-headline .hero-eyebrow,
+  .section--hero-bg .hero-headline .hero-title {
+    position: relative;
+    z-index: 1;
+    text-shadow:
+      0 1px 16px rgba(250, 247, 242, 0.95),
+      0 0 28px rgba(250, 247, 242, 0.8);
+  }
+
+  .section--hero-bg .hero-subtitle,
+  .section--hero-bg .hero-actions {
+    position: relative;
+    z-index: 1;
   }
 
   .section--has-bg .bg-text-panel::before {
@@ -3015,19 +3051,9 @@ body.menu-open {
     font-size: 0.8125rem;
   }
 
-  .section--hero-bg .section-bg__image--lotus {
-    background-size: min(96vw, 360px);
-    background-position: center calc(100% - 1.25rem);
-  }
-
-  .section--hero-bg .section-bg__overlay {
-    background: linear-gradient(
-      180deg,
-      rgba(250, 247, 242, 0.92) 0%,
-      rgba(250, 247, 242, 0.62) 34%,
-      rgba(250, 247, 242, 0.2) 56%,
-      rgba(250, 247, 242, 0.04) 100%
-    );
+  .section--hero-bg .hero-headline {
+    min-height: min(82vw, 300px);
+    background-size: min(96vw, 340px);
   }
 
   .service-card,
