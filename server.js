@@ -103,6 +103,9 @@ Allow: /
 User-agent: ChatGPT-User
 Allow: /
 
+User-agent: OAI-SearchBot
+Allow: /
+
 User-agent: Google-Extended
 Allow: /
 
@@ -112,10 +115,20 @@ Allow: /
 User-agent: ClaudeBot
 Allow: /
 
-Sitemap: ${origin}/sitemap.xml
+User-agent: Claude-Web
+Allow: /
 
-# AI / answer-engine summary
-# ${origin}/llms.txt
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+Sitemap: ${origin}/sitemap.xml
+Llms-Txt: ${origin}/llms.txt
 `);
 });
 
@@ -131,6 +144,14 @@ app.get('/llms.txt', (req, res) => {
     services: siteData.practiceDomains,
     faqs: siteData.faqs,
   }));
+});
+
+app.get('/.well-known/llms.txt', (req, res) => {
+  res.redirect(301, '/llms.txt');
+});
+
+app.get('/ai.txt', (req, res) => {
+  res.redirect(301, '/llms.txt');
 });
 
 app.use((req, res) => {
