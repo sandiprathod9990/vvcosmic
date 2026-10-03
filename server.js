@@ -133,8 +133,10 @@ Llms-Txt: ${origin}/llms.txt
 });
 
 app.get('/sitemap.xml', (req, res) => {
-  res.type('application/xml');
-  res.send(buildSitemapXml({ site: SITE }));
+  const xml = buildSitemapXml({ site: SITE });
+  res.type('application/xml; charset=utf-8');
+  res.set('Cache-Control', 'public, max-age=3600');
+  res.send(xml);
 });
 
 app.get('/llms.txt', (req, res) => {

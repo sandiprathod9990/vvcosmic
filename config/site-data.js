@@ -5,7 +5,7 @@
 module.exports = {
   site: {
     name: 'VVCosmic',
-    domain: 'https://vvcosmic.com',
+    domain: 'https://www.vvccosmic.com',
     tagline: 'Pattern Intelligence & Life Alignment',
     practitioner: 'Harshil Sevak',
     email: 'Vvc1567@gmail.com',
