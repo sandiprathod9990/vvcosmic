@@ -8,7 +8,7 @@ module.exports = {
     domain: 'https://vvcosmic.com',
     tagline: 'Pattern Intelligence & Life Alignment',
     practitioner: 'Harshil Sevak',
-    email: 'contact@vvcosmic.com',
+    email: 'Vvc1567@gmail.com',
     phone: '+91 81409 61570',
     phoneDisplay: '+91 81409 61570',
     phoneTel: 'tel:+918140961570',
@@ -18,6 +18,7 @@ module.exports = {
     footerQuote: 'Every life has a visible story and an invisible architecture.',
     description:
       'VVCosmic — Private advisory in astrology, vastu intelligence, pattern recognition, and life alignment with Harshil Sevak.',
+    ogImage: '/og-image.png',
     aboutLead:
       'Private advisory in pattern intelligence, astrology, and vastu alignment — grounded in observation, structure, and intentional refinement.',
     aboutBody:
@@ -28,11 +29,46 @@ module.exports = {
     home: {
       title: 'VVCosmic | Life Alignment & Pattern Intelligence | Harshil Sevak',
       description:
-        'VVCosmic with Harshil Sevak — private advisory for pattern observation, astrology, vastu intelligence, and strategic life alignment. Begin the conversation.',
+        'VVCosmic with Harshil Sevak — private advisory for pattern observation, Vedic astrology, vastu intelligence, and strategic life alignment in India and worldwide. Inquiry via WhatsApp.',
       keywords:
-        'VVCosmic, Harshil Sevak, life alignment, pattern intelligence, astrology advisory, vastu intelligence, life architecture',
+        'VVCosmic, Harshil Sevak, life alignment, pattern intelligence, astrology advisory, vastu consultant, vastu intelligence, life architecture, Vedic astrology India',
     },
+    // Paste verification token from Google Search Console when available
+    googleSiteVerification: '',
   },
+
+  faqs: [
+    {
+      question: 'What is VVCosmic?',
+      answer:
+        'VVCosmic is a private advisory practice led by Harshil Sevak, focused on pattern intelligence, life alignment, astrology, and vastu intelligence — observation and refinement rather than prediction or fear-based guidance.',
+    },
+    {
+      question: 'Who is Harshil Sevak?',
+      answer:
+        'Harshil Sevak is the practitioner behind VVCosmic, offering structured consultation in chart pattern observation, behavioral and environmental alignment, and vastu intelligence for clients in India and internationally.',
+    },
+    {
+      question: 'What services does VVCosmic offer?',
+      answer:
+        'Services include astrology-based pattern observation, vastu and environmental intelligence for home and workspace, lifestyle and root-cause analysis, and strategic alignment guidance integrated into daily life.',
+    },
+    {
+      question: 'How do I request a consultation with VVCosmic?',
+      answer:
+        'Submit an inquiry via WhatsApp at +91 81409 61570 or email Vvc1567@gmail.com. Each request is reviewed personally; the process typically moves from initial context to consultation discussion and private guidance.',
+    },
+    {
+      question: 'Does VVCosmic focus on prediction?',
+      answer:
+        'No. The practice treats astrology as symbolic pattern recognition — a map of tendencies and recurring themes — not fortune-telling. Recommendations follow deliberate observation of chart, behavior, and environment.',
+    },
+    {
+      question: 'What is vastu intelligence at VVCosmic?',
+      answer:
+        'Vastu intelligence addresses how layout, light, flow, and space influence clarity, movement, and behavior — environmental psychology and energetic architecture without superstition or fear-based language.',
+    },
+  ],
 
   practiceDomains: [
     { id: 'astrology', slug: 'astrology', name: 'Astrology', description: 'Pattern recognition through chart intelligence' },

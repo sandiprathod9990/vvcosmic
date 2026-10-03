@@ -1,0 +1,22 @@
+{
+  "name": "VVCosmic — Harshil Sevak",
+  "short_name": "VVCosmic",
+  "description": "Pattern intelligence, astrology, and vastu alignment advisory",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#faf6f0",
+  "theme_color": "#1a2332",
+  "lang": "en-IN",
+  "icons": [
+    {
+      "src": "/favicon-32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ]
+}

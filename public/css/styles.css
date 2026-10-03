@@ -1337,6 +1337,64 @@ main > .section:first-of-type {
   margin-bottom: var(--space-sm);
 }
 
+/* FAQ — SEO / AEO */
+.faq-section {
+  background: var(--color-ivory);
+}
+
+.faq-list {
+  max-width: 720px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.faq-item {
+  border: 1px solid rgba(166, 139, 91, 0.18);
+  background: var(--color-cream);
+  padding: 0;
+}
+
+.faq-item summary {
+  cursor: pointer;
+  list-style: none;
+  font-family: var(--font-serif);
+  font-size: 1.0625rem;
+  font-weight: 600;
+  color: var(--color-charcoal-deep);
+  padding: var(--space-sm) var(--space-md);
+  line-height: 1.45;
+}
+
+.faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-item summary::after {
+  content: '+';
+  float: right;
+  font-family: var(--font-sans);
+  font-weight: 400;
+  color: var(--color-bronze-muted);
+}
+
+.faq-item[open] summary::after {
+  content: '−';
+}
+
+.faq-answer {
+  padding: 0 var(--space-md) var(--space-md);
+  border-top: 1px solid rgba(166, 139, 91, 0.12);
+}
+
+.faq-answer p {
+  margin: var(--space-sm) 0 0;
+  color: var(--color-earth);
+  line-height: 1.7;
+  font-size: 0.9875rem;
+}
+
 .client-experience {
   background: var(--color-cream);
 }

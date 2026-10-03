@@ -1,20 +1,34 @@
-<% const seoData = seo || {}; const siteUrl = site.domain.replace(/\/$/, ''); const canonical = seoData.canonical || siteUrl; %>
+<% const seoData = seo || {}; const siteUrl = site.domain.replace(/\/$/, ''); const canonical = seoData.canonical || (siteUrl + '/'); const ogImagePath = site.ogImage || '/og-image.png'; const ogImageUrl = ogImagePath.startsWith('http') ? ogImagePath : (siteUrl + ogImagePath); %>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
 <title><%= seoData.title || site.name %></title>
 <meta name="description" content="<%= seoData.description || site.description %>">
 <% if (seoData.keywords) { %>
 <meta name="keywords" content="<%= seoData.keywords %>">
 <% } %>
 <meta name="author" content="<%= site.practitioner %>">
-<meta name="robots" content="index, follow">
+<meta name="robots" content="<%= seoData.robots || 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' %>">
+<meta name="googlebot" content="<%= seoData.robots ? seoData.robots.split(',')[0].trim() : 'index, follow' %>">
+<meta name="geo.region" content="IN">
+<meta name="geo.placename" content="<%= site.location %>">
+<meta name="language" content="English">
+<meta name="theme-color" content="#1a2332">
 <link rel="canonical" href="<%= canonical %>">
+<link rel="alternate" hreflang="en-in" href="<%= canonical %>">
+<link rel="alternate" hreflang="x-default" href="<%= canonical %>">
+<link rel="sitemap" type="application/xml" title="Sitemap" href="<%= siteUrl %>/sitemap.xml">
+
+<% if (seoData.googleSiteVerification) { %>
+<meta name="google-site-verification" content="<%= seoData.googleSiteVerification %>">
+<% } %>
 
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32">
 <link rel="icon" href="/favicon-16.png" type="image/png" sizes="16x16">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
 
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="<%= site.name %>">
@@ -22,10 +36,16 @@
 <meta property="og:description" content="<%= seoData.description || site.description %>">
 <meta property="og:url" content="<%= canonical %>">
 <meta property="og:locale" content="en_IN">
+<meta property="og:image" content="<%= ogImageUrl %>">
+<meta property="og:image:alt" content="<%= site.name %> — <%= site.tagline %>">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="<%= seoData.title || site.name %>">
 <meta name="twitter:description" content="<%= seoData.description || site.description %>">
+<meta name="twitter:image" content="<%= ogImageUrl %>">
+<meta name="twitter:image:alt" content="<%= site.name %> — <%= site.tagline %>">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -33,36 +53,5 @@
 <link rel="stylesheet" href="/css/styles.css">
 
 <script type="application/ld+json">
-<%- JSON.stringify({
-  "@context": "https://schema.org",
-  "@type": "ProfessionalService",
-  "name": site.name,
-  "url": siteUrl,
-  "description": site.description,
-  "email": site.email,
-  "telephone": site.phone,
-  "areaServed": "Worldwide",
-  "founder": {
-    "@type": "Person",
-    "name": site.practitioner,
-    "jobTitle": "Life Alignment & Pattern Intelligence Advisor"
-  },
-  "serviceType": services.map(function(s) { return s.name; }).join(", ")
-}) %>
-</script>
-
-<script type="application/ld+json">
-<%- JSON.stringify({
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": site.practitioner,
-  "url": siteUrl,
-  "jobTitle": "Pattern Intelligence & Life Alignment Advisor",
-  "worksFor": {
-    "@type": "Organization",
-    "name": site.name,
-    "url": siteUrl
-  },
-  "knowsAbout": ["Pattern Observation", "Life Architecture", "Lifestyle Alignment", "Vastu Intelligence", "Karmic Pattern Analysis"]
-}) %>
+<%- JSON.stringify(jsonLdGraph) %>
 </script>

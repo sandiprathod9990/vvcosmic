@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en-IN">
+<head>
+  <%- include('partials/seo-head', { site, services: [], seo, jsonLdGraph }) %>
+  <link rel="stylesheet" href="/css/intake.css">
+</head>
+<body class="intake-page" data-whatsapp-phone="<%= whatsappPhone %>">
+  <main class="intake-main">
+    <div class="intake-container">
+      <header class="intake-brand">
+        <p class="intake-brand-name"><%= site.name %></p>
+        <p class="intake-brand-tag"><%= site.tagline %> · <%= site.practitioner %></p>
+      </header>
+      <hr class="intake-rule" aria-hidden="true">
+
+      <!-- Step 1: choose consultation type -->
+      <section class="intake-step intake-step--active" id="intake-step-choose" aria-labelledby="intake-choose-heading">
+        <h1 class="intake-heading" id="intake-choose-heading">Begin the Conversation</h1>
+        <p class="intake-lead">Choose the consultation you&rsquo;re interested in. The next step asks only for what&rsquo;s needed to prepare for it.</p>
+        <div class="intake-type-grid">
+          <button type="button" class="intake-type-card" data-intake-type="astrology">
+            <span class="intake-type-title">Astrology</span>
+            <span class="intake-type-desc">Chart-based guidance on career, relationships, and recurring life patterns.</span>
+          </button>
+          <button type="button" class="intake-type-card" data-intake-type="vastu">
+            <span class="intake-type-title">Vastu</span>
+            <span class="intake-type-desc">Environmental alignment for home or workspace.</span>
+          </button>
+        </div>
+        <p class="intake-home-link"><a href="/">← Back to <%= site.name %></a></p>
+      </section>
+
+      <!-- Step 2: astrology form -->
+      <section class="intake-step" id="intake-step-astrology" aria-labelledby="intake-astro-heading" hidden>
+        <button type="button" class="intake-back" data-intake-back>← Back</button>
+        <h2 class="intake-form-title" id="intake-astro-heading">Astrology Consultation</h2>
+        <p class="intake-form-intro">A birth chart needs an accurate date, time, and place of birth to be read correctly.</p>
+        <form class="intake-form" id="intake-form-astrology" novalidate>
+          <div class="form-group">
+            <label for="astro-name">Full name</label>
+            <input type="text" id="astro-name" name="fullName" autocomplete="name" placeholder="Your name" required>
+          </div>
+          <div class="form-group">
+            <label for="astro-dob">Date of birth</label>
+            <input type="date" id="astro-dob" name="dateOfBirth" required>
+          </div>
+          <div class="form-group">
+            <label for="astro-time">Time of birth</label>
+            <input type="time" id="astro-time" name="timeOfBirth" required>
+            <p class="field-hint">If unsure of the exact time, use your best estimate — you can confirm it during the first session.</p>
+          </div>
+          <div class="form-group">
+            <label for="astro-place">Place of birth (city, country)</label>
+            <input type="text" id="astro-place" name="placeOfBirth" placeholder="e.g. Ahmedabad, India" required>
+          </div>
+          <div class="form-group">
+            <label for="astro-country">Country you&rsquo;re currently based in</label>
+            <input type="text" id="astro-country" name="countryBased" placeholder="For scheduling &amp; pricing tier" required>
+          </div>
+          <div class="form-group">
+            <label for="astro-focus">What would you like this consultation to focus on? <span class="label-optional">(optional)</span></label>
+            <textarea id="astro-focus" name="focus" rows="4" placeholder="e.g. career direction, relationship pattern, general reading"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-intake-submit">Send to WhatsApp</button>
+          <p class="intake-disclaimer">This opens WhatsApp with your details pre-filled — nothing is sent until you tap Send there.</p>
+        </form>
+      </section>
+
+      <!-- Step 2: vastu form -->
+      <section class="intake-step" id="intake-step-vastu" aria-labelledby="intake-vastu-heading" hidden>
+        <button type="button" class="intake-back" data-intake-back>← Back</button>
+        <h2 class="intake-form-title" id="intake-vastu-heading">Vastu Consultation</h2>
+        <p class="intake-form-intro">Share where you live or work so environmental alignment can be understood in context.</p>
+        <form class="intake-form" id="intake-form-vastu" novalidate>
+          <div class="form-group">
+            <label for="vastu-name">Full name</label>
+            <input type="text" id="vastu-name" name="fullName" autocomplete="name" placeholder="Your name" required>
+          </div>
+          <div class="form-group">
+            <label for="vastu-property">Property type</label>
+            <select id="vastu-property" name="propertyType" required>
+              <option value="" disabled selected>Select one</option>
+              <option value="Home">Home</option>
+              <option value="Workspace">Workspace</option>
+              <option value="Home and workspace">Home and workspace</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="vastu-location">Property location (city, country)</label>
+            <input type="text" id="vastu-location" name="propertyLocation" placeholder="e.g. Mumbai, India" required>
+          </div>
+          <div class="form-group">
+            <label for="vastu-country">Country you&rsquo;re currently based in</label>
+            <input type="text" id="vastu-country" name="countryBased" placeholder="For scheduling &amp; pricing tier" required>
+          </div>
+          <div class="form-group">
+            <label for="vastu-focus">What would you like this consultation to focus on? <span class="label-optional">(optional)</span></label>
+            <textarea id="vastu-focus" name="focus" rows="4" placeholder="e.g. home layout, office energy, renovation planning"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-intake-submit">Send to WhatsApp</button>
+          <p class="intake-disclaimer">This opens WhatsApp with your details pre-filled — nothing is sent until you tap Send there.</p>
+        </form>
+      </section>
+    </div>
+  </main>
+  <script src="/js/intake.js" defer></script>
+</body>
+</html>

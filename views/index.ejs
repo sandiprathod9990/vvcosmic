@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-IN">
 <head>
-  <%- include('partials/seo-head', { site, services, seo }) %>
+  <%- include('partials/seo-head', { site, services, seo, jsonLdGraph }) %>
 </head>
 <body>
   <div class="nav-overlay" id="nav-overlay" aria-hidden="true"></div>
@@ -28,6 +28,7 @@
         <a href="#vastu">Vastu</a>
         <a href="#thought-speech-action">Alignment</a>
         <a href="#the-practice">Practice</a>
+        <a href="#faq">FAQ</a>
         <a href="<%= site.phoneTel %>" class="nav-phone" aria-label="Call <%= site.phoneDisplay %>"><%= site.phoneDisplay %></a>
         <a href="<%= site.whatsappUrl %>" class="nav-cta" target="_blank" rel="noopener noreferrer">Inquiry</a>
       </nav>
@@ -364,6 +365,27 @@
     </section>
 
     <%- include('partials/section-divider') %>
+
+    <section class="section section--intro faq-section" id="faq" aria-labelledby="faq-heading">
+      <div class="container">
+        <div class="section-header section-header--center reveal">
+          <%- include('partials/lotus-icon', { lotusClass: 'lotus-icon lotus-icon--section' }) %>
+          <span class="section-label">Questions</span>
+          <h2 id="faq-heading">Frequently asked questions</h2>
+          <p class="section-lead">Clear answers about the practice, services, and how to begin — for search and for you.</p>
+        </div>
+        <div class="faq-list reveal">
+          <% faqs.forEach(function(faq) { %>
+          <details class="faq-item">
+            <summary><%= faq.question %></summary>
+            <div class="faq-answer">
+              <p><%= faq.answer %></p>
+            </div>
+          </details>
+          <% }); %>
+        </div>
+      </div>
+    </section>
 
     <section class="section cta-section" id="inquiry">
       <div class="container cta-inner reveal">

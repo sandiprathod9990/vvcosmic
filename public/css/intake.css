@@ -1,0 +1,219 @@
+/* VVCosmic consultation intake — dedicated shareable page */
+
+.intake-page {
+  background: var(--color-cream);
+  color: var(--color-charcoal);
+  min-height: 100vh;
+}
+
+.intake-main {
+  padding: var(--space-lg) var(--space-sm) var(--space-3xl);
+}
+
+.intake-container {
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+.intake-brand {
+  text-align: center;
+  margin-bottom: var(--space-md);
+}
+
+.intake-brand-name {
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 8vw, 2.75rem);
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  margin: 0 0 0.35rem;
+  color: var(--color-charcoal-deep);
+}
+
+.intake-brand-tag {
+  font-family: var(--font-serif);
+  font-size: 0.9375rem;
+  font-style: italic;
+  color: var(--color-earth);
+  margin: 0;
+  line-height: 1.5;
+}
+
+.intake-rule {
+  border: none;
+  border-top: 1px solid rgba(26, 35, 50, 0.12);
+  margin: 0 0 var(--space-lg);
+}
+
+.intake-step[hidden] {
+  display: none !important;
+}
+
+.intake-heading {
+  font-family: var(--font-serif);
+  font-size: clamp(1.375rem, 5vw, 1.625rem);
+  font-weight: 400;
+  text-align: center;
+  margin: 0 0 var(--space-sm);
+  color: var(--color-charcoal-deep);
+}
+
+.intake-lead {
+  text-align: center;
+  font-size: 0.9375rem;
+  line-height: 1.65;
+  color: var(--color-earth);
+  margin: 0 0 var(--space-lg);
+  max-width: 420px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.intake-type-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-lg);
+}
+
+.intake-type-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  padding: var(--space-md) var(--space-sm);
+  background: var(--color-parchment);
+  border: 1px solid rgba(166, 139, 91, 0.22);
+  cursor: pointer;
+  font-family: inherit;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  min-height: 100%;
+}
+
+.intake-type-card:hover,
+.intake-type-card:focus-visible {
+  border-color: var(--color-charcoal);
+  outline: none;
+  box-shadow: 0 4px 20px rgba(15, 22, 35, 0.06);
+}
+
+.intake-type-title {
+  font-family: var(--font-serif);
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--color-charcoal-deep);
+  margin-bottom: 0.5rem;
+}
+
+.intake-type-desc {
+  font-size: 0.8125rem;
+  line-height: 1.55;
+  color: var(--color-earth);
+}
+
+.intake-home-link {
+  text-align: center;
+  font-size: 0.875rem;
+}
+
+.intake-home-link a {
+  color: var(--color-earth);
+}
+
+.intake-back {
+  background: none;
+  border: none;
+  padding: 0;
+  margin-bottom: var(--space-md);
+  font-family: var(--font-sans);
+  font-size: 0.9375rem;
+  color: var(--color-earth);
+  cursor: pointer;
+}
+
+.intake-back:hover {
+  color: var(--color-charcoal);
+}
+
+.intake-form-title {
+  font-family: var(--font-serif);
+  font-size: 1.375rem;
+  font-weight: 400;
+  margin: 0 0 var(--space-xs);
+  color: var(--color-charcoal-deep);
+}
+
+.intake-form-intro {
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--color-earth);
+  margin: 0 0 var(--space-lg);
+}
+
+.intake-form .form-group {
+  margin-bottom: var(--space-md);
+}
+
+.intake-form .form-group label {
+  display: block;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--color-charcoal);
+  margin-bottom: 0.35rem;
+}
+
+.label-optional {
+  font-weight: 400;
+  color: var(--color-warm-grey);
+}
+
+.intake-form input,
+.intake-form select,
+.intake-form textarea {
+  width: 100%;
+  padding: 0.75rem 0.875rem;
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  color: var(--color-charcoal);
+  background: var(--color-white);
+  border: 1px solid rgba(26, 35, 50, 0.14);
+  border-radius: 0;
+}
+
+.intake-form input:focus,
+.intake-form select:focus,
+.intake-form textarea:focus {
+  outline: none;
+  border-color: var(--color-bronze-muted);
+}
+
+.field-hint {
+  font-size: 0.8125rem;
+  line-height: 1.5;
+  color: var(--color-warm-grey);
+  margin: 0.35rem 0 0;
+}
+
+.btn-intake-submit {
+  width: 100%;
+  margin-top: var(--space-sm);
+  padding: 0.95rem 1.25rem;
+  font-size: 1rem;
+}
+
+.intake-disclaimer {
+  font-size: 0.8125rem;
+  line-height: 1.55;
+  color: var(--color-warm-grey);
+  text-align: center;
+  margin: var(--space-sm) 0 0;
+}
+
+@media (max-width: 480px) {
+  .intake-type-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .intake-main {
+    padding-top: var(--space-md);
+  }
+}
