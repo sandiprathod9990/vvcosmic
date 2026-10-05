@@ -15,6 +15,10 @@ module.exports = {
     whatsappUrl:
       'https://wa.me/918140961570?text=I%20would%20like%20to%20know%20more%20about%20your%20consultation%20services',
     location: 'India',
+    city: 'Ahmedabad',
+    region: 'Gujarat',
+    alternateNames: ['VV Cosmic', 'VVC Cosmic', 'Vaishali Vastu Consultancy', 'VVC'],
+    sameAs: ['https://www.linkedin.com/in/harshil-sevak-632809349'],
     footerQuote: 'Every life has a visible story and an invisible architecture.',
     description:
       'VVCosmic — Private advisory in astrology, vastu intelligence, pattern recognition, and life alignment with Harshil Sevak.',
@@ -29,7 +33,7 @@ module.exports = {
     home: {
       title: 'VVCosmic | Life Alignment & Pattern Intelligence | Harshil Sevak',
       description:
-        'VVCosmic with Harshil Sevak — private advisory for pattern observation, Vedic astrology, vastu intelligence, and strategic life alignment in India and worldwide. Inquiry via WhatsApp.',
+        'VVCosmic (Vaishali Vastu Consultancy) — Harshil Sevak, Vastu & astrology consultant in Ahmedabad. Logic-based vastu and Vedic astrology consultations, online worldwide. Inquiry via WhatsApp.',
       keywords:
         'VVCosmic, Harshil Sevak, life alignment, pattern intelligence, astrology advisory, vastu consultant, vastu intelligence, life architecture, Vedic astrology India',
     },
@@ -46,7 +50,7 @@ module.exports = {
     {
       question: 'Who is Harshil Sevak?',
       answer:
-        'Harshil Sevak is the practitioner behind VVCosmic, offering structured consultation in chart pattern observation, behavioral and environmental alignment, and vastu intelligence for clients in India and internationally.',
+        'Harshil Sevak is an Ahmedabad-based Vastu and astrology consultant and the founder of Vaishali Vastu Consultancy (VVCosmic). He offers structured consultation in chart pattern observation, behavioral and environmental alignment, and vastu intelligence for clients in India and internationally.',
     },
     {
       question: 'What services does VVCosmic offer?',
