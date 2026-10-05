@@ -21,7 +21,7 @@ module.exports = {
     sameAs: ['https://www.linkedin.com/in/harshil-sevak-632809349'],
     footerQuote: 'Every life has a visible story and an invisible architecture.',
     description:
-      'VVCosmic — Private advisory in astrology, vastu intelligence, pattern recognition, and life alignment with Harshil Sevak.',
+      'VVCosmic (Vaishali Vastu Consultancy) — vastu and Vedic astrology consultation by Harshil Sevak in Ahmedabad and online. Logic-based vastu without demolition, birth chart reading, and life alignment.',
     ogImage: '/og-image.png',
     aboutLead:
       'Private advisory in pattern intelligence, astrology, and vastu alignment — grounded in observation, structure, and intentional refinement.',
@@ -31,11 +31,11 @@ module.exports = {
 
   seo: {
     home: {
-      title: 'VVCosmic | Life Alignment & Pattern Intelligence | Harshil Sevak',
+      title: 'Vastu Consultant in Ahmedabad | Vastu & Astrology by Harshil Sevak – VVCosmic',
       description:
-        'VVCosmic (Vaishali Vastu Consultancy) — Harshil Sevak, Vastu & astrology consultant in Ahmedabad. Logic-based vastu and Vedic astrology consultations, online worldwide. Inquiry via WhatsApp.',
+        'Vastu and Vedic astrology consultant in Ahmedabad — Harshil Sevak, VVCosmic (Vaishali Vastu Consultancy). Logic-based vastu for home and office without demolition or gemstones. Online consultations worldwide.',
       keywords:
-        'VVCosmic, Harshil Sevak, life alignment, pattern intelligence, astrology advisory, vastu consultant, vastu intelligence, life architecture, Vedic astrology India',
+        'vastu consultant in Ahmedabad, vastu expert Ahmedabad, astrologer in Ahmedabad, vastu without demolition, vastu remedies without breaking, vastu for home, vastu for office, vastu for business, floor plan vastu analysis, 16 zone vastu, online vastu consultation, online astrology consultation, birth chart reading, kundli analysis, Vedic astrology, Harshil Sevak, Vaishali Vastu Consultancy, VVCosmic',
     },
     // Paste verification token from Google Search Console when available
     googleSiteVerification: '',
@@ -61,6 +61,21 @@ module.exports = {
       question: 'How do I request a consultation with VVCosmic?',
       answer:
         'Submit an inquiry via WhatsApp at +91 81409 61570 or email Vvc1567@gmail.com. Each request is reviewed personally; the process typically moves from initial context to consultation discussion and private guidance.',
+    },
+    {
+      question: 'Can vastu be corrected without demolition?',
+      answer:
+        'Yes. Most vastu imbalances are corrected without breaking walls or structural changes — through furniture and desk placement, metal strips (copper, brass, or steel), colour adjustments, and zone-based corrections after a floor plan analysis across the 16 vastu zones.',
+    },
+    {
+      question: 'Do you offer online vastu and astrology consultation?',
+      answer:
+        'Yes. Consultations are available in person in Ahmedabad and online for clients anywhere in India or abroad. For vastu, a floor plan and directions are shared over WhatsApp; for astrology, the date, time, and place of birth are needed.',
+    },
+    {
+      question: 'Do you sell gemstones, yantras, or crystals?',
+      answer:
+        'No. VVCosmic does not sell gemstones, charged yantras, or costly crystals. Guidance is consultation-only and focuses on practical corrections in your space and daily routine.',
     },
     {
       question: 'Does VVCosmic focus on prediction?',
